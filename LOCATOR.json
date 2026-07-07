@@ -6,5 +6,20 @@
   "author": "Kevin Yang (ky46738-ops)",
   "version": "seed_v0",
   "A_EQUALS_A": true,
-  "note": "This is the single canonical locator for LKMini public seed."
+  "note": "This is the single canonical locator for LKMini public seed.",
+  "public_repo_protection": {
+    "tracked_by": "CentralizationTracker",
+    "visibility": "public",
+    "open_source": true,
+    "archived": false,
+    "default_branch": "main",
+    "size_kb": 71,
+    "migration_action": "locator_only",
+    "migration_target_repo": "ky46738-ops/lk-unique-gate",
+    "migration_target_issue": 3,
+    "acceptance_status": "PASS",
+    "source_repository_deleted": false,
+    "public_repo_mutation_scope": "locator_only",
+    "note": "Public open-source repositories are not moved into the private centralization inbox; this repository remains the canonical public seed and is tracked by locator/back-reference only."
+  }
 }
