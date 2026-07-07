@@ -19,7 +19,6 @@
     "migration_target_issue": 3,
     "acceptance_status": "PASS",
     "source_repository_deleted": false,
-    "public_repo_mutation_scope": "locator_only",
     "note": "Public open-source repositories are not moved into the private centralization inbox; this repository remains the canonical public seed and is tracked by locator/back-reference only."
   }
 }
