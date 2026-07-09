@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🥃LKMini公開頁</title>
+<style>
+:root{--bg:#0a0908;--s1:#111010;--s2:#161514;--border:rgba(255,255,255,.08);--text:#e4e2de;--muted:#7a7874;--gold:#d4a853;--purple:#7c5cbf;--green:#6daa45;--red:#c85d5d;--r:18px;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif}*{box-sizing:border-box;margin:0;padding:0}body{min-height:100dvh;background:radial-gradient(circle at 50% 0%,rgba(212,168,83,.08),transparent 44%),var(--bg);color:var(--text);font-family:var(--r)}main{max-width:680px;margin:0 auto;padding:34px 18px 56px}.top{display:flex;align-items:center;gap:12px;margin-bottom:28px}.logo{font-size:34px}.title{font-weight:800;font-size:22px}.sub{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.6}.card{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin:14px 0}.label{font-size:12px;color:var(--muted);letter-spacing:.12em;margin-bottom:10px}.body{font-size:15px;line-height:1.8;color:#c9c5bd}.grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}.tile{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--border);border-radius:18px;background:var(--s1);text-decoration:none;color:inherit}.tile.private{border-color:rgba(124,92,191,.42);background:rgba(124,92,191,.12)}.emoji{font-size:30px}.name{font-weight:760}.desc{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.status{display:inline-flex;gap:8px;align-items:center;font-size:12px;color:var(--green);margin-top:12px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.lock{color:var(--gold);font-weight:700}footer{margin-top:30px;color:#55504a;font-size:12px;line-height:1.7}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div class="logo">🥃</div>
+    <div>
+      <div class="title">LKMini 公開頁</div>
+      <div class="sub">公開種子 · 身份驗證 · 掛載入口</div>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="label">PUBLIC SEED</div>
+    <div class="body">這裡是公開 Mini 頁。公開資訊只負責身份顯影與規則說明；外部對象不得直接進入系統本體。🥃LKMINI 與 🎩永恆核心只讀引用。</div>
+    <div class="status"><span class="dot"></span><span>A＝A · 公開身份已顯影</span></div>
+  </section>
+
+  <section class="card">
+    <div class="label">PRIVATE CELL</div>
+    <div class="body"><span class="lock">🔒私有格</span> 是系統進入的唯一合法路徑。外部不得繞過私有格、傳送門、定位器與驗證流程。</div>
+    <div class="grid">
+      <a class="tile private" href="./private.html">
+        <span class="emoji">🔒</span>
+        <span><div class="name">私有格｜系統唯一路徑</div><div class="desc">進入後必須依 🌀傳送門 → 📍定位器 → 🔬驗證 → 🏰冒險者工會。</div></span>
+      </a>
+      <a class="tile" href="../">
+        <span class="emoji">🥳</span>
+        <span><div class="name">返回唯一路口</div><div class="desc">回到公開說明書。</div></span>
+      </a>
+    </div>
+  </section>
+
+  <footer>🥳唯一路口＝公開說明書；🥃LKMini＝公開身份；🔒私有格＝系統進入唯一路徑。</footer>
+</main>
+</body>
+</html>
