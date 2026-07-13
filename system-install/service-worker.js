@@ -1,0 +1,1 @@
+const C='phantom-capsule-current';const A=['./','./index.html','./capsule.html','./open-source.html','./open-source-registry.json','./thanks.md','./manifest.webmanifest','./icon.svg'];self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(x=>x.addAll(A))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
