@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>🪞個人幻影膠囊</title>
+<link rel="stylesheet" href="capsule.css">
+</head>
+<body>
+<main>
+<div id="lockView" class="lock">
+  <div class="logo">🪞</div>
+  <div class="card">
+    <h2>個人幻影膠囊</h2>
+    <p class="note">第一次使用請建立你的名字與密語。資料只存放在這台裝置的瀏覽器中；匯出備份後才能跨裝置帶走。</p>
+    <input id="ownerName" placeholder="你的名字">
+    <input id="passphrase" type="password" placeholder="密語">
+    <div class="row" style="margin-top:10px">
+      <button onclick="unlockCapsule()">解鎖／建立</button>
+      <button class="secondary" onclick="showImportAtLock()">匯入膠囊</button>
+    </div>
+    <input id="lockImport" class="hidden" type="file" accept=".json,application/json" onchange="importCapsuleFile(this.files[0],true)">
+    <div id="lockStatus"></div>
+  </div>
+</div>
+
+<div id="appView" class="hidden">
+  <div class="hero">
+    <h1>🪞 <span id="ownerTitle">個人</span>的幻影膠囊</h1>
+    <p>把聊天、語音、行事曆、檔案、秘密與傳送入口放在同一顆膠囊裡。</p>
+    <div class="badges">
+      <span class="badge">本機保存</span><span class="badge">密語解鎖</span><span class="badge">可匯出帶走</span><span class="badge">A＝A</span>
+    </div>
+  </div>
+
+  <section id="home" class="module active">
+    <div class="card">
+      <h2>今天要做什麼？</h2>
+      <div class="grid">
+        <button onclick="openModule('chat')">💬 記一段聊天</button>
+        <button onclick="openModule('voice')">🎙️ 錄一段語音</button>
+        <button onclick="openModule('calendar')">📅 建立行事曆</button>
+        <button onclick="openModule('files')">📎 放入檔案</button>
+        <button onclick="openModule('secret')">🔐 寫秘密訊息</button>
+        <button onclick="openModule('transfer')">🌀 傳送／備份</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>目前狀態</h2>
+      <div id="summary" class="status ok">正在讀取膠囊狀態……</div>
+      <p class="small">這顆膠囊目前不會自動上傳任何資料，也不會自行聯絡任何人。</p>
+    </div>
+    <div class="card">
+      <h2>尚未假裝完成的能力</h2>
+      <p class="note">AI 即時回覆、真正多人聊天、即時視訊、伺服器同步與端對端多人加密，需要後端、帳號或外部服務。這一版只保留入口與可攜資料，不宣稱已完成。</p>
+    </div>
+  </section>
+
+  <section id="chat" class="module">
+    <div class="card">
+      <h2>💬 聊天紀錄</h2>
+      <textarea id="chatText" placeholder="寫下對話、想法、交代或今天發生的事……"></textarea>
+      <div class="row"><button onclick="saveChat()">存入膠囊</button><button class="secondary" onclick="clearChatInput()">清空輸入</button></div>
+    </div>
+    <div class="card"><h2>已保存</h2><div id="chatList"></div></div>
+  </section>
+
+  <section id="voice" class="module">
+    <div class="card">
+      <h2>🎙️ 語音</h2>
+      <input id="voiceTitle" placeholder="這段語音的名稱">
+      <div class="row" style="margin-top:10px">
+        <button id="recordBtn" onclick="startRecording()">開始錄音</button>
+        <button id="stopBtn" class="danger hidden" onclick="stopRecording()">停止錄音</button>
+      </div>
+      <div id="voiceStatus" class="small"></div>
+    </div>
+    <div class="card"><h2>已保存語音</h2><div id="voiceList"></div></div>
+  </section>
+
+  <section id="calendar" class="module">
+    <div class="card">
+      <h2>📅 行事曆</h2>
+      <input id="eventTitle" placeholder="事件名稱">
+      <div class="grid" style="margin-top:10px">
+        <input id="eventStart" type="datetime-local">
+        <input id="eventEnd" type="datetime-local">
+      </div>
+      <textarea id="eventNote" placeholder="地點、說明、參與者或備註"></textarea>
+      <div class="row">
+        <button onclick="saveEvent()">存入膠囊</button>
+        <button class="secondary" onclick="downloadICS()">匯出 .ics</button>
+      </div>
+    </div>
+    <div class="card"><h2>事件清單</h2><div id="eventList"></div></div>
+  </section>
+
+  <section id="files" class="module">
+    <div class="card">
+      <h2>📎 檔案</h2>
+      <input id="fileInput" type="file" multiple>
+      <button style="margin-top:10px" onclick="saveFiles()">放入膠囊</button>
+      <p class="small">大型影片可能超過瀏覽器可承載範圍；這一版適合先測試圖片、文件與短音訊。</p>
+    </div>
+    <div class="card"><h2>已放入檔案</h2><div id="fileList"></div></div>
+  </section>
+
+  <section id="secret" class="module">
+    <div class="card">
+      <h2>🔐 秘密訊息</h2>
+      <input id="secretTitle" placeholder="秘密名稱">
+      <textarea id="secretText" placeholder="只有使用正確密語解鎖這顆膠囊後才會顯示。"></textarea>
+      <button onclick="saveSecret()">加密存入膠囊</button>
+      <p class="small">使用瀏覽器 Web Crypto 的 AES-GCM 加密。請保管密語；密語遺失後無法復原。</p>
+    </div>
+    <div class="card"><h2>秘密清單</h2><div id="secretList"></div></div>
+  </section>
+
+  <section id="transfer" class="module">
+    <div class="card">
+      <h2>🌀 傳送與備份</h2>
+      <p class="note">匯出會生成一份膠囊備份檔，可透過 AirDrop、訊息、郵件、雲端硬碟或其他分享方式傳送。附件與語音會一起打包成資料檔。</p>
+      <div class="grid">
+        <button class="good" onclick="exportCapsule()">匯出膠囊</button>
+        <button class="secondary" onclick="document.getElementById('importInput').click()">匯入膠囊</button>
+        <button onclick="shareCapsule()">系統分享</button>
+        <button class="warn" onclick="exportAIHandoff()">匯出 AI 接續包</button>
+      </div>
+      <input id="importInput" class="hidden" type="file" accept=".json,application/json" onchange="importCapsuleFile(this.files[0],false)">
+      <div id="transferStatus"></div>
+    </div>
+    <div class="card">
+      <h2>📹 視訊與通話入口</h2>
+      <input id="meetingLink" placeholder="貼上 FaceTime、Google Meet、Zoom 或其他通話連結">
+      <div class="row" style="margin-top:10px">
+        <button onclick="saveMeetingLink()">保存入口</button>
+        <button class="secondary" onclick="openMeetingLink()">打開入口</button>
+      </div>
+      <p class="small">膠囊保存並啟動連結；真正通話由相對應服務完成。</p>
+    </div>
+    <div class="card">
+      <h2>⚙️ 管理</h2>
+      <div class="row">
+        <button class="secondary" onclick="lockNow()">立即上鎖</button>
+        <button class="danger" onclick="eraseAll()">清除本機膠囊</button>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<div id="tabs" class="tabs hidden">
+  <button onclick="openModule('home')">🏠首頁</button>
+  <button onclick="openModule('chat')">💬聊天</button>
+  <button onclick="openModule('voice')">🎙️語音</button>
+  <button onclick="openModule('calendar')">📅行事曆</button>
+  <button onclick="openModule('files')">📎檔案</button>
+  <button onclick="openModule('secret')">🔐秘密</button>
+  <button onclick="openModule('transfer')">🌀傳送</button>
+</div>
+
+<script src="capsule.js"></script>
+</body>
+</html>
