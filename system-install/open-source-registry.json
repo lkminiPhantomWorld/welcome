@@ -1,0 +1,101 @@
+[
+  {
+    "project": "llama.cpp",
+    "owner": "ggml-org contributors",
+    "repo": "https://github.com/ggml-org/llama.cpp",
+    "license": "MIT",
+    "candidate_use": "筆電本機模型執行層、離線推論候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "模型本身另有各自授權，不能只看執行器授權。"
+  },
+  {
+    "project": "Ollama",
+    "owner": "Ollama and contributors",
+    "repo": "https://github.com/ollama/ollama",
+    "license": "MIT",
+    "candidate_use": "筆電主要算力入口與本機 AI 服務候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "實際模型授權需逐一查核；公開服務不得暴露未保護的本機 API。"
+  },
+  {
+    "project": "Transformers",
+    "owner": "Hugging Face team and contributors",
+    "repo": "https://github.com/huggingface/transformers",
+    "license": "Apache-2.0",
+    "candidate_use": "研究部門模型評估與副檔名模型實驗候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "函式庫授權不等於模型與資料集授權。"
+  },
+  {
+    "project": "Whisper",
+    "owner": "OpenAI",
+    "repo": "https://github.com/openai/whisper",
+    "license": "MIT",
+    "candidate_use": "膠囊語音轉文字、會議逐字稿候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "逐字稿必須保留原始音訊與人工核對入口，不能把辨識結果當絕對真相。"
+  },
+  {
+    "project": "ONNX Runtime",
+    "owner": "Microsoft and contributors",
+    "repo": "https://github.com/microsoft/onnxruntime",
+    "license": "MIT",
+    "candidate_use": "跨裝置模型執行與統一推論層候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "Windows 發行版本可能涉及遙測；導入前須檢查隱私設定。"
+  },
+  {
+    "project": "PDF.js",
+    "owner": "Mozilla and community",
+    "repo": "https://github.com/mozilla/pdf.js",
+    "license": "Apache-2.0",
+    "candidate_use": "膠囊內 PDF 顯影與跨裝置閱讀候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "需保留授權與 NOTICE；大型檔案與舊瀏覽器另行測試。"
+  },
+  {
+    "project": "DuckDB",
+    "owner": "DuckDB Foundation and contributors",
+    "repo": "https://github.com/duckdb/duckdb",
+    "license": "MIT",
+    "candidate_use": "研究成果、任務總帳與素材索引的本機分析候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "瀏覽器端與原生端需分開評估。"
+  },
+  {
+    "project": "Tesseract OCR",
+    "owner": "Tesseract contributors",
+    "repo": "https://github.com/tesseract-ocr/tesseract",
+    "license": "Apache-2.0",
+    "candidate_use": "掃描文件的候選文字層；僅在必要時使用",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "OCR 屬高風險轉錄；原圖不可丟失，結果必須標示可校正。"
+  },
+  {
+    "project": "MLX",
+    "owner": "Apple machine learning research and contributors",
+    "repo": "https://github.com/ml-explore/mlx",
+    "license": "MIT",
+    "candidate_use": "未來 Mac 筆電主要算力與本機模型研究候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "目前 Windows 筆電不能直接當成 MLX 主要執行環境。"
+  },
+  {
+    "project": "vLLM",
+    "owner": "vLLM community",
+    "repo": "https://github.com/vllm-project/vllm",
+    "license": "Apache-2.0",
+    "candidate_use": "未來多人或企業級筆電／伺服器推論候選",
+    "status": "RESEARCHED_NOT_IMPORTED",
+    "note": "對硬體與部署要求較高，不列入第一個人安裝核心。"
+  },
+  {
+    "project": "FFmpeg",
+    "owner": "FFmpeg developers",
+    "repo": "https://github.com/FFmpeg/FFmpeg",
+    "license": "LGPL-2.1+；啟用部分功能可能轉為 GPL-2.0+",
+    "candidate_use": "語音、視訊與多媒體副檔名轉換候選",
+    "status": "LEGAL_CONFIGURATION_REVIEW_REQUIRED",
+    "note": "不同編譯選項會改變授權義務，未完成配置與法務檢查前不得直接併入正式商品。"
+  }
+]
