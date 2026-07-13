@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>🌱開源共學部</title><style>
+:root{--bg:#07111f;--panel:#101b30;--panel2:#17253f;--text:#eff5ff;--muted:#9eb0ca;--line:#2a3f62;--accent:#8cb0ff;--ok:#75d7a6;--warn:#ffd27a;--bad:#ff909b}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#06101e,#0c1830 58%,#121c30);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;min-height:100vh}
+main{max-width:1160px;margin:auto;padding:24px 16px 90px}h1{font-size:32px;margin:0 0 8px}h2{font-size:20px;margin:0 0 12px}h3{margin:0 0 8px}.lead{color:var(--muted);line-height:1.75}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}.card{background:rgba(16,27,48,.95);border:1px solid var(--line);border-radius:22px;padding:17px;margin:13px 0;box-shadow:0 15px 45px rgba(0,0,0,.2)}
+a.btn,button{display:inline-block;text-decoration:none;background:#2852a4;color:#fff;border:1px solid #4775ce;border-radius:13px;padding:11px 14px;font-weight:750;margin:5px 5px 0 0;cursor:pointer}
+a.secondary,button.secondary{background:#1a2944;border-color:#385073}.badge{display:inline-block;border:1px solid #385276;background:#172640;border-radius:999px;padding:5px 9px;margin:3px;font-size:12px}
+.ok{border-left:4px solid var(--ok)}.warn{border-left:4px solid var(--warn)}.bad{border-left:4px solid var(--bad)}.muted{color:var(--muted)}code{word-break:break-all}table{width:100%;border-collapse:collapse;background:#0c172a;border-radius:16px;overflow:hidden}th,td{border:1px solid #2a3e60;padding:10px;text-align:left;vertical-align:top}th{background:#1d3152}.scroll{overflow:auto}.step{display:flex;gap:12px;align-items:flex-start;margin:10px 0}.num{min-width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#2c58aa;font-weight:800}
+footer{color:var(--muted);margin-top:30px;font-size:13px}.topnav{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.topnav a{color:#dbe7ff;text-decoration:none;border:1px solid #324a70;border-radius:999px;padding:7px 10px}
+</style></head><body><main>
+<h1>🌱開源共學部</h1><p class="lead">搜尋世界上免費與開源的 AI、文件、媒體與資料能力；先看清楚人與來源，再決定能否引用、整合或只學習。真的用到就回饋、致謝，並留下老K系統的公開紀錄。</p>
+<div class="card warn"><b>本輪裁決：</b>已完成 11 個官方專案的來源與授權初步閱讀；全部仍是研究候選，沒有把第三方程式碼偽裝成已正式併入。</div>
+<div class="scroll"><table><thead><tr><th>專案</th><th>授權快照</th><th>候選用途</th><th>狀態</th><th>注意</th></tr></thead><tbody><tr><td><a href='https://github.com/ggml-org/llama.cpp' target='_blank' rel='noopener'>llama.cpp</a></td><td>MIT</td><td>筆電本機模型執行層、離線推論候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>模型本身另有各自授權，不能只看執行器授權。</td></tr>
+<tr><td><a href='https://github.com/ollama/ollama' target='_blank' rel='noopener'>Ollama</a></td><td>MIT</td><td>筆電主要算力入口與本機 AI 服務候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>實際模型授權需逐一查核；公開服務不得暴露未保護的本機 API。</td></tr>
+<tr><td><a href='https://github.com/huggingface/transformers' target='_blank' rel='noopener'>Transformers</a></td><td>Apache-2.0</td><td>研究部門模型評估與副檔名模型實驗候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>函式庫授權不等於模型與資料集授權。</td></tr>
+<tr><td><a href='https://github.com/openai/whisper' target='_blank' rel='noopener'>Whisper</a></td><td>MIT</td><td>膠囊語音轉文字、會議逐字稿候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>逐字稿必須保留原始音訊與人工核對入口，不能把辨識結果當絕對真相。</td></tr>
+<tr><td><a href='https://github.com/microsoft/onnxruntime' target='_blank' rel='noopener'>ONNX Runtime</a></td><td>MIT</td><td>跨裝置模型執行與統一推論層候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>Windows 發行版本可能涉及遙測；導入前須檢查隱私設定。</td></tr>
+<tr><td><a href='https://github.com/mozilla/pdf.js' target='_blank' rel='noopener'>PDF.js</a></td><td>Apache-2.0</td><td>膠囊內 PDF 顯影與跨裝置閱讀候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>需保留授權與 NOTICE；大型檔案與舊瀏覽器另行測試。</td></tr>
+<tr><td><a href='https://github.com/duckdb/duckdb' target='_blank' rel='noopener'>DuckDB</a></td><td>MIT</td><td>研究成果、任務總帳與素材索引的本機分析候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>瀏覽器端與原生端需分開評估。</td></tr>
+<tr><td><a href='https://github.com/tesseract-ocr/tesseract' target='_blank' rel='noopener'>Tesseract OCR</a></td><td>Apache-2.0</td><td>掃描文件的候選文字層；僅在必要時使用</td><td>RESEARCHED_NOT_IMPORTED</td><td>OCR 屬高風險轉錄；原圖不可丟失，結果必須標示可校正。</td></tr>
+<tr><td><a href='https://github.com/ml-explore/mlx' target='_blank' rel='noopener'>MLX</a></td><td>MIT</td><td>未來 Mac 筆電主要算力與本機模型研究候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>目前 Windows 筆電不能直接當成 MLX 主要執行環境。</td></tr>
+<tr><td><a href='https://github.com/vllm-project/vllm' target='_blank' rel='noopener'>vLLM</a></td><td>Apache-2.0</td><td>未來多人或企業級筆電／伺服器推論候選</td><td>RESEARCHED_NOT_IMPORTED</td><td>對硬體與部署要求較高，不列入第一個人安裝核心。</td></tr>
+<tr><td><a href='https://github.com/FFmpeg/FFmpeg' target='_blank' rel='noopener'>FFmpeg</a></td><td>LGPL-2.1+；啟用部分功能可能轉為 GPL-2.0+</td><td>語音、視訊與多媒體副檔名轉換候選</td><td>LEGAL_CONFIGURATION_REVIEW_REQUIRED</td><td>不同編譯選項會改變授權義務，未完成配置與法務檢查前不得直接併入正式商品。</td></tr></tbody></table></div>
+<div class="grid">
+<div class="card"><h2>📖讀來源</h2><p>官方專案、官方文件、原始研究、LICENSE、NOTICE 與依賴清單。</p></div>
+<div class="card"><h2>🧪真的使用</h2><p>沒有安裝、測試與實際效果，就不能填「已使用」。</p></div>
+<div class="card"><h2>💬回饋</h2><p>遇到問題或可改善處，透過 Issue、Discussion 或貢獻流程回到原社群。</p></div>
+<div class="card"><h2>🙏說謝謝</h2><p>保留作者、專案、授權與使用位置，不把別人的成果洗成自己的。</p></div>
+</div>
+<a class="btn" href="open-source-registry.json">來源總帳</a><a class="secondary btn" href="thanks.md">公開致謝候選</a><a class="secondary btn" href="index.html">回安裝入口</a>
+</main></body></html>
