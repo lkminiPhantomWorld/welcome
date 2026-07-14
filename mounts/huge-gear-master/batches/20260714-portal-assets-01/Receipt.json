@@ -1,0 +1,166 @@
+{
+  "batch_id": "20260714-portal-assets-01",
+  "executor": "🛠️胡哥｜裝備大師",
+  "scope": "公開唯一路口正面區與已存在但未接線的公開成品",
+  "timestamp_utc": "2026-07-14T12:23:52Z",
+  "rounds": {
+    "round_1_inventory": "VERIFIED_TRUE",
+    "round_2_repair_and_wiring": "VERIFIED_TRUE"
+  },
+  "protected_boundaries": {
+    "lkmini_modified": "VERIFIED_FALSE",
+    "core_data_modified": "VERIFIED_FALSE",
+    "frozen_body_modified": "VERIFIED_FALSE",
+    "source_evidence_deleted": "VERIFIED_FALSE"
+  },
+  "source_evidence": {
+    "pre_repair_head_commit": "a2d746d8193fa264f64a0d41e670c6f64ca70a44",
+    "pre_repair_index_git_blob_sha": "e8b97b366c30c01f381a96981a67010a1d7f991a",
+    "note": "以上為 Git commit SHA 與 Git blob SHA，不宣稱為 SHA256。Git 歷史保留原始 index.html。"
+  },
+  "write_commits": [
+    "08157c54780ec914ae1d4eeed8c6e1ba10011b80",
+    "60321b078dd56bf7cc9d4477fe423c962239d4ea",
+    "a245f16fc0f1b84338b252a173023de5fc510d7c"
+  ],
+  "objects": [
+    {
+      "object": "Mini 入口卡",
+      "original_position": "index.html 正面角色卡；href=mini/",
+      "error_type": "斷線／404／錯誤投放為可用成品",
+      "asset_use": "公開唯讀入口，導向公開種子、狀態、邊界與雜湊清單",
+      "repair_action": "新增 mini/index.html 唯讀轉接頁並保留原卡位置",
+      "correct_position": "mini/index.html；index.html 可直接使用區",
+      "directly_usable": "VERIFIED_TRUE",
+      "test_result": "VERIFIED_TRUE：GitHub 寫入成功、fetch_file 讀回成功、四個相對連結已寫入",
+      "rollback": "revert commit 08157c54780ec914ae1d4eeed8c6e1ba10011b80，並將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "胡哥入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位／已完成成品未接線／錯誤降級",
+      "asset_use": "裝備資產盤點、歸位、接線、驗證與回執入口",
+      "repair_action": "將卡片接到既有 mounts/huge-gear-master/ 正式頁",
+      "correct_position": "index.html 可直接使用區；mounts/huge-gear-master/index.html",
+      "directly_usable": "VERIFIED_TRUE",
+      "test_result": "VERIFIED_TRUE：既有入口檔 fetch_file 成功，首頁 href 寫入並讀回成功",
+      "rollback": "將 index.html 回復到 pre-repair blob；既有胡哥入口不刪除",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "個人幻影膠囊",
+      "original_position": "system-install/capsule.html；未在唯一路口顯影",
+      "error_type": "正式成品被藏在安裝區／未接線／待測",
+      "asset_use": "本機保存、密語解鎖、聊天、語音、行事曆、檔案、秘密與匯入匯出",
+      "repair_action": "接到首頁待測成品區；未放入已驗證成品區",
+      "correct_position": "index.html 待測成品區；來源仍保留 system-install/",
+      "directly_usable": "HYPOTHESIS",
+      "test_result": "VERIFIED_TRUE：HTML、CSS、JS 三個依賴檔存在並可讀；HYPOTHESIS：瀏覽器互動尚未由本節點暴力測試",
+      "rollback": "移除首頁接線即可；來源檔不變",
+      "status": "HYPOTHESIS"
+    },
+    {
+      "object": "小蜜入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位偽裝成可點擊成品",
+      "asset_use": "角色名稱與圖示資產",
+      "repair_action": "移出可直接使用區，改成不可點擊的待處理資產卡",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：首頁讀回顯示為非連結 div，未再宣稱可用",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "畫家入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位偽裝成可點擊成品",
+      "asset_use": "角色名稱與圖示資產",
+      "repair_action": "移出可直接使用區，改成不可點擊的待處理資產卡",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：首頁讀回顯示為非連結 div，未再宣稱可用",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "作文老師入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位偽裝成可點擊成品",
+      "asset_use": "角色名稱與圖示資產",
+      "repair_action": "移出可直接使用區，改成不可點擊的待處理資產卡",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：首頁讀回顯示為非連結 div，未再宣稱可用",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "封存入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位／內部支撐誤放正面成品區／需重建",
+      "asset_use": "未來封存工具入口名稱與圖示證據",
+      "repair_action": "移出可直接使用區，歸入內部支撐／待重建",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：非連結顯影，來源名稱與圖示保留",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "搜尋入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位／內部支撐誤放正面成品區／需重建",
+      "asset_use": "未來搜尋工具入口名稱與圖示證據",
+      "repair_action": "移出可直接使用區，歸入內部支撐／待重建",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：非連結顯影，來源名稱與圖示保留",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "凌凌入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位偽裝成可點擊成品",
+      "asset_use": "角色名稱與圖示資產",
+      "repair_action": "移出可直接使用區，改成不可點擊的待處理資產卡",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：首頁讀回顯示為非連結 div，未再宣稱可用",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "餐廳入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位偽裝成可點擊成品",
+      "asset_use": "角色名稱與圖示資產",
+      "repair_action": "移出可直接使用區，改成不可點擊的待處理資產卡",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：首頁讀回顯示為非連結 div，未再宣稱可用",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "王牌入口卡",
+      "original_position": "index.html 正面角色卡；href=# 且 onclick=false",
+      "error_type": "佔位偽裝成可點擊成品",
+      "asset_use": "角色名稱與圖示資產",
+      "repair_action": "移出可直接使用區，改成不可點擊的待處理資產卡",
+      "correct_position": "index.html 保留資產／尚未接線區",
+      "directly_usable": "VERIFIED_FALSE",
+      "test_result": "VERIFIED_TRUE：首頁讀回顯示為非連結 div，未再宣稱可用",
+      "rollback": "將 index.html 回復到 pre-repair blob",
+      "status": "VERIFIED_FALSE"
+    }
+  ],
+  "verification": {
+    "repository_write": "VERIFIED_TRUE",
+    "repository_readback": "VERIFIED_TRUE",
+    "public_pages_deployment": "HYPOTHESIS",
+    "public_pages_observation": "舊首頁仍可見；新提交尚未由公開網址讀回"
+  }
+}
