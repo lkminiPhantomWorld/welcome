@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>🧪幻影膠囊自測</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef3f8;color:#17212d;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif}main{max-width:760px;margin:auto;padding:16px}.card{background:#fff;border:1px solid #cad6e2;border-radius:18px;padding:16px;margin:11px 0}.hero{background:#17324d;color:#fff}.ok{color:#176b2c;font-weight:800}.bad{color:#9b1c1c;font-weight:800}.row{border-top:1px solid #e5ebf1;padding:10px 0}.small{font-size:13px;color:#526273}button,a{display:block;width:100%;padding:12px;border-radius:13px;border:1px solid #aebdca;background:#f7fafc;color:#17212d;text-decoration:none;font-size:16px;margin:8px 0}
+</style>
+</head>
+<body><main>
+<header class="card hero"><h1>🧪 幻影膠囊自測</h1><p>只測公開工作層，不讀取或修改 🥃LKMINI、Core Data、凍結本體。</p></header>
+<section class="card"><button id="run">重新執行測試</button><div id="summary" class="small">尚未執行</div></section>
+<section id="results" class="card"></section>
+<section class="card"><a href="capsule.html">← 回個人幻影膠囊</a><a href="../mounts/huge-gear-master/">查看胡哥回執</a></section>
+<script src="capsule.js"></script>
+<script>
+const tests=[];
+function add(name,pass,detail){tests.push({name,pass,detail})}
+async function run(){
+ tests.length=0;
+ try{
+  const bytes=new Uint8Array(2*1024*1024+7);for(let i=0;i<bytes.length;i++)bytes[i]=i%251;
+  const round=new Uint8Array(unb64(b64(bytes.buffer)));
+  add('2 MiB+ Base64 可逆',round.length===bytes.length&&round[123456]===bytes[123456]&&round.at(-1)===bytes.at(-1),'避免大型檔案轉碼因展開參數而失敗');
+ }catch(e){add('2 MiB+ Base64 可逆',false,e.message)}
+ add('允許 HTTPS',!!safeMeetingURL('https://meet.google.com/abc'),'Google Meet 等安全網頁連結');
+ add('允許 FaceTime',!!safeMeetingURL('facetime:test@example.com'),'iPhone 通話入口');
+ add('阻擋 javascript:',safeMeetingURL('javascript:alert(1)')===null,'防止危險協定被當成入口');
+ add('阻擋 data:',safeMeetingURL('data:text/html,x')===null,'防止內嵌內容被當成入口');
+ add('ICS 特殊字元轉義',icsEscape('a,b;c\\d\ne')==='a\\,b\\;c\\\\d\\ne','逗號、分號、反斜線、換行');
+ try{
+  const [html,js]=await Promise.all([fetch('capsule.html',{cache:'no-store'}).then(r=>r.text()),fetch('capsule.js',{cache:'no-store'}).then(r=>r.text())]);
+  add('HTML 接到 capsule.css',html.includes('href="capsule.css"'),'樣式支撐存在');
+  add('HTML 接到 capsule.js',html.includes('src="capsule.js"'),'程式支撐存在');
+  const calls=[...html.matchAll(/onclick="([A-Za-z_$][\w$]*)\(/g)].map(x=>x[1]);
+  const missing=[...new Set(calls)].filter(fn=>!new RegExp('(?:async\\s+)?function\\s+'+fn+'\\s*\\(').test(js));
+  add('按鈕函式完整',missing.length===0,missing.length?'缺少：'+missing.join('、'):'全部存在');
+  add('清除動作不污染同網域其他 sessionStorage',!js.includes('sessionStorage.clear()'),'只移除 capsulePass');
+ }catch(e){add('來源接線檢查',false,e.message)}
+ const passed=tests.filter(x=>x.pass).length;
+ document.getElementById('summary').innerHTML=`<span class="${passed===tests.length?'ok':'bad'}">${passed}/${tests.length} 通過</span>`;
+ document.getElementById('results').innerHTML=tests.map(x=>`<div class="row"><div class="${x.pass?'ok':'bad'}">${x.pass?'VERIFIED_TRUE':'VERIFIED_FALSE'}｜${x.name}</div><div class="small">${x.detail}</div></div>`).join('');
+}
+document.getElementById('run').addEventListener('click',run);run();
+</script>
+</main></body></html>
