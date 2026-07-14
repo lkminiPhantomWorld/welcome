@@ -1,0 +1,21 @@
+{
+  "identity": "🛠️胡哥｜裝備大師",
+  "system": "🥃老K系統｜LK System",
+  "portal_repository": "ky46738-ops/welcome",
+  "portal_path": "mounts/huge-gear-master/index.html",
+  "mount_status": "VERIFIED_TRUE",
+  "source_deleted": "VERIFIED_FALSE",
+  "source_overwritten": "VERIFIED_FALSE",
+  "lkmini_modified": "VERIFIED_FALSE",
+  "core_data_modified": "VERIFIED_FALSE",
+  "frozen_body_modified": "VERIFIED_FALSE",
+  "write_method": "GitHub contents API",
+  "rollback": "revert commits 1e751db4a801c60672121e632671346911068f0d and the receipt commit; no protected body was touched",
+  "rules": [
+    "每回合連續兩輪",
+    "零件庫只保留獨立、立即可用、實測通過成品",
+    "其餘移出正面位置並放入正確區域",
+    "不得刪除來源證據",
+    "不得修改 LKMINI、Core Data、任何凍結本體"
+  ]
+}
