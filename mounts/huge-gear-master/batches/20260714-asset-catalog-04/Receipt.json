@@ -1,0 +1,93 @@
+{
+  "batch": "20260714-asset-catalog-04",
+  "role": "🛠️胡哥｜裝備大師",
+  "scope": "公開工作層／封存與搜尋佔位資產",
+  "rounds": {
+    "round1": "盤點封存、搜尋、目錄支撐、入口位置與公開部署鏈",
+    "round2": "重建、接線、Node 測試、GitHub 讀回與公開網址讀回"
+  },
+  "protectedScope": ["🥃LKMINI", "Core Data", "任何凍結本體"],
+  "objects": [
+    {
+      "object": "封存入口佔位",
+      "originalLocation": "index.html 的保留資產正面位置",
+      "errorType": "佔位／無法直接使用／錯誤分類",
+      "assetPurpose": "集中顯影歷次回執、公開狀態、邊界與證據，不刪除來源",
+      "repairAction": "建立 archive/index.html，只讀載入公開資產目錄，並保留 noscript 直接證據連結",
+      "correctLocation": "archive/；唯一路口改放正式成品待部署區",
+      "directlyUsable": false,
+      "testResult": "GitHub 建立與讀回成功；公開 Pages 仍未部署新版，因此不可升格零件庫正面",
+      "rollback": "git revert 89290352765ed5e32db2a6202ef72c23aecc3fb5，再 git revert 7c59ba14a981f9e2776cc9146172993117e53775",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "搜尋入口佔位",
+      "originalLocation": "index.html 的保留資產正面位置",
+      "errorType": "佔位／無搜尋能力／無法直接使用",
+      "assetPurpose": "在 iPhone 瀏覽器端查找公開工作層資產，不上傳查詢內容",
+      "repairAction": "建立 tools/search/index.html 與 search-core.js，支援關鍵字、分類與狀態篩選",
+      "correctLocation": "tools/search/；唯一路口改放正式成品待部署區",
+      "directlyUsable": false,
+      "testResult": "Node 9/9 通過；GitHub 建立與讀回成功；公開 Pages 待部署",
+      "rollback": "git revert a7d888d757621ebb279c4c7214650a6b1bd2522b，再 git revert 99489ff13d29f860715898073648b032d4813a86，再 git revert 7c59ba14a981f9e2776cc9146172993117e53775",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "公開資產目錄",
+      "originalLocation": "不存在；封存、搜尋與回執入口資訊拆散於多個頁面",
+      "errorType": "拆散／內部支撐缺失",
+      "assetPurpose": "提供 14 個公開資產的名稱、路徑、分類、狀態與標籤單一來源",
+      "repairAction": "建立 tools/asset-catalog.js；只收公開工作層路徑，所有 publicReady 維持 false 直到 Pages 讀回",
+      "correctLocation": "tools/asset-catalog.js，分類為內部支撐，不放零件庫正面",
+      "directlyUsable": false,
+      "testResult": "14 筆、ID 唯一、路徑唯一、狀態集合合法等測試通過",
+      "rollback": "git revert d18d0d3e8b9bbdf1cd240532d6d1461e40064ff7",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "搜尋核心",
+      "originalLocation": "不存在；搜尋責任未建立",
+      "errorType": "需重建／內部支撐缺失",
+      "assetPurpose": "正規化文字、AND 關鍵字比對、分類與狀態過濾、專案相對路徑解析",
+      "repairAction": "建立可由瀏覽器與 Node 載入的 tools/search/search-core.js",
+      "correctLocation": "tools/search/search-core.js，分類為內部支撐",
+      "directlyUsable": false,
+      "testResult": "匯入搜尋、多詞 AND、分類、狀態與路徑解析共 9/9 通過",
+      "rollback": "git revert 99489ff13d29f860715898073648b032d4813a86",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "唯一路口中的封存與搜尋位置",
+      "originalLocation": "index.html 保留資產區，與未接線角色混放",
+      "errorType": "錯誤分類／降級／正面佔位",
+      "assetPurpose": "讓使用者看見真實狀態並從正確入口進入成品",
+      "repairAction": "移出未接線角色區，建立正式成品待公開部署區並接上 archive/ 與 tools/search/；舊狀態由 Git 歷史及本回執保留",
+      "correctLocation": "index.html 的正式成品待公開部署區",
+      "directlyUsable": false,
+      "testResult": "GitHub update 成功；公開網址仍顯示舊首頁",
+      "rollback": "git revert 7c59ba14a981f9e2776cc9146172993117e53775",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "GitHub Pages 公開部署鏈",
+      "originalLocation": "GitHub Pages／Actions 發布層",
+      "errorType": "待修／來源已更新但公開站點停留舊版",
+      "assetPurpose": "把 main 分支正式成品發布到唯一公開入口",
+      "repairAction": "完成公開讀回檢查；未取得可列出或觸發最新部署 run 的有效工具入口，未偽稱已部署",
+      "correctLocation": "GitHub Actions 的 Deploy to GitHub Pages 工作流程與 Repository Settings → Pages",
+      "directlyUsable": false,
+      "testResult": "2026-07-14 公開網址仍顯示舊版角色佔位首頁，VERIFIED_FALSE",
+      "rollback": "本物件未寫入部署設定，無需回滾",
+      "status": "VERIFIED_FALSE",
+      "failureType": "PUBLIC_PAGES_DEPLOYMENT_STALE",
+      "failureReason": "main 分支已寫入新成品與入口，但公開 Pages 未讀回；目前連接器只能重跑已知 run，無法列出或手動 dispatch 最新 run",
+      "immediateRepairActions": [
+        "在 Actions 開啟 Deploy to GitHub Pages，重跑最新失敗或停滯的 run",
+        "在 Settings → Pages 確認 Source 為 GitHub Actions，並確認環境允許 main 發布",
+        "部署後逐一讀回 /welcome/、/welcome/archive/、/welcome/tools/search/ 與批次 04，再把 publicReady 改為 true"
+      ]
+    }
+  ],
+  "sourceEvidenceDeleted": false,
+  "protectedCoreModified": false
+}
