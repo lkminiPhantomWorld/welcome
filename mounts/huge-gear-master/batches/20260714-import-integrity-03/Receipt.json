@@ -1,0 +1,86 @@
+{
+  "batch": "20260714-import-integrity-03",
+  "role": "🛠️胡哥｜裝備大師",
+  "scope": "公開工作層／幻影膠囊匯入完整性",
+  "protectedScope": [
+    "🥃LKMINI",
+    "Core Data",
+    "任何凍結本體"
+  ],
+  "objects": [
+    {
+      "object": "原始匯入函式 importCapsuleFile",
+      "originalLocation": "system-install/capsule.js",
+      "errorType": "錯誤分類／被當成可直接使用成品；逐 store、逐物件寫入，驗證失敗時可能留下半套資料",
+      "assetPurpose": "把 PhantomCapsule 備份匯入 IndexedDB",
+      "repairAction": "保留原檔不改寫，新增後載入防護層接管同名函式",
+      "correctLocation": "system-install/capsule.js 作為來源證據與基礎支撐；安全入口由 system-install/capsule-import-guard.js 接管",
+      "directlyUsable": false,
+      "testResult": "原始檔未改寫；防護層 Node+VM 8/8 通過",
+      "rollback": "git revert 9bfdc3d84fd1aa44e364a6a87b2d577c79b14fc8，再 git revert d9324fec2c94f0c781945c4ba591645a0fad34de；歷史證據保留",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "匯入資料預檢責任",
+      "originalLocation": "原本散落在 system-install/capsule.js 的寫入迴圈內",
+      "errorType": "拆散／待修；資料尚未全數驗證就開始寫入",
+      "assetPurpose": "驗證備份格式、store 型態、物件有效 ID 與備份內重複 ID",
+      "repairAction": "重建為 validateImportData，先完整預檢並正規化，再允許任何資料庫操作",
+      "correctLocation": "system-install/capsule-import-guard.js",
+      "directlyUsable": true,
+      "testResult": "合法備份、錯誤 store、重複 ID 三類測試全部通過",
+      "rollback": "git revert d9324fec2c94f0c781945c4ba591645a0fad34de",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "既有資產同 ID 衝突處理",
+      "originalLocation": "system-install/capsule.js 的 objectStore.put 路徑",
+      "errorType": "覆蓋風險／錯誤降級；不同內容同 ID 會覆蓋老K既有資產",
+      "assetPurpose": "合併備份與裝置內既有膠囊資料",
+      "repairAction": "先比對既有物件；相同內容冪等略過，不同內容同 ID 整批拒絕且不寫入",
+      "correctLocation": "system-install/capsule-import-guard.js 的 prepareImportPlan",
+      "directlyUsable": true,
+      "testResult": "不同內容衝突被阻擋；相同內容重複匯入被安全略過",
+      "rollback": "git revert d9324fec2c94f0c781945c4ba591645a0fad34de",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "多 store 匯入寫入流程",
+      "originalLocation": "system-install/capsule.js 的多次獨立 put",
+      "errorType": "拆散／待修；任一後續寫入失敗時，前面物件可能已落地",
+      "assetPurpose": "一次匯入 chat、voice、events、files、secrets、meta",
+      "repairAction": "改由單一 IndexedDB 多 store readwrite transaction 提交，失敗由交易中止",
+      "correctLocation": "system-install/capsule-import-guard.js 的 commitImportPlan",
+      "directlyUsable": true,
+      "testResult": "VM 假資料驗證只建立一個 transaction，兩筆跨 store 寫入同批提交",
+      "rollback": "git revert d9324fec2c94f0c781945c4ba591645a0fad34de",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "幻影膠囊匯入入口接線",
+      "originalLocation": "system-install/capsule.html 僅載入 capsule.js",
+      "errorType": "接線缺失／無法直接安全使用",
+      "assetPurpose": "讓鎖定畫面與傳送頁的匯入按鈕走安全匯入流程",
+      "repairAction": "在原始 capsule.js 後載入 capsule-import-guard.js，保留來源並以後載入函式接管入口",
+      "correctLocation": "system-install/capsule.html",
+      "directlyUsable": true,
+      "testResult": "GitHub 寫入成功；接線自測已新增",
+      "rollback": "git revert 9bfdc3d84fd1aa44e364a6a87b2d577c79b14fc8",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "匯入完整性自測",
+      "originalLocation": "system-install/capsule-selftest.html",
+      "errorType": "待測／測試覆蓋不足；未測預檢、衝突阻擋與單一交易",
+      "assetPurpose": "在公開工作層快速顯示膠囊程式支撐狀態",
+      "repairAction": "載入防護層並新增合法備份、重複 ID、接線、交易與覆蓋防護檢查",
+      "correctLocation": "system-install/capsule-selftest.html，分類為內部支撐，不進零件庫正面區",
+      "directlyUsable": false,
+      "testResult": "Node 語法通過；本地 Node+VM 8/8 通過；iPhone Safari 實機互動仍待驗證",
+      "rollback": "git revert 10d682d6b98d3bd723820f6b4f7671073245cc95",
+      "status": "VERIFIED_TRUE"
+    }
+  ],
+  "sourceEvidenceDeleted": false,
+  "protectedCoreModified": false
+}
