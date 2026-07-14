@@ -1,0 +1,62 @@
+{
+  "batch_id": "20260714-capsule-support-02",
+  "executor": "🛠️胡哥｜裝備大師",
+  "result": "VERIFIED_TRUE",
+  "round_1_inventory": "VERIFIED_TRUE",
+  "round_2_repair_and_receipt": "VERIFIED_TRUE",
+  "objects_in_batch": 6,
+  "repository_write": "VERIFIED_TRUE",
+  "repository_readback": "VERIFIED_TRUE",
+  "static_tests": "VERIFIED_TRUE",
+  "static_test_passed": 7,
+  "browser_interactive_test": "HYPOTHESIS",
+  "public_pages_new_version_readback": "VERIFIED_FALSE",
+  "direct_use_status": {
+    "repository_index_source": "VERIFIED_TRUE",
+    "capsule_full_browser_use": "HYPOTHESIS",
+    "public_pages_entry": "VERIFIED_FALSE"
+  },
+  "repairs": [
+    "sessionStorage.clear 改為只移除 capsulePass",
+    "通話入口加入協定白名單並阻擋 javascript/data",
+    "Base64 改為分段轉碼，2 MiB+ 測試通過",
+    "錄音物件 URL 在重新渲染時回收",
+    "匯入格式與物件 id 驗證補強",
+    "分享、開鎖、錄音與檔案錯誤回報補強",
+    "ICS 特殊字元轉義補強",
+    "新增可重跑 capsule-selftest.html"
+  ],
+  "commits": [
+    "d32b5f468fff9a76c022923acf1a3b6d449e2c3e",
+    "0ca066ff9f18b520ccac90652293ce65a7bfd2f2",
+    "868161292718c942038dd4abb59c2fd857645f97",
+    "fe6f77420ddfe2886de2b05c44e1318a4e255dca",
+    "03b5c23dc28050041cd0c9e2846d86422de0510b"
+  ],
+  "source_evidence": {
+    "capsule_js_pre_repair_blob": "215c207d780cc673124d74fdad26692dc6490622",
+    "capsule_js_post_repair_blob": "8ce4e324d168e5fbd022f940e594465834c0cd2e",
+    "hash_type_note": "以上均為 Git blob SHA；未宣稱為 SHA256"
+  },
+  "protected_boundaries": {
+    "lkmini_modified": "VERIFIED_FALSE",
+    "core_data_modified": "VERIFIED_FALSE",
+    "frozen_body_modified": "VERIFIED_FALSE",
+    "source_evidence_deleted": "VERIFIED_FALSE"
+  },
+  "failure": {
+    "failure_type": "PUBLIC_PAGES_DEPLOYMENT_STALE_AND_IPHONE_BROWSER_UNAVAILABLE",
+    "failure_reason": "主分支已寫入並讀回，但公開 Pages 仍顯示舊首頁且 /mini/ 仍 404；本節點無法操作 Kevin 的 iPhone Safari 完成麥克風、IndexedDB、分享與下載全互動測試",
+    "immediate_repair_actions": [
+      "在 GitHub Actions 確認 Deploy to GitHub Pages 最新 push run 並重跑失敗 job",
+      "確認 Repository Settings > Pages 的 Source 使用 GitHub Actions，而非舊 branch source",
+      "公開新版讀回後，在 iPhone Safari 開啟 capsule-selftest.html，再依序測解鎖、聊天、錄音、行事曆、檔案、秘密、匯出、匯入與系統分享"
+    ]
+  },
+  "rollback": {
+    "preferred": "依 commits 反向 revert，保留 Git 歷史與來源證據",
+    "capsule_js_restore_blob": "215c207d780cc673124d74fdad26692dc6490622",
+    "delete_source_files": "VERIFIED_FALSE"
+  },
+  "self_commit_note": "建立本檔的 commit 不列入自身 commits 陣列，避免自我引用循環"
+}
