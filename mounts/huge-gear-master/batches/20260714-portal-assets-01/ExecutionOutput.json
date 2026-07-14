@@ -1,0 +1,52 @@
+{
+  "batch_id": "20260714-portal-assets-01",
+  "executor": "🛠️胡哥｜裝備大師",
+  "result": "VERIFIED_TRUE",
+  "round_1_inventory": "VERIFIED_TRUE",
+  "round_2_repository_repair": "VERIFIED_TRUE",
+  "repository_write": "VERIFIED_TRUE",
+  "repository_readback": "VERIFIED_TRUE",
+  "public_pages_new_version_readback": "VERIFIED_FALSE",
+  "public_pages_observed_content": "舊首頁仍顯示 Mini 與九個 href=# 角色佔位；新版本尚未從公開網址讀回",
+  "deployment_workflow_configuration": "VERIFIED_TRUE",
+  "deployment_workflow_evidence": "pages.yml 設為 main push 觸發，使用 upload-pages-artifact@v3 與 deploy-pages@v5",
+  "objects_in_batch": 11,
+  "direct_use_verified": 2,
+  "runtime_test_pending": 1,
+  "moved_out_of_direct_use_area": 8,
+  "protected_boundaries": {
+    "lkmini_modified": "VERIFIED_FALSE",
+    "core_data_modified": "VERIFIED_FALSE",
+    "frozen_body_modified": "VERIFIED_FALSE",
+    "source_evidence_deleted": "VERIFIED_FALSE"
+  },
+  "commits": [
+    "08157c54780ec914ae1d4eeed8c6e1ba10011b80",
+    "60321b078dd56bf7cc9d4477fe423c962239d4ea",
+    "a245f16fc0f1b84338b252a173023de5fc510d7c",
+    "a749d7c85c88b7299da055bad26cba4c4d4a4cf5",
+    "b40aba37bdb4fb9c92de29494684fc4741ee6d4f",
+    "1a71de9ee34afa07c684eb54b0395bcebc5e8cf2",
+    "f87162e3672cdbde81e3bfa0a57ba454b95f42e3"
+  ],
+  "source_evidence": {
+    "pre_repair_head_commit": "a2d746d8193fa264f64a0d41e670c6f64ca70a44",
+    "pre_repair_index_git_blob_sha": "e8b97b366c30c01f381a96981a67010a1d7f991a",
+    "hash_type_note": "以上為 Git SHA；未宣稱為 SHA256"
+  },
+  "failure": {
+    "failure_type": "PUBLIC_PAGES_READBACK_NOT_UPDATED",
+    "failure_reason": "GitHub main 分支內容已更新並讀回，但公開 GitHub Pages 網址在本回合最後一次讀取時仍回傳舊首頁",
+    "immediate_repair_actions": [
+      "到 GitHub Actions 檢查 Deploy to GitHub Pages 的最新 push run 是否排隊、失敗或被停用",
+      "若 workflow 失敗，依失敗 job 日誌修復後重新執行；若未觸發，手動 workflow_dispatch",
+      "部署成功後重新讀取唯一路口、Mini、胡哥入口與批次回執 URL，逐一確認 HTTP 內容為新版本"
+    ]
+  },
+  "rollback": {
+    "preferred": "revert 本批次 commits，保留 Git 歷史與來源證據",
+    "index_restore": "將 index.html 還原至 Git blob e8b97b366c30c01f381a96981a67010a1d7f991a",
+    "delete_source_files": "VERIFIED_FALSE"
+  },
+  "self_commit_note": "建立本檔的 commit 不列入自身 commits 陣列，避免自我引用循環"
+}
