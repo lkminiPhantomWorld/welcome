@@ -1,0 +1,54 @@
+{
+  "batch": "20260714-import-integrity-03",
+  "tool": "node+vm",
+  "testedFiles": [
+    "system-install/capsule-import-guard.js",
+    "system-install/capsule.html",
+    "system-install/capsule-selftest.html"
+  ],
+  "passed": 8,
+  "total": 8,
+  "status": "VERIFIED_TRUE",
+  "results": [
+    {
+      "name": "合法備份預檢",
+      "pass": true,
+      "detail": "缺少的 store 正規化為空陣列"
+    },
+    {
+      "name": "阻擋錯誤 store 型態",
+      "pass": true,
+      "detail": "chat 資料格式不符"
+    },
+    {
+      "name": "阻擋備份內重複 id",
+      "pass": true,
+      "detail": "chat 備份內含重複 id：a"
+    },
+    {
+      "name": "阻擋既有資產覆蓋",
+      "pass": true,
+      "detail": "chat 物件 id 衝突，未寫入：same"
+    },
+    {
+      "name": "相同資產重複匯入可冪等略過",
+      "pass": true,
+      "detail": "相同內容不重寫"
+    },
+    {
+      "name": "單一多 store 交易提交",
+      "pass": true,
+      "detail": "一個 transaction，兩筆 put"
+    },
+    {
+      "name": "原始 capsule.js 未被本批次改寫",
+      "pass": true,
+      "detail": "採新增 guard 檔案與後載入覆寫，來源證據保留"
+    },
+    {
+      "name": "Node 語法檢查",
+      "pass": true,
+      "detail": "node --check capsule-import-guard.js 與 selftest inline script 已通過"
+    }
+  ]
+}
