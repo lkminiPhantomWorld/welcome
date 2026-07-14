@@ -1,0 +1,57 @@
+{
+  "batch": "20260714-asset-catalog-04",
+  "role": "🛠️胡哥｜裝備大師",
+  "result": "PARTIAL_SUCCESS",
+  "round1": {
+    "status": "VERIFIED_TRUE",
+    "objectsInventoried": 6,
+    "classifications": {
+      "formalProductPendingDeployment": ["封存入口", "搜尋入口"],
+      "internalSupport": ["公開資產目錄", "搜尋核心"],
+      "placementRepair": ["唯一路口中的封存與搜尋位置"],
+      "pendingRepair": ["GitHub Pages 公開部署鏈"]
+    }
+  },
+  "round2": {
+    "repositoryWrite": "VERIFIED_TRUE",
+    "repositoryReadback": "VERIFIED_TRUE",
+    "nodeTests": {"passed": 9, "total": 9, "status": "VERIFIED_TRUE"},
+    "portalPlacement": "VERIFIED_TRUE",
+    "publicPagesReadback": "VERIFIED_FALSE",
+    "iphoneSafari": "HYPOTHESIS"
+  },
+  "createdFiles": [
+    "tools/asset-catalog.js",
+    "tools/search/search-core.js",
+    "tools/search/index.html",
+    "archive/index.html",
+    "mounts/huge-gear-master/batches/20260714-asset-catalog-04/StaticTestOutput.json",
+    "mounts/huge-gear-master/batches/20260714-asset-catalog-04/Receipt.json",
+    "mounts/huge-gear-master/batches/20260714-asset-catalog-04/index.html"
+  ],
+  "updatedFiles": ["index.html", "mounts/huge-gear-master/index.html"],
+  "commits": {
+    "assetCatalog": "d18d0d3e8b9bbdf1cd240532d6d1461e40064ff7",
+    "searchCore": "99489ff13d29f860715898073648b032d4813a86",
+    "searchProduct": "a7d888d757621ebb279c4c7214650a6b1bd2522b",
+    "archiveProduct": "89290352765ed5e32db2a6202ef72c23aecc3fb5",
+    "staticTest": "fdfc99030cc08ea41dbe980d988753ca08c8d285",
+    "portalPlacement": "7c59ba14a981f9e2776cc9146172993117e53775",
+    "receipt": "ddc36d9fb7460038feaccc9406bedb5321e99d7d",
+    "quickReceipt": "7bc4fe69f727e850cdc642c8fab9d9f7a3a45728",
+    "hugeMasterIndex": "3c1a1b9ef1c7a30a08e66a40ae12077fb3a43aac"
+  },
+  "sourceEvidenceDeleted": false,
+  "protectedCoreModified": false,
+  "directlyUsablePromotedToPartsLibrary": [],
+  "reasonNotPromoted": "公開 Pages 尚未讀回新版；兩項成品保留在正式成品待部署區，不冒充立即可用零件。",
+  "failure": {
+    "type": "PUBLIC_PAGES_DEPLOYMENT_STALE",
+    "reason": "2026-07-14 公開唯一路口仍顯示舊版角色佔位頁；目前工具未提供可列出或 dispatch 最新 Pages run 的入口。",
+    "immediateRepairActions": [
+      "在 GitHub Actions 重跑 Deploy to GitHub Pages 最新 run",
+      "在 Settings → Pages 確認 Source 為 GitHub Actions",
+      "部署後讀回入口、archive、tools/search 與批次 04，確認後才將 publicReady 改為 true"
+    ]
+  }
+}
