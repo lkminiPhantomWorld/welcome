@@ -1,0 +1,83 @@
+{
+  "batch_id": "20260714-capsule-support-02",
+  "executor": "🛠️胡哥｜裝備大師",
+  "round_1": "VERIFIED_TRUE",
+  "round_2": "VERIFIED_TRUE",
+  "objects": [
+    {
+      "object": "公開唯一路口部署",
+      "original_location": "https://lkminiphantomworld.github.io/welcome/",
+      "error_type": "部署內容落後主分支／路徑漂移",
+      "asset_use": "老K系統公開唯一路口",
+      "repair_action": "以本批 GitHub push 重新觸發 Pages；保留舊公開內容作來源證據並重新讀取",
+      "correct_location": "GitHub Pages /welcome/",
+      "direct_use": "VERIFIED_FALSE",
+      "test_result": "公開根頁仍讀到舊首頁；/mini/ 仍為 404",
+      "rollback": "不刪除舊頁；可 revert 本批 commits，不影響公開舊版本",
+      "status": "VERIFIED_FALSE"
+    },
+    {
+      "object": "唯一路口原始碼",
+      "original_location": "repository root / index.html",
+      "error_type": "正式成品原始碼已完成，但未部署顯影",
+      "asset_use": "公開入口正式成品來源",
+      "repair_action": "保持原檔不覆寫；納入本批部署與讀回檢查",
+      "correct_location": "repository root / index.html",
+      "direct_use": "VERIFIED_TRUE",
+      "test_result": "GitHub fetch_file 讀回 Mini、胡哥、待測區與保留資產區",
+      "rollback": "無內容修改；不需回滾",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "個人幻影膠囊介面",
+      "original_location": "system-install/capsule.html",
+      "error_type": "正式成品藏於安裝區／瀏覽器互動待測",
+      "asset_use": "本機聊天、語音、行事曆、檔案、秘密與可攜匯出介面",
+      "repair_action": "保留來源；建立配套自測工具並修復其程式支撐，不提前升級為已驗證成品",
+      "correct_location": "唯一路口待測成品區；來源保留 system-install/capsule.html",
+      "direct_use": "HYPOTHESIS",
+      "test_result": "HTML、CSS、JS 接線已讀回；iPhone Safari 全互動尚未實測",
+      "rollback": "移除自測連結或 revert 支撐修復；介面來源保留",
+      "status": "HYPOTHESIS"
+    },
+    {
+      "object": "幻影膠囊樣式",
+      "original_location": "system-install/capsule.css",
+      "error_type": "內部支撐，不應視為可獨立零件",
+      "asset_use": "膠囊介面版面與手機顯示支撐",
+      "repair_action": "確認 capsule.html 相對接線；歸類為內部支撐，不放入零件庫正面",
+      "correct_location": "system-install/capsule.css｜內部支撐",
+      "direct_use": "VERIFIED_FALSE",
+      "test_result": "來源存在且 capsule.html href 接線已讀回",
+      "rollback": "分類回執可 revert；來源不變",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "幻影膠囊程式",
+      "original_location": "system-install/capsule.js",
+      "error_type": "待修內部支撐：sessionStorage 全域清除、危險協定入口、大資料轉碼風險、物件 URL 未回收、匯入驗證不足",
+      "asset_use": "膠囊 IndexedDB、加密、錄音、匯入匯出與入口控制",
+      "repair_action": "改為只移除 capsulePass；限制允許協定；分段 Base64；回收語音 URL；強化匯入格式、分享與錯誤回報；補 ICS 轉義",
+      "correct_location": "system-install/capsule.js｜內部支撐",
+      "direct_use": "VERIFIED_FALSE",
+      "test_result": "Node 語法通過；2 MiB+ 可逆、URL 阻擋與 ICS 測試全通過；GitHub blob 讀回成功",
+      "rollback": "revert commit d32b5f468fff9a76c022923acf1a3b6d449e2c3e，恢復原 blob 215c207d780cc673124d74fdad26692dc6490622",
+      "status": "VERIFIED_TRUE"
+    },
+    {
+      "object": "幻影膠囊自測工具",
+      "original_location": "缺件／不存在",
+      "error_type": "測試能力缺件",
+      "asset_use": "重跑 Base64、連結協定、ICS、HTML/JS 接線與隔離檢查",
+      "repair_action": "新增 system-install/capsule-selftest.html；不放入零件庫正面，歸為內部支撐",
+      "correct_location": "system-install/capsule-selftest.html｜內部支撐",
+      "direct_use": "HYPOTHESIS",
+      "test_result": "GitHub 建立與讀回成功；公開 Pages 尚未部署，瀏覽器自動執行待驗",
+      "rollback": "revert commit 0ca066ff9f18b520ccac90652293ce65a7bfd2f2；Git 歷史保留來源證據",
+      "status": "VERIFIED_TRUE"
+    }
+  ],
+  "source_evidence_deleted": "VERIFIED_FALSE",
+  "source_evidence_overwritten": "VERIFIED_FALSE",
+  "protected_core_modified": "VERIFIED_FALSE"
+}
