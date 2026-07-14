@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>🛠️批次 03｜匯入完整性</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#eef3f8;color:#17212d;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif}main{max-width:780px;margin:auto;padding:16px}.card{background:#fff;border:1px solid #cad6e2;border-radius:18px;padding:16px;margin:11px 0}.hero{background:#17324d;color:#fff}.ok{color:#176b2c;font-weight:800}.wait{color:#8a5a00;font-weight:800}.bad{color:#9b1c1c;font-weight:800}.item{border-top:1px solid #e5ebf1;padding:12px 0}.label{font-size:12px;color:#526273}.value{margin:3px 0 8px;line-height:1.55}a{display:block;text-decoration:none;color:#17212d;background:#f7fafc;border:1px solid #cad6e2;border-radius:13px;padding:12px;margin:8px 0}code{overflow-wrap:anywhere}</style></head>
+<body><main>
+<header class="card hero"><h1>🛠️胡哥｜批次 03</h1><p>幻影膠囊匯入完整性：不覆蓋、不中途落地、來源可逆保留。</p></header>
+<section class="card"><p class="ok">VERIFIED_TRUE：GitHub 工作層已新增防護層、完成接線並留下逐物件回執。</p><p class="ok">VERIFIED_TRUE：Node+VM 8/8 通過。</p><p class="wait">HYPOTHESIS：iPhone Safari 的實際檔案選取、IndexedDB 寫入與匯入後解鎖仍待實機測試。</p><p>保護邊界：未修改 🥃LKMINI、Core Data 或任何凍結本體；未刪除原始 <code>capsule.js</code>。</p></section>
+<section class="card"><h2>第一輪｜盤點分類</h2>
+<div class="item"><div class="label">原始匯入函式</div><div class="value">錯誤分類：被當成可直接使用成品；實際是待修內部支撐。</div></div>
+<div class="item"><div class="label">同 ID 合併路徑</div><div class="value">錯誤型態：覆蓋風險；不同內容可能覆蓋既有資產。</div></div>
+<div class="item"><div class="label">多 store 寫入</div><div class="value">錯誤型態：拆散；逐筆寫入可能形成半套匯入。</div></div>
+<div class="item"><div class="label">自測工具</div><div class="value">正確分類：內部支撐；不屬於零件庫正面成品。</div></div>
+</section>
+<section class="card"><h2>第二輪｜實際修復</h2>
+<div class="item"><div class="label">預檢</div><div class="value">先驗證格式、store、有效 ID 與備份內重複 ID。</div></div>
+<div class="item"><div class="label">不覆蓋</div><div class="value">相同內容同 ID 冪等略過；不同內容同 ID 整批拒絕。</div></div>
+<div class="item"><div class="label">單一交易</div><div class="value">所有 store 在同一個 IndexedDB readwrite transaction 內提交。</div></div>
+<div class="item"><div class="label">可逆接線</div><div class="value">原始 <code>capsule.js</code> 保留；新增 guard 後載入接管匯入函式。</div></div>
+</section>
+<section class="card"><h2>回執與測試</h2><a href="Receipt.json">逐物件 Receipt.json</a><a href="StaticTestOutput.json">Node+VM 8/8 測試輸出</a><a href="ExecutionOutput.json">最終 ExecutionOutput.json</a><a href="../../../../system-install/capsule-import-guard.js">匯入防護層原始碼</a><a href="../../../../system-install/capsule-selftest.html">幻影膠囊自測工具</a><a href="../../">← 回胡哥入口</a></section>
+</main></body></html>
