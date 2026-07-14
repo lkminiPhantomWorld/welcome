@@ -13,6 +13,7 @@
 <section id="results" class="card"></section>
 <section class="card"><a href="capsule.html">← 回個人幻影膠囊</a><a href="../mounts/huge-gear-master/">查看胡哥回執</a></section>
 <script src="capsule.js"></script>
+<script src="capsule-import-guard.js"></script>
 <script>
 const tests=[];
 function add(name,pass,detail){tests.push({name,pass,detail})}
@@ -29,13 +30,25 @@ async function run(){
  add('阻擋 data:',safeMeetingURL('data:text/html,x')===null,'防止內嵌內容被當成入口');
  add('ICS 特殊字元轉義',icsEscape('a,b;c\\d\ne')==='a\\,b\\;c\\\\d\\ne','逗號、分號、反斜線、換行');
  try{
-  const [html,js]=await Promise.all([fetch('capsule.html',{cache:'no-store'}).then(r=>r.text()),fetch('capsule.js',{cache:'no-store'}).then(r=>r.text())]);
+  const valid=validateImportData({format:'PhantomCapsule',stores:{chat:[{id:'test-1',text:'ok'}]}});
+  add('匯入預檢接受合法備份',valid.chat.length===1&&valid.meta.length===0,'缺少的 store 只正規化為空陣列');
+ }catch(e){add('匯入預檢接受合法備份',false,e.message)}
+ try{
+  validateImportData({format:'PhantomCapsule',stores:{chat:[{id:'same'},{id:'same'}]}});
+  add('匯入預檢阻擋重複 id',false,'未阻擋重複 id');
+ }catch(e){add('匯入預檢阻擋重複 id',String(e.message||e).includes('重複 id'),e.message||String(e))}
+ try{
+  const [html,js,guard]=await Promise.all([fetch('capsule.html',{cache:'no-store'}).then(r=>r.text()),fetch('capsule.js',{cache:'no-store'}).then(r=>r.text()),fetch('capsule-import-guard.js',{cache:'no-store'}).then(r=>r.text())]);
   add('HTML 接到 capsule.css',html.includes('href="capsule.css"'),'樣式支撐存在');
-  add('HTML 接到 capsule.js',html.includes('src="capsule.js"'),'程式支撐存在');
+  add('HTML 接到 capsule.js',html.includes('src="capsule.js"'),'原始程式支撐保留');
+  add('HTML 接到匯入防護層',html.includes('src="capsule-import-guard.js"'),'防護層載入順序位於原始程式之後');
   const calls=[...html.matchAll(/onclick="([A-Za-z_$][\w$]*)\(/g)].map(x=>x[1]);
-  const missing=[...new Set(calls)].filter(fn=>!new RegExp('(?:async\\s+)?function\\s+'+fn+'\\s*\\(').test(js));
+  const combined=js+'\n'+guard;
+  const missing=[...new Set(calls)].filter(fn=>!new RegExp('(?:async\\s+)?function\\s+'+fn+'\\s*\\(').test(combined));
   add('按鈕函式完整',missing.length===0,missing.length?'缺少：'+missing.join('、'):'全部存在');
   add('清除動作不污染同網域其他 sessionStorage',!js.includes('sessionStorage.clear()'),'只移除 capsulePass');
+  add('匯入採單一多 store 交易',guard.includes("db.transaction(CAPSULE_STORES,'readwrite')"),'避免拆散寫入造成半套資料');
+  add('匯入衝突禁止覆蓋',guard.includes('物件 id 衝突，未寫入'),'不同內容同 ID 會整批拒絕');
  }catch(e){add('來源接線檢查',false,e.message)}
  const passed=tests.filter(x=>x.pass).length;
  document.getElementById('summary').innerHTML=`<span class="${passed===tests.length?'ok':'bad'}">${passed}/${tests.length} 通過</span>`;
