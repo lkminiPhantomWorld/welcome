@@ -1,0 +1,27 @@
+{
+  "batch_id": "20260714-capsule-support-02",
+  "executor": "🛠️胡哥｜裝備大師",
+  "executed_at_utc": "2026-07-14T13:26:10Z",
+  "environment": "OpenAI container / Node.js syntax and VM helper tests",
+  "source": {
+    "path": "system-install/capsule.js",
+    "repository_blob_sha_after_write": "8ce4e324d168e5fbd022f940e594465834c0cd2e",
+    "hash_type_note": "此值為 Git blob SHA，不宣稱為 SHA256"
+  },
+  "tests": [
+    {"name": "JavaScript syntax", "result": "VERIFIED_TRUE", "command": "node --check capsule.js"},
+    {"name": "2 MiB+ Base64 round trip", "result": "VERIFIED_TRUE"},
+    {"name": "HTTPS meeting URL allowed", "result": "VERIFIED_TRUE"},
+    {"name": "FaceTime URL allowed", "result": "VERIFIED_TRUE"},
+    {"name": "javascript: URL blocked", "result": "VERIFIED_TRUE"},
+    {"name": "data: URL blocked", "result": "VERIFIED_TRUE"},
+    {"name": "ICS special character escaping", "result": "VERIFIED_TRUE"}
+  ],
+  "browser_interactive_test": "HYPOTHESIS",
+  "browser_test_reason": "本節點沒有可操作 iPhone Safari；自測頁已建立，但公開 Pages 尚未讀回新版",
+  "protected_boundaries": {
+    "lkmini_modified": "VERIFIED_FALSE",
+    "core_data_modified": "VERIFIED_FALSE",
+    "frozen_body_modified": "VERIFIED_FALSE"
+  }
+}
