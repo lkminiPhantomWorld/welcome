@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>🌀多AI傳送門 × 📍空座標</title>
+<style>
+:root{--bg:#07111f;--panel:#111827;--line:#334155;--text:#eef2ff;--muted:#9fb0c4;--accent:#38bdf8;--ok:#22c55e;--warn:#f59e0b}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#07111f,#0b1020);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC",sans-serif;padding:12px}main{max-width:900px;margin:auto}.panel{background:rgba(17,24,39,.97);border:1px solid var(--line);border-radius:18px;padding:14px;margin:10px 0}h1{font-size:24px;margin:4px 0 8px}h2{font-size:16px;color:#fbbf24}label{display:block;color:var(--muted);font-size:12px;margin:8px 0 4px}input,select,textarea{width:100%;background:#07111f;color:#fff;border:1px solid var(--line);border-radius:11px;padding:10px;font:inherit}textarea{min-height:88px}button{border:0;border-radius:11px;padding:10px 12px;font-weight:800;color:#fff;background:#2563eb;margin:4px 4px 4px 0}.ok{background:#16a34a}.warn{background:#d97706}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:11px;margin:8px 0}.small{color:var(--muted);font-size:12px;line-height:1.55}pre{white-space:pre-wrap;word-break:break-word;background:#020617;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:11px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:11px;color:var(--accent)}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<section class="panel"><h1>🌀多AI傳送門 × 📍空座標</h1><div class="small">本世界 ⇄ 對面世界｜送出 → 回傳 → 收件 → 空座標 → 權限 → 驗證 → 掛載／召回</div><p><span class="badge">A == A</span> <span class="badge">NO_DELETE</span> <span class="badge">RETURN_PATH_ALWAYS_EXISTS</span></p></section>
+<div class="grid">
+<section class="panel"><h2>📤建立傳送 Payload</h2><label>AI／世界</label><select id="ai"><option>GPT</option><option>Claude</option><option>Gemini</option><option>Copilot</option><option>本機 AI</option><option>自訂 AI</option></select><label>角色</label><input id="role" value="🎩大管家"><label>任務</label><textarea id="task"></textarea><label>目標節點</label><select id="node"><option value="0">0📥收件區</option><option value="3">3🧠理解與驗證</option><option value="5">5🌐顯影層</option><option value="7">7📸快照</option><option value="8">8🔁自動化</option><option value="9">9♾可逆循環</option></select><button id="buildPayload">產生 Payload</button><pre id="payload">尚未產生</pre></section>
+<section class="panel"><h2>📍建立空座標</h2><label>IdentityReference</label><input id="identity" placeholder="本體識別"><label>Coordinate</label><input id="coordinate" value="phantom://portal/multi-ai-empty-coordinate"><label>Locator</label><input id="locator" value="./Locator.json"><label>Permission</label><select id="permission"><option value="false">未取得</option><option value="true">已取得</option></select><label>ReverseChain</label><input id="reverse" value="./ReverseChain.json"><label>備註</label><textarea id="note"></textarea><button class="ok" id="buildCoordinate">建立空座標</button><pre id="coordinateOut">等待建立</pre></section>
+</div>
+<section class="panel"><h2>📥回傳與歸位</h2><label>對面世界回傳內容</label><textarea id="returnText"></textarea><button class="ok" id="receive">收進收件區</button><button class="warn" id="verify">驗證並判定</button><div id="inbox"></div></section>
+<section class="panel"><h2>📋傳送總帳</h2><pre id="ledger">[]</pre><button id="export">匯出總帳 JSON</button></section>
+<script>
+const KEY='phantomworld_bridge_v1';let state=JSON.parse(localStorage.getItem(KEY)||'{"inbox":[],"ledger":[]}');
+const now=()=>new Date().toISOString();const save=()=>{localStorage.setItem(KEY,JSON.stringify(state));render()};
+function render(){document.getElementById('ledger').textContent=JSON.stringify(state.ledger,null,2);document.getElementById('inbox').innerHTML=state.inbox.map((x,i)=>`<div class="card"><b>${x.status}</b><div>${escapeHtml(x.text)}</div><div class="small">${x.time}｜${x.coordinate||'尚未指派座標'}</div></div>`).join('')||'<div class="small">尚無回傳內容</div>'}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+document.getElementById('buildPayload').addEventListener('click',()=>{const p={schema:'phantomworld-bidirectional-portal-v1',ai:ai.value,role:role.value,task:task.value,target_node:node.value,return_route:'收件區→空座標→權限→驗證→掛載／召回',sent_at:now()};payload.textContent=JSON.stringify(p,null,2);state.ledger.push({time:now(),action:'產生Payload',target:node.value});save()});
+document.getElementById('buildCoordinate').addEventListener('click',()=>{const obj={status:'COORDINATE_ONLY',identity:identity.value,coordinate:coordinate.value,locator:locator.value,permission:permission.value==='true',reverse_chain:reverse.value,retire_timestamp:now(),content:null,note:note.value,AEqualsAStatus:true};coordinateOut.textContent=JSON.stringify(obj,null,2);state.ledger.push({time:now(),action:'建立空座標',coordinate:obj.coordinate,permission:obj.permission});save()});
+document.getElementById('receive').addEventListener('click',()=>{if(!returnText.value.trim())return;state.inbox.push({text:returnText.value.trim(),status:'收件區',time:now()});state.ledger.push({time:now(),action:'回傳進收件區'});returnText.value='';save()});
+document.getElementById('verify').addEventListener('click',()=>{const ok=permission.value==='true'&&identity.value.trim()&&coordinate.value.trim();state.inbox.forEach(x=>{if(x.status==='收件區'){x.status=ok?'可合法掛載／召回':'等待座標或權限';x.coordinate=coordinate.value}});state.ledger.push({time:now(),action:'驗證判定',result:ok?'PASS':'BLOCKED'});save()});
+document.getElementById('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:'phantomworld-bridge-ledger-v1',exported_at:now(),...state},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='🌀傳送總帳.json';a.click()});render();
+</script>
+</main></body></html>
