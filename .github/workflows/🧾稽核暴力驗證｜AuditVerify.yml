@@ -3,8 +3,16 @@ name: 🧾老K系統稽核暴力驗證
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
-      - 'portal/phantom-bridge/audit/🧾全量盤點進度｜FullInventoryProgress.json'
+      - 'portal/phantom-bridge/audit/**'
+      - '.github/workflows/🧾稽核暴力驗證｜AuditVerify.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'portal/phantom-bridge/audit/**'
       - '.github/workflows/🧾稽核暴力驗證｜AuditVerify.yml'
 
 permissions:
