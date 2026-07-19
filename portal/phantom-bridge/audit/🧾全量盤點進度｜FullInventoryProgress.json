@@ -1,0 +1,152 @@
+{
+  "標題": "🧾老K系統全量盤點進度｜FullInventoryProgress",
+  "盤點時間_TPE": "2026-07-19 19:56:08 +08:00",
+  "狀態": "錯誤",
+  "SYSTEM_COMPLETION": "VERIFIED_FALSE",
+  "唯讀保護": {
+    "🧩LKMINI": "READ_ONLY_UNTOUCHED",
+    "Core Data": "READ_ONLY_UNTOUCHED",
+    "正式 Identity": "READ_ONLY_UNTOUCHED",
+    "凍結物件": "READ_ONLY_UNTOUCHED"
+  },
+  "GoogleDrive": {
+    "根資料夾": {
+      "名稱": ":🥃老K系統Lkstyle",
+      "ID": "1I32P9LdzG7HnV_-JFGFTaPNYyg0SQfH2",
+      "直接子項目總數": 20,
+      "資料夾數": 16,
+      "檔案數": 4
+    },
+    "正式十一區": {
+      "驗證": "PASS",
+      "已確認": [
+        "00_📥收件箱｜InboxGateway",
+        "01_🥳歡迎光臨唯一路口",
+        "2_🔗掛載⚙️引擎庫",
+        "3_🧠知識庫🔬驗證",
+        "4_🧩零件庫房",
+        "5_👘樣式庫",
+        "6_🎮主控台",
+        "7_📸快照",
+        "8_🧭小管家🔁自動化系統",
+        "9_♾️可逆循環",
+        "10_👉不好意思右邊請"
+      ]
+    },
+    "PortalLocatorCloudPortal": {
+      "ID": "11nNFEH3pd_ZVk0fqCrJL7pJg7ZViwkb0",
+      "直接子項目總數": 5
+    },
+    "收件箱直接子項目": {
+      "ID": "14gWxoCWSS-6FIxFU3zMWEssz4bqsZrWA",
+      "數量": 9,
+      "型態": "全部為資料夾"
+    }
+  },
+  "SHA256": [
+    {
+      "名稱": "▶啟動全同步連動｜Start OneSync.sh",
+      "大小": 328,
+      "sha256": "d56b3ac79f5bbd417b0c797b0a10fccf3001efe6192c24fed823c06a00c65de9"
+    },
+    {
+      "名稱": "🥳歡迎光臨唯一路口｜總入口.url",
+      "大小": 467,
+      "sha256": "90035bbb4455ad75ca8f2f6b2c40464b840e2f8eb10eb3bd2a4def8cc20ef567"
+    },
+    {
+      "名稱": "🧭幻界雲端根定位器｜PhantomCloudRootLocator.zip",
+      "大小": 3119,
+      "sha256": "5051cbe5f0da8eb1b08d6ad6cd8d42503f3c23622ff7aae0102fad968afc8746"
+    },
+    {
+      "名稱": "📍定位卡｜Folder Locator.md",
+      "大小": 621,
+      "sha256": "dbd165127dc23595568abbef52dadfc39bb8d458fc27d1f1984d91e644a13703"
+    },
+    {
+      "名稱": "📍全平台資料夾定位總表｜All Platform Folder Locator Map.md",
+      "大小": 7074,
+      "sha256": "4927dc4310fb5af14b497d70e579eb3a5fb38a2dca2ec631e932f53080c557c6"
+    }
+  ],
+  "暴力驗證": {
+    "Shell語法_sh_n": "PASS",
+    "ZIP完整性_testzip": "PASS",
+    "ROOT_LOCATOR_JSON解析": "PASS",
+    "ROOT_LOCATOR_HTML冒煙": "PASS",
+    "公開入口_https_lkminiphantomworld_github_io_welcome": "PASS",
+    "本機執行": "NOT_RUN_NO_LOCAL_EXECUTION_RECEIPT"
+  },
+  "StartOneSyncCapsule": {
+    "ID": "1qZKOBQKht4upE1zexfOr2tGDZk6HBsCD",
+    "十資料夾骨架": "PASS",
+    "內容狀態": {
+      "01_🌱來源｜Source": "含 1 個啟動器",
+      "其餘九區": "EMPTY"
+    },
+    "依賴": {
+      "🔁全同步連動引擎｜OneSyncEngine.py": "MISSING_EXACT_NAME",
+      "📤同步輸出｜Outbox": {
+        "狀態": "EXISTS_DIFFERENT_PARENT",
+        "ID": "1XWTuRfJeahNFoUWEhBFZdkfL-HNCngdZ",
+        "父層ID": "1jsY9FuIlGafUi_0DMXW9msbYR8TrnlXw"
+      }
+    },
+    "執行裁決": "ERROR_NOT_VERIFIED_RUNNABLE"
+  },
+  "定位差異": {
+    "總表宣告但根層未找到": [
+      "00_📥世界收件箱｜InboxGateway",
+      "08_封裝核心"
+    ],
+    "根層存在但總表未列": [
+      "00_📥收件箱｜InboxGateway",
+      "10_👉不好意思右邊請"
+    ],
+    "裁決": "ERROR_LOCATOR_DRIFT"
+  },
+  "App裝置伺服器": {
+    "App": {
+      "GoogleDrive原生文件寫入": "PASS",
+      "GoogleDrive原始位元上傳": "ERROR_407_PROXY",
+      "GitHub_ky46738_ops_welcome": "PASS_WRITABLE",
+      "公開歡迎入口": "PASS_HTTP_CONTENT"
+    },
+    "裝置": {
+      "Windows_G槽座標": "RECORDED_NOT_READ_BACK",
+      "Windows_C槽_iCloud": "RECORDED_NOT_READ_BACK",
+      "iPhone本機安裝": "NO_LOCAL_EXECUTION_RECEIPT"
+    },
+    "伺服器": {
+      "舊TryCloudflare定位器": "NOT_VERIFIED_THIS_RUN",
+      "舊GitHubPages_ky46738_ops_lk_unique_gate": "NOT_VERIFIED_THIS_RUN",
+      "現行GitHubPages_lkminiphantomworld_welcome": "PASS"
+    }
+  },
+  "錯誤證據": [
+    {
+      "代碼": "E407",
+      "內容": "Google Drive 原始位元 upload_file 被 407 Proxy Rejected"
+    },
+    {
+      "代碼": "E-ONESYNC-DEPENDENCY",
+      "內容": "啟動器引用的 OneSyncEngine.py 無精確名稱結果，且同層未存在"
+    },
+    {
+      "代碼": "E-CAPSULE-EMPTY",
+      "內容": "StartOneSyncCapsule 十區中九區為空"
+    },
+    {
+      "代碼": "E-LOCATOR-DRIFT",
+      "內容": "正式定位總表與現行根層命名/區域存在差異"
+    }
+  ],
+  "ReverseChain": [
+    "Drive Root 1I32P9LdzG7HnV_-JFGFTaPNYyg0SQfH2",
+    "Portal 11nNFEH3pd_ZVk0fqCrJL7pJg7ZViwkb0",
+    "GitHub ky46738-ops/welcome/portal/phantom-bridge/audit",
+    "本進度 Manifest",
+    "🧩LKMINI（唯讀回指，不寫入）"
+  ]
+}
