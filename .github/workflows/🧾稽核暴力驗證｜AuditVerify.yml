@@ -2,6 +2,8 @@ name: 🧾老K系統稽核暴力驗證
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '7 * * * *'
   push:
     branches:
       - main
