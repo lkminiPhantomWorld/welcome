@@ -1,0 +1,13 @@
+{
+  "schema": "PHANTOMWORLD_LOCATOR_V1",
+  "identity_reference": "portal.phantom-bridge",
+  "coordinate": "phantom://portal/multi-ai-empty-coordinate",
+  "world": "04_🌀Portal_Locator_CloudPortal",
+  "projection": "./index.html",
+  "manifest": "./Manifest.json",
+  "reverse_chain": "./ReverseChain.json",
+  "permission_required": true,
+  "entry_rule": "Coordinate + Permission + World Boundary + Verification",
+  "return_path": "ALWAYS_EXISTS",
+  "state": "ACTIVE"
+}
