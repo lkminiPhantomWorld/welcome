@@ -1,0 +1,74 @@
+{
+  "標題": "🧾GitHub稽核執行回執索引｜GitHubAuditExecutionReceiptIndex",
+  "狀態": "完成",
+  "建立時間_TPE": "2026-07-20T06:54:25+08:00",
+  "SYSTEM_COMPLETION": "VERIFIED_FALSE",
+  "唯讀保護": {
+    "🧩LKMINI": "READ_ONLY_UNTOUCHED",
+    "Core Data": "READ_ONLY_UNTOUCHED",
+    "正式 Identity": "READ_ONLY_UNTOUCHED",
+    "凍結物件": "READ_ONLY_UNTOUCHED"
+  },
+  "GitHubActions": {
+    "repository": "ky46738-ops/welcome",
+    "pull_request": 1,
+    "head_sha": "bb3ae15b947ad27c08b26cb1429bb6f35e408d7c",
+    "synthetic_merge_sha": "1902bbcd72fbbf9c736d56e53e5fde50090085b4",
+    "audit_workflow": {
+      "run_id": 29706950032,
+      "run_number": 1,
+      "job_id": 88245455143,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": "7/7 SUCCESS"
+    },
+    "ascii_runtime_probe": {
+      "run_id": 29706950033,
+      "run_number": 2,
+      "job_id": 88245455112,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": "3/3 SUCCESS"
+    }
+  },
+  "Artifact": {
+    "artifact_id": 8448197593,
+    "name": "老K系統稽核執行回執-29706950032",
+    "size_in_bytes_api": 1457,
+    "expires_at": "2026-10-17T22:53:06Z",
+    "declared_digest": "sha256:96d37991c1e285e44068af9b778fe840dc9d5a1ec4084862b9b53e61e8ff4e89",
+    "downloaded_zip_sha256": "96d37991c1e285e44068af9b778fe840dc9d5a1ec4084862b9b53e61e8ff4e89",
+    "digest_match": true,
+    "zip_test": "PASS",
+    "zip_member_count": 2
+  },
+  "Receipt": {
+    "json_bytes": 1682,
+    "receipt_sha256_declared": "c044e55f53ba8ff2612a849b6fd73c73c6ede6a45c106cb60b8bc9b0540dfca8",
+    "receipt_sha256_recalculated": "c044e55f53ba8ff2612a849b6fd73c73c6ede6a45c106cb60b8bc9b0540dfca8",
+    "sha256sums_match": true,
+    "json_parse": "PASS",
+    "required_fields": "PASS",
+    "source_audit_sha256": "3f2d83880a17505c37251c5fd8d6cf817ff0a9e520cc59184909a53fb4369c70"
+  },
+  "GoogleDriveRawUpload": {
+    "status": "ERROR",
+    "code": "E407-GDRIVE-RAW-UPLOAD",
+    "error": "ClientHttpProxyError 407 Request rejected by proxy",
+    "target_parent_id": "11nNFEH3pd_ZVk0fqCrJL7pJg7ZViwkb0",
+    "source_artifact_sha256_preserved": true
+  },
+  "ReverseChain": [
+    "github://ky46738-ops/welcome@bb3ae15b947ad27c08b26cb1429bb6f35e408d7c/pull/1",
+    "github-actions://ky46738-ops/welcome/runs/29706950032",
+    "github-artifact://ky46738-ops/welcome/8448197593",
+    "sha256://96d37991c1e285e44068af9b778fe840dc9d5a1ec4084862b9b53e61e8ff4e89",
+    "gdrive://11nNFEH3pd_ZVk0fqCrJL7pJg7ZViwkb0/raw-upload-error-407",
+    "🧩LKMINI（唯讀回指）"
+  ],
+  "未完成條件": [
+    "Google Drive 原始 ZIP 位元尚未成功入庫",
+    "iPhone、iPad、Windows、Obsidian、Server 實機 ExecutionReceipt 尚未齊全",
+    "全量 Locator、Manifest、SHA256、ReverseChain 尚未完成閉環"
+  ]
+}
