@@ -1,0 +1,134 @@
+name: 🧾老K系統稽核暴力驗證
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'portal/phantom-bridge/audit/🧾全量盤點進度｜FullInventoryProgress.json'
+      - '.github/workflows/🧾稽核暴力驗證｜AuditVerify.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit-verify:
+    name: 驗證稽核JSON並產生回執
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 唯讀取回稽核投影
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: 解析、驗證並建立分離式SHA256回執
+        id: verify
+        env:
+          AUDIT_FILE: portal/phantom-bridge/audit/🧾全量盤點進度｜FullInventoryProgress.json
+          RECEIPT_DIR: audit-receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          audit_path = Path(os.environ['AUDIT_FILE'])
+          receipt_dir = Path(os.environ['RECEIPT_DIR'])
+          receipt_dir.mkdir(parents=True, exist_ok=True)
+
+          if not audit_path.is_file():
+              raise FileNotFoundError(f'稽核來源不存在: {audit_path}')
+
+          raw = audit_path.read_bytes()
+          data = json.loads(raw.decode('utf-8-sig'))
+
+          required_fields = [
+              '標題', '狀態', 'SYSTEM_COMPLETION', '唯讀保護',
+              'GoogleDrive', 'SHA256', '暴力驗證', '錯誤證據', 'ReverseChain'
+          ]
+          missing = [field for field in required_fields if field not in data]
+          if missing:
+              raise ValueError(f'缺少必要欄位: {missing}')
+          if not isinstance(data['SHA256'], list) or not data['SHA256']:
+              raise ValueError('SHA256 清單為空或格式錯誤')
+          if not isinstance(data['ReverseChain'], list) or not data['ReverseChain']:
+              raise ValueError('ReverseChain 為空或格式錯誤')
+          if data['SYSTEM_COMPLETION'] not in {'VERIFIED_TRUE', 'VERIFIED_FALSE'}:
+              raise ValueError('SYSTEM_COMPLETION 值不合法')
+
+          source_sha256 = hashlib.sha256(raw).hexdigest()
+          receipt = {
+              'title': '🧾GitHub稽核執行回執｜GitHubAuditExecutionReceipt',
+              'status': '完成',
+              'system_completion': data['SYSTEM_COMPLETION'],
+              'generated_at_utc': datetime.now(timezone.utc).isoformat(),
+              'executor': 'GitHub Actions',
+              'repository_full_name': os.environ['GITHUB_REPOSITORY'],
+              'branch_or_ref': os.environ['GITHUB_REF'],
+              'source_commit_sha': os.environ['GITHUB_SHA'],
+              'workflow': os.environ['GITHUB_WORKFLOW'],
+              'run_id': os.environ['GITHUB_RUN_ID'],
+              'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'],
+              'actor': os.environ['GITHUB_ACTOR'],
+              'exit_code': 0,
+              'source_audit_path': str(audit_path),
+              'source_bytes': len(raw),
+              'source_sha256': source_sha256,
+              'validation': {
+                  'json_parse': 'PASS',
+                  'required_fields': 'PASS',
+                  'required_field_count': len(required_fields),
+                  'sha256_entry_count': len(data['SHA256']),
+                  'reverse_chain_entry_count': len(data['ReverseChain']),
+                  'protected_objects_declared': data['唯讀保護'],
+              },
+              'reverse_chain': [
+                  f'github://{os.environ["GITHUB_REPOSITORY"]}@{os.environ["GITHUB_SHA"]}/{audit_path}',
+                  f'github-actions://{os.environ["GITHUB_REPOSITORY"]}/runs/{os.environ["GITHUB_RUN_ID"]}',
+                  'artifact://GitHubAuditExecutionReceipt',
+                  'gdrive://1fFKKIqiWtdBhtCIEVKANym9MXkP4_ged7-68TOh7DWM',
+                  '🧩LKMINI（唯讀回指）',
+              ],
+              'note': '本回執只證明稽核JSON在GitHub Actions中完成解析與欄位驗證；不代表iPhone、iPad、Windows、Obsidian或Server已執行。',
+          }
+
+          receipt_path = receipt_dir / '🧾GitHub稽核執行回執｜GitHubAuditExecutionReceipt.json'
+          receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          receipt_hash = hashlib.sha256(receipt_path.read_bytes()).hexdigest()
+          sums_path = receipt_dir / 'SHA256SUMS.txt'
+          sums_path.write_text(f'{receipt_hash}  {receipt_path.name}\n', encoding='utf-8')
+
+          output_path = Path(os.environ['GITHUB_OUTPUT'])
+          with output_path.open('a', encoding='utf-8') as stream:
+              stream.write(f'receipt_dir={receipt_dir}\n')
+              stream.write(f'source_sha256={source_sha256}\n')
+              stream.write(f'receipt_sha256={receipt_hash}\n')
+          PY
+
+      - name: 上傳不可變稽核回執 Artifact
+        id: upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: 老K系統稽核執行回執-${{ github.run_id }}
+          path: ${{ steps.verify.outputs.receipt_dir }}
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: 輸出驗證摘要
+        shell: bash
+        run: |
+          {
+            echo '## 🧾老K系統稽核暴力驗證'
+            echo ''
+            echo '- JSON_PARSE=PASS'
+            echo '- REQUIRED_FIELDS=PASS'
+            echo '- SOURCE_SHA256=${{ steps.verify.outputs.source_sha256 }}'
+            echo '- RECEIPT_SHA256=${{ steps.verify.outputs.receipt_sha256 }}'
+            echo '- ARTIFACT_ID=${{ steps.upload.outputs.artifact-id }}'
+            echo '- ARTIFACT_DIGEST=${{ steps.upload.outputs.artifact-digest }}'
+            echo '- SYSTEM_COMPLETION=VERIFIED_FALSE'
+          } >> "$GITHUB_STEP_SUMMARY"
