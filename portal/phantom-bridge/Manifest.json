@@ -1,0 +1,37 @@
+{
+  "schema": "PHANTOMWORLD_PORTAL_EMPTY_COORDINATE_V1",
+  "identity": "portal.phantom-bridge",
+  "owner": "Kevin／老K",
+  "axiom": "A == A",
+  "world": "04_🌀Portal_Locator_CloudPortal",
+  "mode": "CLOUD_BRIDGE",
+  "no_delete": true,
+  "return_path": "ALWAYS_EXISTS",
+  "components": [
+    "🌀多對話多AI雙向傳送門",
+    "📍空座標｜EmptyCoordinate",
+    "📥收件區",
+    "🔬驗證歸位",
+    "📋傳送總帳"
+  ],
+  "flow": [
+    "建立對話",
+    "產生 Payload",
+    "對面世界處理",
+    "回傳收件",
+    "無法歸位時建立空座標",
+    "確認 Coordinate + Permission",
+    "驗證後掛載或召回",
+    "更新總帳與 ReverseChain"
+  ],
+  "protected": [
+    "🧩LKMINI",
+    "Core Data",
+    "正式 Identity",
+    "凍結物件"
+  ],
+  "projection": "index.html",
+  "locator": "Locator.json",
+  "reverse_chain": "ReverseChain.json",
+  "state": "INSTALLED_GITHUB_PROJECTION"
+}
