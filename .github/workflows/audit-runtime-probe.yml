@@ -1,0 +1,49 @@
+name: audit-runtime-probe
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/audit-runtime-probe.yml'
+      - 'portal/phantom-bridge/audit/runtime-probe/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'portal/phantom-bridge/audit/runtime-probe/**'
+      - 'portal/phantom-bridge/audit/🧪工作流程執行探針｜WorkflowExecutionProbe.json'
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-probe:
+    name: GitHub Actions runtime probe
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Emit execution receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "EVENT_NAME=${GITHUB_EVENT_NAME}"
+          echo "RUN_ID=${GITHUB_RUN_ID}"
+          echo "RUN_ATTEMPT=${GITHUB_RUN_ATTEMPT}"
+          echo "REPOSITORY=${GITHUB_REPOSITORY}"
+          echo "SHA=${GITHUB_SHA}"
+          echo "REF=${GITHUB_REF}"
+          test -n "${GITHUB_RUN_ID}"
+          test -n "${GITHUB_SHA}"
+          {
+            echo '## Audit runtime probe'
+            echo ''
+            echo '- STATUS=PASS'
+            echo "- EVENT_NAME=${GITHUB_EVENT_NAME}"
+            echo "- RUN_ID=${GITHUB_RUN_ID}"
+            echo "- SHA=${GITHUB_SHA}"
+            echo '- SYSTEM_COMPLETION=VERIFIED_FALSE'
+          } >> "${GITHUB_STEP_SUMMARY}"
