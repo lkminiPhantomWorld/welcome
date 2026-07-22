@@ -1,0 +1,27 @@
+{
+  "schema": "LKMiniExecutionReceipt/v1",
+  "executed_at": "2026-07-21T16:54:26+08:00",
+  "repository_full_name": "ky46738-ops/welcome",
+  "branch": "main",
+  "task": "補齊 Mini 正式 Lineage 與 Snapshot，維持 Identity 唯讀",
+  "created": [
+    {
+      "path": "mini/Lineage.json",
+      "commit_sha": "66ee93785ea31944a2f155daf387eafccfc3fc6d",
+      "blob_sha": "9c0fac36508e287a31993ac3922f00eff7184552",
+      "bytes": 731,
+      "sha256": "7c6e9c7870223412f70b77114eddd78f76d60f6a7e2db88e59242a5c9ec6c234"
+    },
+    {
+      "path": "mini/Snapshot.json",
+      "commit_sha": "0bc39f94fe7d19250799cb723a4d42f08b9f46dc",
+      "blob_sha": "d754e63e499c8a1a35aa92fe050ac10c305ae737",
+      "bytes": 1227,
+      "sha256": "104db58b4286f738bc4fb394fbfd9a969e4fa00383ed4604f5768ffe6caaba0e"
+    }
+  ],
+  "readback_verified": 2,
+  "source_write_move_rename_delete_overwrite": 0,
+  "protected_object_write_count": 0,
+  "result": "COMPLETED"
+}

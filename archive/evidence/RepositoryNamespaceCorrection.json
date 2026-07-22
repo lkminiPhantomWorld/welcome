@@ -1,0 +1,23 @@
+{
+  "schema": "ErrorEvidence/v1",
+  "error_code": "E-WRONG-REPOSITORY-NAMESPACE",
+  "classification": "FALSE_REPORT",
+  "wrong_target": "lkminiPhantomWorld/welcome",
+  "current_authorized_target": "ky46738-ops/welcome",
+  "facts": {
+    "wrong_target_write_result": "403 Resource not accessible by integration",
+    "authorized_repository_permissions": [
+      "admin",
+      "maintain",
+      "pull",
+      "push",
+      "triage"
+    ],
+    "mini_route_exists": true,
+    "mini_path": "mini/index.html",
+    "mini_blob_sha": "159d2db8b61346501c68aa7ee9fe18de73d8ad64"
+  },
+  "main_flow_reference": "REMOVED",
+  "evidence_location": "archive/evidence/RepositoryNamespaceCorrection.json",
+  "protected_object_write_count": 0
+}

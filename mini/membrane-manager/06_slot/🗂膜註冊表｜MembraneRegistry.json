@@ -1,0 +1,38 @@
+{
+  "title": "LK Mini 顯影管理器 v2.0 | 88層膜總表",
+  "source": "user uploaded source bytes",
+  "registry_preview": [
+    {"ext": ".png", "type": "Transparent_Membrane", "opacity": 0.05, "lv": 1},
+    {"ext": ".jpg", "type": "Frosted_Membrane", "opacity": 0.4, "lv": 2},
+    {"ext": ".aes", "type": "Blackout_Membrane", "opacity": 1.0, "lv": 5},
+    {"ext": ".txt", "type": "Glass_Membrane", "opacity": 0.0, "lv": 1},
+    {"ext": ".emerge", "type": "Glass_Membrane", "opacity": 0.0, "lv": 0}
+  ],
+  "table_rows": [
+    {"world":"無損圖像世界","extensions":".png","membrane_type":"Transparent_Membrane","opacity":"5%","properties":"Lossless|Alpha_Channel","risk_level":"Lv.1"},
+    {"world":"無損圖像世界","extensions":".webp","membrane_type":"Transparent_Membrane","opacity":"5%","properties":"Lossless|Alpha_Channel","risk_level":"Lv.1"},
+    {"world":"無損圖像世界","extensions":".svg","membrane_type":"Glass_Membrane","opacity":"0%","properties":"Vector|Infinite_Scale","risk_level":"Lv.1"},
+    {"world":"無損圖像世界","extensions":".bmp","membrane_type":"Glass_Membrane","opacity":"0%","properties":"Raw|No_Compression","risk_level":"Lv.1"},
+    {"world":"無損圖像世界","extensions":".tiff","membrane_type":"Transparent_Membrane","opacity":"5%","properties":"Lossless|Layers","risk_level":"Lv.1"},
+    {"world":"有損圖像世界","extensions":".jpg .jpeg","membrane_type":"Frosted_Membrane","opacity":"40%","properties":"DCT_Lossy|No_Alpha","risk_level":"Lv.2"},
+    {"world":"有損圖像世界","extensions":".avif","membrane_type":"Frosted_Membrane","opacity":"30%","properties":"Modern_Lossy|Alpha","risk_level":"Lv.2"},
+    {"world":"有損圖像世界","extensions":".heic","membrane_type":"Frosted_Membrane","opacity":"35%","properties":"Apple_Lossy|Alpha","risk_level":"Lv.2"},
+    {"world":"視頻音頻世界","extensions":".mp4 .mkv","membrane_type":"Frosted_Membrane","opacity":"45%","properties":"H264|Temporal_Lossy","risk_level":"Lv.2"},
+    {"world":"視頻音頻世界","extensions":".wav","membrane_type":"Glass_Membrane","opacity":"0%","properties":"PCM_Raw","risk_level":"Lv.1"},
+    {"world":"視頻音頻世界","extensions":".mp3","membrane_type":"Frosted_Membrane","opacity":"50%","properties":"Psychoacoustic_Lossy","risk_level":"Lv.2"},
+    {"world":"程式腳本世界","extensions":".py .js","membrane_type":"Execution_Membrane","opacity":"0%","properties":"Source_Code|Readable","risk_level":"Lv.3"},
+    {"world":"程式腳本世界","extensions":".exe .dll","membrane_type":"Armor_Membrane","opacity":"90%","properties":"Binary|Compiled","risk_level":"Lv.4"},
+    {"world":"程式腳本世界","extensions":".wasm","membrane_type":"Armor_Membrane","opacity":"85%","properties":"Sandboxed_Binary","risk_level":"Lv.3"},
+    {"world":"容器壓縮世界","extensions":".zip .7z","membrane_type":"Armor_Membrane","opacity":"80%","properties":"Archive|Need_Extract","risk_level":"Lv.2"},
+    {"world":"容器壓縮世界","extensions":".tar","membrane_type":"Armor_Membrane","opacity":"75%","properties":"Stream_Archive","risk_level":"Lv.2"},
+    {"world":"加密安全世界","extensions":".aes .gpg","membrane_type":"Blackout_Membrane","opacity":"100%","properties":"Encrypted|No_Key_No_Body","risk_level":"Lv.5"},
+    {"world":"加密安全世界","extensions":".sha256","membrane_type":"Glass_Membrane","opacity":"0%","properties":"Fingerprint_Only","risk_level":"Lv.1"},
+    {"world":"文本數據世界","extensions":".txt .md","membrane_type":"Glass_Membrane","opacity":"0%","properties":"Plain_Text","risk_level":"Lv.1"},
+    {"world":"文本數據世界","extensions":".json .xml","membrane_type":"Glass_Membrane","opacity":"0%","properties":"Structured_Text","risk_level":"Lv.1"},
+    {"world":"文本數據世界","extensions":".csv","membrane_type":"Glass_Membrane","opacity":"0%","properties":"Table_Text","risk_level":"Lv.1"},
+    {"world":"專業格式","extensions":".pdf","membrane_type":"Frosted_Membrane","opacity":"20%","properties":"Vector+Raster|Locked","risk_level":"Lv.2"},
+    {"world":"專業格式","extensions":".psd .ai","membrane_type":"Transparent_Membrane","opacity":"10%","properties":"Layers|Proprietary","risk_level":"Lv.2"},
+    {"world":"專業格式","extensions":".emerge","membrane_type":"Glass_Membrane","opacity":"0%","properties":"LK_Mini_Bone|Self_Describing","risk_level":"Lv.0"}
+  ],
+  "status": "原始內容已寫入 GitHub Projection；未補未提供的其餘格式。"
+}

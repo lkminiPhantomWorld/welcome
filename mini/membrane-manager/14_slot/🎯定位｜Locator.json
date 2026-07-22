@@ -1,0 +1,16 @@
+{
+  "source_message": "current user upload: LK Mini 顯影管理器 v2.0 | 88層膜總表",
+  "source_zip_sha256": "126d80fe93b521feb128237924dfe3cc5841674e28d5b4ba8460eb9d6e60e23e",
+  "derived_files": [
+    "01_slot/🧬LKMini顯影管理器｜LKMini-MembraneManager.md",
+    "04_slot/📑膜總表｜MembraneTable.csv",
+    "05_slot/🧊膜總表｜MembraneTable.tsv",
+    "06_slot/🌐顯影預覽｜MembranePreview.html",
+    "06_slot/🗂膜註冊表｜MembraneRegistry.json",
+    "13_slot/🧾清單｜Manifest.csv"
+  ],
+  "github_repository": "ky46738-ops/welcome",
+  "github_root": "mini/membrane-manager",
+  "output_slot": "06_slot",
+  "status": "完成"
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "LKMiniValidationReceipt/v1",
+  "validated_at": "2026-07-21T16:54:26+08:00",
+  "repository_full_name": "ky46738-ops/welcome",
+  "branch": "main",
+  "scope": "mini/🧬證據鏈/SHA256SUMS",
+  "scope_sha256": "f64a88fb5c512b177d00a5a334af741b7b2a54500d950d42b32d72c7a00d8c52",
+  "checks": [
+    {
+      "path": "mini/ExecutionReceipt.json",
+      "expected_sha256": "e90c2917657097e16e166bb800c1fb0f64d7e1079cdb6821d29f0bccc08dd022",
+      "actual_sha256": "e90c2917657097e16e166bb800c1fb0f64d7e1079cdb6821d29f0bccc08dd022",
+      "result": "PASS"
+    },
+    {
+      "path": "mini/Lineage.json",
+      "expected_sha256": "7c6e9c7870223412f70b77114eddd78f76d60f6a7e2db88e59242a5c9ec6c234",
+      "actual_sha256": "7c6e9c7870223412f70b77114eddd78f76d60f6a7e2db88e59242a5c9ec6c234",
+      "result": "PASS"
+    },
+    {
+      "path": "mini/Snapshot.json",
+      "expected_sha256": "104db58b4286f738bc4fb394fbfd9a969e4fa00383ed4604f5768ffe6caaba0e",
+      "actual_sha256": "104db58b4286f738bc4fb394fbfd9a969e4fa00383ed4604f5768ffe6caaba0e",
+      "result": "PASS"
+    },
+    {
+      "path": "mini/🧬證據鏈/Manifest.json",
+      "expected_sha256": "6c7c2084433630dd4fc8e4e09f0b07b8eaf573115b542881c92ec4069ea94a7d",
+      "actual_sha256": "6c7c2084433630dd4fc8e4e09f0b07b8eaf573115b542881c92ec4069ea94a7d",
+      "result": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "result": "VERIFIED_TRUE_FOR_SCOPE"
+  },
+  "identity_write": "READ_ONLY",
+  "protected_object_write_count": 0
+}
