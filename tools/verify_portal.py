@@ -113,12 +113,15 @@ def main() -> None:
     print("PASS: PORTAL_ROUTES")
     print("PASS: PORTAL_LOCATOR")
     print("PASS: PORTAL_REVERSECHAIN")
-    print("PORTAL_COMPLETION=VERIFIED_TRUE")
+    print("PUBLIC_PORTAL_PROJECTION_COMPLETION=VERIFIED_TRUE")
+    print("DEVICE_RUNTIME_COMPLETION=NOT_VERIFIED")
+    print("SYSTEM_COMPLETION=VERIFIED_FALSE")
 
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as exc:
-        print(f"PORTAL_COMPLETION=ERROR: {exc}")
+        print(f"PUBLIC_PORTAL_PROJECTION_COMPLETION=ERROR: {exc}")
+        print("SYSTEM_COMPLETION=VERIFIED_FALSE")
         raise SystemExit(1)
