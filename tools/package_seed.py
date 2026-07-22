@@ -12,6 +12,7 @@ SEED_FILES = [
     "README.md",
     "LICENSE",
     "NOTICE.md",
+    "LKMini.svg",
     "MANIFEST.json",
     "LOCATOR.json",
     "SNAPSHOT.json",
@@ -38,10 +39,9 @@ if __name__ == "__main__":
     print(f"封裝 LKMini seed_v0 -> {OUTPUT}")
     with zipfile.ZipFile(OUTPUT, "w", zipfile.ZIP_DEFLATED) as zf:
         for f in SEED_FILES:
-            if os.path.exists(f):
-                zf.write(f)
-                print(f"  加入: {f}")
-            else:
-                print(f"  跳過（不存在）: {f}")
+            if not os.path.isfile(f):
+                raise FileNotFoundError(f"錯誤：缺少必要封裝檔案 {f}")
+            zf.write(f)
+            print(f"  加入: {f}")
     print(f"\n✅ 完成: {OUTPUT}")
     print("A_EQUALS_A=true")
