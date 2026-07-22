@@ -9,7 +9,7 @@
 
 ## 什麼不能進
 
-- 私有引擎設定（PRIVATE_ENGINE_FLEET 內容）
+- LKMini public seed 以外的私有引擎設定內容
 - 永恆核心內部規則
 - API 金鑰、密碼、個人資料
 - 未經驗證的聲明
