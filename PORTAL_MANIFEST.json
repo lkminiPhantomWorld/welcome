@@ -1,0 +1,55 @@
+{
+  "name": "🥳歡迎光臨唯一路口｜PublicPortalManifest",
+  "type": "public_projection_manifest",
+  "system": "LKMini public projection",
+  "A_EQUALS_A": true,
+  "files": [
+    {
+      "path": "index.html",
+      "role": "page",
+      "state": "verified"
+    },
+    {
+      "path": "mini/index.html",
+      "role": "page",
+      "state": "verified"
+    },
+    {
+      "path": "ui/shrine/index.html",
+      "role": "page",
+      "state": "verified"
+    },
+    {
+      "path": "PORTAL_MANIFEST.json",
+      "role": "manifest",
+      "state": "verified"
+    },
+    {
+      "path": "PORTAL_LOCATOR.json",
+      "role": "locator",
+      "state": "verified"
+    },
+    {
+      "path": "PORTAL_REVERSECHAIN.json",
+      "role": "reverse_chain",
+      "state": "verified"
+    },
+    {
+      "path": "PORTAL_SHA256SUMS",
+      "role": "hash_index",
+      "state": "verified"
+    },
+    {
+      "path": "tools/verify_portal.py",
+      "role": "verifier",
+      "state": "verified"
+    },
+    {
+      "path": ".github/workflows/deploy-pages.yml",
+      "role": "deployment",
+      "state": "verified"
+    }
+  ],
+  "quarantined_evidence": "evidence/2026-07-22/placeholder-routes.json",
+  "private_device_coordinates": "excluded_from_public_projection"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "PublicPortalReverseChain",
+  "purpose": "Preserve identity-to-projection return path without modifying frozen seed files",
+  "chain": [
+    {
+      "identity": "LKMini/seed_v0",
+      "repo": "ky46738-ops/LKMini",
+      "root_commit": "527d29a",
+      "date": "2026-05-17",
+      "state": "frozen_readonly"
+    },
+    {
+      "projection": "lkminiPhantomWorld/welcome",
+      "source_parent_commit": "19e53fa1b78c7f3527864b24763e02eded616d08",
+      "date": "2026-07-22",
+      "state": "portal_integrity_repair",
+      "returns_to": "LKMini/seed_v0"
+    }
+  ],
+  "A_EQUALS_A": true
+}

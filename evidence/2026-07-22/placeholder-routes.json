@@ -1,0 +1,29 @@
+{
+  "name": "錯誤證據｜PlaceholderRoutes",
+  "source_repo": "lkminiPhantomWorld/welcome",
+  "source_commit": "19e53fa1b78c7f3527864b24763e02eded616d08",
+  "source_path": "index.html",
+  "error_type": "FORMAL_ENTRY_EMPTY_SHELL",
+  "cross_check": {
+    "root_html_placeholder_count": 11,
+    "deployment_missing_real_shrine_path": true,
+    "seed_sha256_duplicate_readme_entries": true,
+    "private_marker_policy_false_positive": true
+  },
+  "isolated_routes": [
+    {"name": "小蜜", "old_href": "#"},
+    {"name": "凌凌", "old_href": "#"},
+    {"name": "機器人", "old_href": "#"},
+    {"name": "王牌", "old_href": "#"},
+    {"name": "泱泱", "old_href": "#"},
+    {"name": "心語", "old_href": "#"},
+    {"name": "婉婉", "old_href": "#"},
+    {"name": "畫家", "old_href": "#"},
+    {"name": "螃蟹", "old_href": "#"},
+    {"name": "快客", "old_href": "#"},
+    {"name": "精靈", "old_href": "#"}
+  ],
+  "main_flow_reference_removed": true,
+  "preservation": "Git history plus this evidence record",
+  "A_EQUALS_A": true
+}
