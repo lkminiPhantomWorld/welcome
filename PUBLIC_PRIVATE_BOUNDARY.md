@@ -21,8 +21,8 @@ This document defines the boundary between public (LKMini) and private (🥃老K
 
 - 🥃永恆核心 (Eternal Core) internal configuration
 - 🎩大管家 (Gatekeeper) role logic and rules
-- PRIVATE_ENGINE_FLEET
-- ENGINE_REGISTRY_PRIVATE
+- Private engine fleet marker family (literal token intentionally omitted)
+- Private engine registry marker family (literal token intentionally omitted)
 - Any personal data, API keys, tokens, or credentials
 - Internal system automation (Shortcuts, URL Schemes)
 

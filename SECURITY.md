@@ -10,9 +10,7 @@
 
 ## 私有資料保護
 
-Gatekeeper workflow 會自動檢查以下私有標記是否意外出現在公開檔案中：
-- `PRIVATE_ENGINE`
-- `ENGINE_REGISTRY_PRIVATE`
+Gatekeeper workflow 會自動檢查私有標記是否意外出現在公開檔案中。為避免公開文件自身觸發掃描，具體 literal token 不在此列出。
 
 如發現私有資料外洩，請立即通知 @ky46738-ops。
 
