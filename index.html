@@ -103,6 +103,11 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(88, 166, 255, 0.2);
         }
+
+        .character-card.shrine:hover {
+            border-color: #e8c87a;
+            box-shadow: 0 8px 24px rgba(232, 200, 122, 0.2);
+        }
         
         .character-emoji {
             font-size: 2.5rem;
@@ -113,6 +118,12 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: #f0f6fc;
+        }
+
+        .character-sub {
+            font-size: 0.75rem;
+            color: #8b949e;
+            margin-top: 0.25rem;
         }
         
         footer {
@@ -161,52 +172,80 @@
             <div class="characters-grid">
                 <a href="mini/" class="character-card">
                     <div class="character-emoji">🥃</div>
-                    <div class="character-name">Mini</div>
+                    <div class="character-name">大管家</div>
+                    <div class="character-sub">系統本體</div>
                 </a>
                 
-                <a href="#" class="character-card" onclick="return false;">
+                <a href="#" class="character-card">
                     <div class="character-emoji">💬</div>
                     <div class="character-name">小蜜</div>
+                    <div class="character-sub">隨身秘書</div>
                 </a>
                 
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">🎨</div>
-                    <div class="character-name">畫家</div>
-                </a>
-                
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">📘</div>
-                    <div class="character-name">作文老師</div>
-                </a>
-                
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">📦</div>
-                    <div class="character-name">封存</div>
-                </a>
-                
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">🔍</div>
-                    <div class="character-name">搜尋</div>
-                </a>
-                
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">🛠️</div>
-                    <div class="character-name">胡哥</div>
-                </a>
-                
-                <a href="#" class="character-card" onclick="return false;">
+                <a href="#" class="character-card">
                     <div class="character-emoji">❄️</div>
                     <div class="character-name">凌凌</div>
+                    <div class="character-sub">投資</div>
                 </a>
                 
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">🦀</div>
-                    <div class="character-name">餐廳</div>
+                <a href="#" class="character-card">
+                    <div class="character-emoji">🤖</div>
+                    <div class="character-name">機器人</div>
+                    <div class="character-sub">風控 · 自動化</div>
                 </a>
                 
-                <a href="#" class="character-card" onclick="return false;">
-                    <div class="character-emoji">🃏</div>
+                <a href="#" class="character-card">
+                    <div class="character-emoji">⚖️</div>
                     <div class="character-name">王牌</div>
+                    <div class="character-sub">法務</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">🌊</div>
+                    <div class="character-name">泱泱</div>
+                    <div class="character-sub">生活吃喝玩樂</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">💭</div>
+                    <div class="character-name">心語</div>
+                    <div class="character-sub">幻想 · 私密</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">👗</div>
+                    <div class="character-name">婉婉</div>
+                    <div class="character-sub">角色管理</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">🎨</div>
+                    <div class="character-name">畫家</div>
+                    <div class="character-sub">素材庫</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">🦀</div>
+                    <div class="character-name">螃蟹</div>
+                    <div class="character-sub">餐廳</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">⚡️</div>
+                    <div class="character-name">快客</div>
+                    <div class="character-sub">執行官</div>
+                </a>
+                
+                <a href="#" class="character-card">
+                    <div class="character-emoji">🧚</div>
+                    <div class="character-name">精靈</div>
+                    <div class="character-sub">精靈世界</div>
+                </a>
+                
+                <a href="ui/shrine/" class="character-card shrine">
+                    <div class="character-emoji">⛩️</div>
+                    <div class="character-name">祭祀</div>
+                    <div class="character-sub">供品台 · 歸檔</div>
                 </a>
             </div>
             
@@ -229,7 +268,7 @@
                 this.spiritY = this.canvas.height / 2;
                 this.portalX = this.canvas.width / 2;
                 this.portalY = this.canvas.height / 2;
-                this.stage = 0; // 0: 星空, 1: 精靈飛進, 2: 對話, 3: 飛向傳送門, 4: 門發光, 5: 等待點擊
+                this.stage = 0;
                 this.stageTime = 0;
                 
                 this.createStars();
@@ -254,20 +293,17 @@
                     if (star.opacity > 1 || star.opacity < 0.3) {
                         star.twinkleSpeed *= -1;
                     }
-                    
                     this.ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
                     this.ctx.fillRect(star.x, star.y, star.radius, star.radius);
                 });
             }
             
             drawSpirit(x, y, handWave = false) {
-                // 精靈身體（簡單的圓形）
                 this.ctx.fillStyle = '#FFD700';
                 this.ctx.beginPath();
                 this.ctx.arc(x, y, 20, 0, Math.PI * 2);
                 this.ctx.fill();
                 
-                // 眼睛
                 this.ctx.fillStyle = '#000';
                 this.ctx.beginPath();
                 this.ctx.arc(x - 8, y - 5, 4, 0, Math.PI * 2);
@@ -276,14 +312,12 @@
                 this.ctx.arc(x + 8, y - 5, 4, 0, Math.PI * 2);
                 this.ctx.fill();
                 
-                // 微笑
                 this.ctx.strokeStyle = '#000';
                 this.ctx.lineWidth = 2;
                 this.ctx.beginPath();
                 this.ctx.arc(x, y + 2, 6, 0, Math.PI, false);
                 this.ctx.stroke();
                 
-                // 揮手
                 if (handWave) {
                     const waveOffset = Math.sin(this.stageTime * 0.1) * 15;
                     this.ctx.strokeStyle = '#FFD700';
@@ -298,14 +332,12 @@
             drawPortal(x, y, glow = 0) {
                 const radius = 50 + glow * 10;
                 
-                // 外圈光暈
                 this.ctx.strokeStyle = `rgba(138, 43, 226, ${Math.min(glow * 0.3, 0.8)})`;
                 this.ctx.lineWidth = 3;
                 this.ctx.beginPath();
                 this.ctx.arc(x, y, radius, 0, Math.PI * 2);
                 this.ctx.stroke();
                 
-                // 內部漸變
                 const gradient = this.ctx.createRadialGradient(x, y, 20, x, y, radius);
                 gradient.addColorStop(0, `rgba(138, 43, 226, 0.6)`);
                 gradient.addColorStop(1, `rgba(138, 43, 226, 0.1)`);
@@ -315,7 +347,6 @@
                 this.ctx.arc(x, y, radius, 0, Math.PI * 2);
                 this.ctx.fill();
                 
-                // 邊框
                 this.ctx.strokeStyle = `rgba(138, 43, 226, ${0.8 + glow * 0.2})`;
                 this.ctx.lineWidth = 2;
                 this.ctx.beginPath();
@@ -335,30 +366,18 @@
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
                 
                 this.drawStars();
-                
                 this.stageTime++;
                 
                 if (this.stage === 0) {
-                    // 星空階段
-                    if (this.stageTime > 60) {
-                        this.stage = 1;
-                        this.stageTime = 0;
-                    }
+                    if (this.stageTime > 60) { this.stage = 1; this.stageTime = 0; }
                 } 
                 else if (this.stage === 1) {
-                    // 精靈飛進來
                     this.spiritY = this.canvas.height / 2 - (this.stageTime * 3);
                     this.drawSpirit(this.spiritX, this.spiritY, true);
-                    
-                    if (this.stageTime > 50) {
-                        this.stage = 2;
-                        this.stageTime = 0;
-                    }
+                    if (this.stageTime > 50) { this.stage = 2; this.stageTime = 0; }
                 } 
                 else if (this.stage === 2) {
-                    // 對話階段
                     this.drawSpirit(this.spiritX, this.spiritY - 150, true);
-                    
                     if (this.stageTime < 40) {
                         this.drawText('Hi ~', this.canvas.width / 2, this.canvas.height / 2 - 50);
                     } else if (this.stageTime < 80) {
@@ -366,44 +385,29 @@
                     } else if (this.stageTime < 120) {
                         this.drawText('跟我來', this.canvas.width / 2, this.canvas.height / 2 - 50);
                     } else {
-                        this.stage = 3;
-                        this.stageTime = 0;
+                        this.stage = 3; this.stageTime = 0;
                     }
                 }
                 else if (this.stage === 3) {
-                    // 飛向傳送門
                     const progress = this.stageTime / 80;
                     this.spiritX = this.canvas.width / 2 + progress * 100;
                     this.spiritY = (this.canvas.height / 2 - 150) + progress * 200;
-                    
                     this.drawSpirit(this.spiritX, this.spiritY, false);
                     this.drawPortal(this.canvas.width / 2, this.canvas.height / 2 + 100);
-                    
-                    if (this.stageTime > 80) {
-                        this.stage = 4;
-                        this.stageTime = 0;
-                    }
+                    if (this.stageTime > 80) { this.stage = 4; this.stageTime = 0; }
                 }
                 else if (this.stage === 4) {
-                    // 精靈飛進傳送門
                     const progress = this.stageTime / 40;
                     this.spiritX = this.canvas.width / 2 + 100 * (1 - progress);
                     this.spiritY = (this.canvas.height / 2 + 100) * (1 - progress * 0.5);
-                    
                     this.ctx.globalAlpha = 1 - progress;
                     this.drawSpirit(this.spiritX, this.spiritY, false);
                     this.ctx.globalAlpha = 1;
-                    
                     const glow = this.stageTime / 40;
                     this.drawPortal(this.canvas.width / 2, this.canvas.height / 2 + 100, glow);
-                    
-                    if (this.stageTime > 40) {
-                        this.stage = 5;
-                        this.stageTime = 0;
-                    }
+                    if (this.stageTime > 40) { this.stage = 5; this.stageTime = 0; }
                 }
                 else if (this.stage === 5) {
-                    // 等待點擊，傳送門發光
                     this.drawPortal(this.canvas.width / 2, this.canvas.height / 2 + 100, 1);
                     this.drawText('點擊傳送門進入', this.canvas.width / 2, this.canvas.height / 2 + 200);
                 }
@@ -411,7 +415,6 @@
                 if (this.stage < 5) {
                     requestAnimationFrame(() => this.animate());
                 } else {
-                    // 完成動畫，等待點擊
                     this.canvas.style.cursor = 'pointer';
                     this.canvas.onclick = () => this.enterWorld();
                 }
@@ -421,7 +424,6 @@
                 const container = document.getElementById('intro-container');
                 const mainContent = document.getElementById('main-content');
                 
-                // 吸入效果
                 this.ctx.fillStyle = '#000';
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
                 
@@ -430,14 +432,10 @@
                     progress += 0.05;
                     this.ctx.fillStyle = '#000';
                     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-                    
                     this.drawStars();
                     this.drawPortal(this.canvas.width / 2, this.canvas.height / 2 + 100, 1);
-                    
-                    // 黑色從四邊吸入
                     this.ctx.fillStyle = `rgba(0, 0, 0, ${Math.min(progress * 0.5, 1)})`;
                     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-                    
                     if (progress > 1) {
                         clearInterval(suckInterval);
                         container.classList.add('hidden');
@@ -447,7 +445,6 @@
             }
         }
         
-        // 初始化動畫
         window.addEventListener('load', () => {
             const canvas = document.getElementById('intro-canvas');
             new IntroAnimation(canvas);

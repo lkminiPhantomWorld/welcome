@@ -1,0 +1,11 @@
+{
+  "name": "tiny-state-core",
+  "version": "0.1.0",
+  "description": "一個極簡、可組合的狀態核心。可掛載在任何地方，也可隨時卸載。",
+  "main": "core.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": ["state", "core", "minimal", "composable", "event"],
+  "license": "MIT"
+}
