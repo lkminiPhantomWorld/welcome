@@ -25,6 +25,7 @@
     "GOVERNANCE.md",
     "THREAT_MODEL.md",
     "CITATION.cff",
+    "SHA256SUMS",
     ".github/CODEOWNERS",
     ".github/workflows/gatekeeper.yml",
     "tools/verify_lkmini.py",
