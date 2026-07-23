@@ -1,0 +1,23 @@
+{
+  "標題": "🧪工作流程執行探針｜WorkflowExecutionProbe",
+  "狀態": "完成",
+  "建立時間": "2026-07-20T04:50:43+08:00",
+  "更新時間": "2026-07-20T06:53:30+08:00",
+  "觸發序號": 2,
+  "目的": "只用於觸發稽核投影倉庫的 pull_request GitHub Actions，取得可回讀的 Run、Job、Step、Artifact、Digest 與 SHA256 證據。",
+  "唯讀保護": [
+    "🧩LKMINI",
+    "Core Data",
+    "正式 Identity",
+    "凍結物件"
+  ],
+  "來源分支": "audit-execution-probe-20260720",
+  "目標分支": "main",
+  "預期工作流程": [
+    "🧾老K系統稽核暴力驗證",
+    "audit-runtime-probe"
+  ],
+  "ASCII最小探針Commit": "712634e5f594eedcd1d2aec0299def249f039733",
+  "聲明": "此探針不是系統完成回執，不改寫正式本體，不代表 App、裝置或伺服器已執行。",
+  "SYSTEM_COMPLETION": "VERIFIED_FALSE"
+}
