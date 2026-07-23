@@ -1,0 +1,22 @@
+{
+  "AXIOM": "A=A",
+  "Identity": "MOBILE-ABSORB-3EED1C383A03204C0F9245B0",
+  "task": "手機來源吸回、去重、封存與退場清單",
+  "top_level_sources": 10,
+  "expanded_records": 179,
+  "unique_sha256_objects": 140,
+  "exact_duplicate_groups": 10,
+  "meaningful_duplicate_references": 22,
+  "junk_items": 57,
+  "canonical_top_level_count": 9,
+  "legacy_top_level_count": 1,
+  "estimated_mobile_releasable_bytes_after_remote_verification": 10691914,
+  "capsule_name": "🪞手機來源吸回封存膠囊｜MobileSourceAbsorptionArchiveCapsule｜20260724-044052_TPE.zip",
+  "capsule_sha256": "587eda98ae2d57fca644876ad3b1781a31bba898847a9dd24d6786fe215e59d5",
+  "capsule_size": 15210240,
+  "zip_integrity": "VERIFIED_TRUE",
+  "drive_sync": "VERIFIED_FALSE",
+  "portal_projection": "VERIFIED_TRUE",
+  "mobile_actual_deletion": "HYPOTHESIS",
+  "return_to": "🧩LKMINI"
+}
