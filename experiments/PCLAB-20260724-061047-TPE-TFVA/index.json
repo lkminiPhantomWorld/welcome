@@ -15,9 +15,10 @@
   "附件可下載": "VERIFIED_TRUE",
   "Drive資料夾ID": "173wUbuRSXRt650HbNUi5wsKjYihPGwNh",
   "Drive持久保存": "VERIFIED_FALSE",
-  "Drive失敗原因": "upload_file 拒絕本機路徑，要求 connector file reference",
-  "膠囊SHA256": "b8cd35f0b9110af6fd75a0286810ff8c3805d30f4a33ee7e135024c9712bc3fb",
-  "膠囊大小": 19116,
+  "Drive回讀": "VERIFIED_FALSE",
+  "Drive失敗原因": "upload_file 要求 connector file reference；本回合未取得可用 reference",
+  "膠囊SHA256": "7708e704065f5ff25c38fce7efe4588adb4fd8f3982f865a4ba86e72c65407af",
+  "膠囊大小": 19763,
   "回指": "🧩LKMINI",
   "凍結本體修改": "VERIFIED_FALSE"
 }
