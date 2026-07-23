@@ -1,0 +1,40 @@
+{
+  "原名": "🧪預演目的地承諾法｜PreflightDestinationCommitment",
+  "Identity": "PCFL-PDC-D95DC38013EE4605B47BCBE5",
+  "實驗編號": "PCLAB-20260724-050229-TPE-PDC",
+  "A=A": "VERIFIED_TRUE",
+  "新方法模型": "HYPOTHESIS",
+  "比較既有方法": [
+    "直接 extractall",
+    "basename 扁平解壓"
+  ],
+  "概念測試": {
+    "直接解壓接受含父層元件成員": "VERIFIED_TRUE",
+    "扁平解壓發生同名碰撞": "VERIFIED_TRUE",
+    "新方法危險包零寫入拒絕": "VERIFIED_TRUE",
+    "新方法安全包成功解壓": "VERIFIED_TRUE"
+  },
+  "風險": {
+    "條件": "NFC＋casefold 政策可能在大小寫敏感檔案系統上誤拒絕可共存檔名",
+    "狀態": "HYPOTHESIS"
+  },
+  "Drive": {
+    "實驗資料夾ID": "19mqkLxIZoxzGKo25wFcAN9Cvmvipf5yT",
+    "附件資料夾ID": "1MP2KWoG6E5R_ffTEA5RA95JEzfAaw_s0",
+    "唯一出口資料夾ID": "1rGOqUaDziwtCDc0yhi09lTVD67_g8RvT",
+    "膠囊檔案ID": "1jF1MdNdFhzs2h7aSF7cBbUA8B5C2_U0l",
+    "持久保存": "VERIFIED_TRUE",
+    "回讀": "VERIFIED_TRUE"
+  },
+  "膠囊": {
+    "檔名": "🧪預演目的地承諾法｜PreflightDestinationCommitment｜20260724-050522_TPE.zip",
+    "bytes": 25366,
+    "SHA256": "faa13922a045d6791d764696dbb92234b205924d1bef241e0b484478a7265f75",
+    "ZIP完整性": "VERIFIED_TRUE",
+    "下載回讀SHA256一致": "VERIFIED_TRUE"
+  },
+  "06唯一出口": "VERIFIED_TRUE",
+  "ReverseChain": "VERIFIED_TRUE",
+  "回指": "🧩LKMINI",
+  "凍結本體修改": "VERIFIED_FALSE"
+}
