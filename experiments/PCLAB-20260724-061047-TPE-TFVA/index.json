@@ -1,0 +1,23 @@
+{
+  "原名": "🧪三重指紋版本裁決法｜TripleFingerprintVersionAdjudication",
+  "Identity": "PCFL-TFVA-76825BF3193F92E2251617D6",
+  "實驗編號": "PCLAB-20260724-061047_TPE-TFVA",
+  "A=A": "VERIFIED_TRUE",
+  "新方法模型": "HYPOTHESIS",
+  "比較既有方法": [
+    "只看SHA256",
+    "只看檔名與版本字串"
+  ],
+  "概念測試": "VERIFIED_TRUE",
+  "新方法四類裁決": "VERIFIED_TRUE",
+  "風險紀錄": "VERIFIED_TRUE",
+  "ZIP完整性": "VERIFIED_TRUE",
+  "附件可下載": "VERIFIED_TRUE",
+  "Drive資料夾ID": "173wUbuRSXRt650HbNUi5wsKjYihPGwNh",
+  "Drive持久保存": "VERIFIED_FALSE",
+  "Drive失敗原因": "upload_file 拒絕本機路徑，要求 connector file reference",
+  "膠囊SHA256": "b8cd35f0b9110af6fd75a0286810ff8c3805d30f4a33ee7e135024c9712bc3fb",
+  "膠囊大小": 19116,
+  "回指": "🧩LKMINI",
+  "凍結本體修改": "VERIFIED_FALSE"
+}
