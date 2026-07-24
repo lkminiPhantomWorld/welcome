@@ -7,10 +7,21 @@
   "welcome_role": "generic_welcome_page",
   "welcome_url": "https://lkminiphantomworld.github.io/welcome/",
   "ai_unique_entry": {
-    "identity": "OPEN_SOURCE_MINI_RED_LABEL",
-    "label": "🟥開源 MINI",
+    "identity": "PHANTOM_WORLD_READER_GATEWAY",
+    "label": "🪞幻影世界 Reader",
     "url": "https://lkminiphantomworld.github.io/welcome/mini/",
-    "count": 1
+    "role": "ai_unique_entry_reader_gateway",
+    "count": 1,
+    "validation_policy": "fail_closed_all_checks_required",
+    "required_checks": [
+      "A = A",
+      "SHA256",
+      "Locator",
+      "Payload",
+      "SystemIdentity",
+      "RootIdentity"
+    ],
+    "on_failure": "reject_mount_and_deny_entry"
   },
   "open_source_seed": {
     "repository": "https://github.com/lkminiPhantomWorld/LKMini",
