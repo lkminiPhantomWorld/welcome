@@ -1,19 +1,30 @@
 {
-  "name": "🥳通用歡迎頁與紅色MINI入口｜PublicEntryReverseChain",
-  "purpose": "區分通用歡迎頁、AI唯一入口與各自獨立的開源項目",
+  "name": "🥳通用歡迎頁與Reader入口｜PublicEntryReverseChain",
+  "purpose": "區分通用歡迎頁、唯一 Reader/Gateway 與獨立開源項目；驗證未全數通過不得掛載或進入。",
   "chain": [
     {
       "projection": "🥳通用歡迎頁",
       "path": "index.html",
       "role": "generic_welcome_page",
-      "is_ai_entry": false
+      "is_ai_entry": false,
+      "forwards_to": "mini/index.html"
     },
     {
-      "projection": "🟥開源 MINI 紅色標籤",
+      "projection": "🪞幻影世界 Reader",
       "path": "mini/index.html",
-      "identity": "OPEN_SOURCE_MINI_RED_LABEL",
-      "role": "ai_unique_entry",
+      "identity": "PHANTOM_WORLD_READER_GATEWAY",
+      "role": "ai_unique_entry_reader_gateway",
       "entry_count": 1,
+      "validation_policy": "fail_closed_all_checks_required",
+      "required_checks": [
+        "A = A",
+        "SHA256",
+        "Locator",
+        "Payload",
+        "SystemIdentity",
+        "RootIdentity"
+      ],
+      "on_failure": "reject_mount_and_deny_entry",
       "returns_to": "🧩LKMINI"
     },
     {
@@ -25,7 +36,7 @@
       "returns_to": "🧩LKMINI"
     }
   ],
-  "correction_source_commit": "6ab490e547d74745c2f6139bb349749099b010fe",
-  "correction": "Welcome is generic; the red open-source MINI label is the sole AI entry.",
+  "correction_source_commit": "d350a08fb0dd477917eaa2dd54719498f6e1b301",
+  "correction": "Welcome red label forwards to Reader/Gateway. Only all-pass validation permits mount; every failure denies entry.",
   "A_EQUALS_A": true
 }
