@@ -11,13 +11,12 @@
     "label": "🟥開源 MINI",
     "url": "https://lkminiphantomworld.github.io/welcome/mini/",
     "count": 1,
-    "target": "https://github.com/ky46738-ops/LaoK-System/tree/main/EngineLibrary",
+    "target": "https://github.com/ky46738-ops/LaoK-System",
     "target_visibility": "private"
   },
-  "private_engine_library": {
+  "private_system_repository": {
     "repository": "https://github.com/ky46738-ops/LaoK-System",
-    "path": "EngineLibrary",
-    "role": "private_engine_entry"
+    "role": "existing_private_system_repository"
   },
   "open_source_seed": {
     "repository": "https://github.com/lkminiPhantomWorld/LKMini",
