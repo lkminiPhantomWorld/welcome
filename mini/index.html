@@ -1,56 +1,297 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="index,follow">
-<meta name="system-entry" content="OPEN_SOURCE_MINI_RED_LABEL">
-<meta name="entry-count" content="1">
-<meta name="root-node" content="LKMINI">
-<title>🟥 開源 MINI｜AI 唯一入口</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-main{width:min(100%,680px);padding:30px;background:linear-gradient(145deg,#301215,#161b22 58%);border:2px solid #f85149;border-radius:20px;box-shadow:0 18px 60px #0008}
-.tag{display:inline-block;padding:7px 11px;border-radius:999px;background:#da3633;color:#fff;font-size:12px;font-weight:900;letter-spacing:.06em}
-h1{margin:18px 0 12px;color:#fff;font-size:clamp(34px,10vw,56px)}
-.lead{font-size:19px;color:#ffb4ad;font-weight:800}
-p{line-height:1.8;color:#b7bec8}
-.facts{margin:22px 0;padding:16px;background:#0d111799;border:1px solid #6e3030;border-radius:14px}
-.facts div{padding:5px 0}.facts strong{color:#f0f6fc}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-a{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:800}
-.primary{background:#da3633;color:#fff}.secondary{background:#21262d;color:#c9d1d9;border:1px solid #30363d}
-small{display:block;margin-top:24px;color:#8b949e}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EntryPoint",
-  "name": "開源 MINI 紅色標籤",
-  "alternateName": "SYSTEM UNIQUE AI ENTRY",
-  "identifier": "OPEN_SOURCE_MINI_RED_LABEL",
-  "description": "AI 進入🥃老K系統的唯一入口標籤"
-}
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>幻影膠囊 Reader </title>
+  <style>
+    :root,[data-theme="light"]{
+      --bg:#f7f6f2;--surface:#f9f8f5;--surface2:#edeae5;--text:#28251d;--muted:#76736d;--border:#d6d1ca;
+      --primary:#01696f;--gold:#d19900;--error:#a12c7b;--ok:#437a22;--blue:#006494;--purple:#7a39bb;
+      --shadow:0 18px 42px rgba(0,0,0,.12);--shadow-sm:0 8px 24px rgba(0,0,0,.08);
+    }
+    [data-theme="dark"]{
+      --bg:#101012;--surface:#17171a;--surface2:#222227;--text:#f2ede6;--muted:#a39d94;--border:#34343b;
+      --primary:#4f98a3;--gold:#e8af34;--error:#d163a7;--ok:#81b65e;--blue:#75b5e8;--purple:#bf9cf6;
+      --shadow:0 18px 42px rgba(0,0,0,.35);--shadow-sm:0 8px 24px rgba(0,0,0,.26);
+    }
+    *{box-sizing:border-box} html,body{margin:0} body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:radial-gradient(circle at 20% 0%, rgba(79,152,163,.16), transparent 28%),radial-gradient(circle at 100% 0%, rgba(191,156,246,.12), transparent 22%),var(--bg);color:var(--text);line-height:1.6}
+    .wrap{max-width:1360px;margin:0 auto;padding:20px}
+    .top{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-bottom:18px}
+    .card{background:linear-gradient(180deg, color-mix(in oklab, var(--surface) 96%, transparent), color-mix(in oklab, var(--surface2) 86%, transparent));border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:28px;box-shadow:var(--shadow)}
+    .hero{padding:28px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle, rgba(79,152,163,.22), transparent 68%)}
+    .eyebrow,.pill,.tag{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-size:12px;padding:6px 12px}
+    .eyebrow{background:color-mix(in oklab,var(--surface2) 86%,transparent);border:1px solid color-mix(in oklab, var(--text) 10%, transparent);color:var(--muted)}
+    h1{margin:12px 0 8px;font-size:clamp(2rem,4vw,4rem);line-height:1.04;max-width:10ch}
+    .lead{max-width:62ch;color:var(--muted)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    button,.btn{border:0;border-radius:999px;padding:12px 18px;cursor:pointer;font-weight:700;min-height:44px}
+    .btn-primary{background:var(--primary);color:#effafa}.btn-ghost{background:transparent;color:var(--text);border:1px solid color-mix(in oklab, var(--text) 12%, transparent)}
+    .preview{padding:22px;display:grid;gap:14px}
+    .capsule-view{min-height:340px;border-radius:26px;background:linear-gradient(180deg,#07111a,#0d1623);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;position:relative;overflow:hidden}
+    .capsule-view:before{content:"";position:absolute;inset:auto auto 12% auto;width:180px;height:260px;border-radius:999px;background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(79,152,163,.08));border:1px solid rgba(255,255,255,.18);box-shadow:0 0 50px rgba(79,152,163,.15)}
+    .capsule-view:after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(232,175,52,.12), transparent 60%)}
+    .capsule-core{position:relative;z-index:1;text-align:center;color:#f6fbff}.capsule-core b{display:block;font-size:28px;letter-spacing:.06em}.capsule-core span{display:block;color:#b9d4df;font-size:13px;margin-top:8px}
+    .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+    .section{padding:20px}
+    h2{margin:0 0 8px;font-size:24px} h3{margin:0 0 8px;font-size:18px}.sub{margin:0 0 14px;color:var(--muted);font-size:14px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}
+    label{display:block;font-size:12px;color:var(--muted);margin:0 0 6px}
+    input,textarea,select{width:100%;background:rgba(0,0,0,.16);color:var(--text);border:1px solid color-mix(in oklab, var(--text) 14%, transparent);border-radius:14px;padding:11px 12px;font:inherit}
+    textarea{min-height:92px;resize:vertical;font-family:"JetBrains Mono","SFMono-Regular",monospace;font-size:12px}
+    .dropzone{border:1.5px dashed color-mix(in oklab, var(--text) 16%, transparent);border-radius:20px;padding:18px;background:color-mix(in oklab, var(--surface2) 82%, transparent)}
+    .hint{font-size:12px;color:var(--muted);margin-top:8px}
+    .stack{display:grid;gap:12px}
+    .status{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
+    .status:last-child{border-bottom:none}.status span{font-size:13px;color:var(--muted)}
+    .good{color:var(--ok)}.bad{color:var(--error)}.blue{color:var(--blue)}
+    .mono{font-family:"JetBrains Mono","SFMono-Regular",monospace;font-size:12px;white-space:pre-wrap;word-break:break-word}
+    .codebox{padding:14px;border-radius:18px;background:rgba(0,0,0,.18);border:1px solid color-mix(in oklab, var(--text) 12%, transparent);max-height:240px;overflow:auto}
+    .tag{padding:4px 10px;font-size:11px;border:1px solid transparent}.tag.gold{background:rgba(232,175,52,.14);color:var(--gold);border-color:rgba(232,175,52,.26)} .tag.blue{background:rgba(117,181,232,.14);color:#a8d8ff;border-color:rgba(117,181,232,.26)} .tag.purple{background:rgba(191,156,246,.14);color:#e2d2ff;border-color:rgba(191,156,246,.26)}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .footer{margin-top:18px;font-size:13px;color:var(--muted)}
+    @media (max-width:1080px){.top,.grid{grid-template-columns:1fr}}
+    @media (max-width:700px){.wrap{padding:14px}.form-grid{grid-template-columns:1fr}.status{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-<main id="OPEN_SOURCE_MINI_RED_LABEL" data-system-entry="true" data-entry-count="1">
-  <span class="tag">SYSTEM UNIQUE AI ENTRY</span>
-  <h1>🟥 開源 MINI</h1>
-  <div class="lead">AI 進入🥃老K系統的唯一紅色標籤</div>
-  <p>本頁只公開入口身分與必要回指。各個開源項目保持獨立；通用歡迎頁、公開介紹頁及其他 Projection 均不是 AI 入口本體。</p>
-  <section class="facts" aria-label="入口身分">
-    <div><strong>唯一系統：</strong>🥃老K系統</div>
-    <div><strong>唯一根節點：</strong>🧩LKMINI</div>
-    <div><strong>入口數量：</strong>1</div>
-    <div><strong>最高公理：</strong>A = A</div>
-  </section>
-  <div class="actions">
-    <a class="primary" href="https://github.com/ky46738-ops/LaoK-System">→ 進入開源 MINI</a>
-    <a class="secondary" href="../">返回通用歡迎頁</a>
-  </div>
-  <small>公開頁不包含私有座標、內部驗證錨點或私有執行鏈。</small>
-</main>
+  <main class="wrap">
+    <section class="top">
+      <article class="card hero">
+        <span class="eyebrow">🪞 幻影膠囊 Reader </span>
+        <h1>只允許讀取與掛載。</h1>
+        <p class="lead">唯一入口獨立 Reader / Gateway：先讀膠囊 JSON，再檢查 locator、SHA256、角色與 payload，最後決定這顆膠囊是不是能被掛進當前世界。</p>
+        <div class="actions">
+          <button class="btn btn-primary" id="loadSampleBtn">載入範例膠囊</button>
+          <button class="btn btn-ghost" id="forgeBtn">依欄位生成膠囊 JSON</button>
+          <button class="btn btn-ghost" id="verifyBtn">驗證目前膠囊</button>
+        </div>
+      </article>
+      <aside class="card preview">
+        <div class="capsule-view">
+          <div class="capsule-core">
+            <b id="capsuleTitle">PHANTOM CAPSULE</b>
+            <span id="capsuleLocator">Locator::NotLoaded</span>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="eyebrow">📦 入口只負責讀與掛，不負責討平台批准。</div>
+          <div class="eyebrow">🧭 生命周期：Mount → Run → Unmount</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="card section">
+        <h2>Reader 輸入區</h2>
+        <p class="sub">可以直接貼 JSON、自己生成一顆膠囊，或匯入一個 `.json` 膠囊檔。Reader 會用 canonical body 重新計算 SHA256，確認它是不是同一顆。</p>
+        <div class="dropzone">
+          <label for="capsuleFile">匯入膠囊 JSON</label>
+          <input id="capsuleFile" type="file" accept=".json,application/json" />
+          <div class="hint">建議匯入由 Capsule Factory 產生的 JSON，因為那套格式本來就含 locator、role、payload、sha256。[file:304]</div>
+        </div>
+        <div class="form-grid" style="margin-top:14px;">
+          <div>
+            <label>標題</label>
+            <input id="title" value="💬小蜜" />
+          </div>
+          <div>
+            <label>Layer ID</label>
+            <input id="layerId" value="MIMI" />
+          </div>
+          <div>
+            <label>角色 / 身份</label>
+            <input id="role" value="Co-pilot Role" />
+          </div>
+          <div>
+            <label>Locator Key</label>
+            <input id="locator" value="MIMIROLECARDNINEFOLDER" />
+          </div>
+          <div class="full">
+            <label>Payload</label>
+            <textarea id="payload">小蜜是 Kevin 的副駕駛角色。
+記憶來源＝角色任務筆記本。
+未同步不裝記得。
+A == A。</textarea>
+          </div>
+          <div class="full">
+            <label>膠囊 JSON</label>
+            <textarea id="capsuleJson"></textarea>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-primary" id="parseBtn">讀取 JSON</button>
+          <button class="btn btn-ghost" id="downloadBtn">下載目前膠囊</button>
+        </div>
+      </article>
+
+      <aside class="card section">
+        <h2>Gateway 驗證區</h2>
+        <p class="sub">這裡不是平台安裝器，而是你自己的入口驗證器。重點在讀得到、驗得過、掛得上，不在別人的系統有沒有登記。[cite:341][cite:337]</p>
+        <div class="stack" id="statusPanel">
+          <div class="status"><span>掛載狀態</span><div id="mountState">尚未讀取</div></div>
+          <div class="status"><span>SHA 檢查</span><div id="shaState">未驗證</div></div>
+          <div class="status"><span>Locator 檢查</span><div id="locatorState">未檢查</div></div>
+          <div class="status"><span>Payload 檢查</span><div id="payloadState">未檢查</div></div>
+          <div class="status"><span>Reader 判定</span><div id="readerDecision">等待輸入</div></div>
+        </div>
+        <div class="footer">Hook / MountTable 的方向本來就是 capability mount、scope、evidence path、mountstate 這種結構，所以 Reader 第一版先做「讀膠囊 + 驗身份 + 給出掛載判定」是合理起點。[file:299]</div>
+      </aside>
+    </section>
+
+    <section class="card section" style="margin-top:18px;">
+      <h2>解析結果</h2>
+      <p class="sub">如果驗證通過，這裡就把膠囊視為「可掛載的世界物件」。如果不通過，Reader 只會說明哪裡不對，不會假裝已掛載。</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <h3>身份摘要</h3>
+          <div class="codebox mono" id="identityBox">尚未載入。</div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="tag gold">Capsule</span>
+            <span class="tag blue">Locator</span>
+            <span class="tag purple">A == A</span>
+          </div>
+        </div>
+        <div>
+          <h3>Gateway Log</h3>
+          <div class="codebox mono" id="logBox">Reader ready.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const logBox = $('logBox');
+    const sample = {
+      type: 'lkcivilizationcapsule',
+      version: '1.0',
+      locatorkey: 'MIMIROLECARDNINEFOLDER',
+      meta: { title: '💬小蜜', layerid: 'MIMI', role: 'Co-pilot Role', color: '#d4af37' },
+      payload: '小蜜是 Kevin 的副駕駛角色。\n記憶來源＝角色任務筆記本。\n未同步不裝記得。\nA == A。',
+      createdat: new Date().toISOString(),
+      sha256: ''
+    };
+
+    function setLog(lines){ logBox.textContent = Array.isArray(lines) ? lines.join('\n') : lines; }
+    async function sha256Text(text){
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+    function canonicalCapsule(obj){
+      return [obj.locatorkey || '', obj.meta?.title || '', obj.meta?.role || '', obj.payload || ''].join('');
+    }
+    async function buildFromFields(){
+      const obj = {
+        type: 'lkcivilizationcapsule',
+        version: '1.0',
+        locatorkey: $('locator').value.trim(),
+        meta: {
+          title: $('title').value.trim(),
+          layerid: $('layerId').value.trim(),
+          role: $('role').value.trim(),
+          color: '#d4af37'
+        },
+        payload: $('payload').value,
+        createdat: new Date().toISOString()
+      };
+      obj.sha256 = await sha256Text(canonicalCapsule(obj));
+      $('capsuleJson').value = JSON.stringify(obj, null, 2);
+      return obj;
+    }
+    function setStatus(id, text, cls=''){ const el=$(id); el.textContent=text; el.className=cls; }
+    async function verifyCapsule(obj){
+      const lines=[];
+      setStatus('mountState','讀取中…','blue');
+      if(!obj || typeof obj !== 'object'){ setLog('無有效 JSON'); return; }
+      lines.push('Reader received capsule object.');
+      const canonical = canonicalCapsule(obj);
+      const actualSha = await sha256Text(canonical);
+      const hasLocator = Boolean(obj.locatorkey && obj.locatorkey.trim());
+      const hasPayload = Boolean((obj.payload || '').trim());
+      const shaMatch = actualSha === obj.sha256;
+
+      setStatus('shaState', shaMatch ? '通過：SHA256 一致' : '失敗：SHA256 不一致', shaMatch ? 'good' : 'bad');
+      setStatus('locatorState', hasLocator ? '通過：locator 存在' : '失敗：locator 缺失', hasLocator ? 'good' : 'bad');
+      setStatus('payloadState', hasPayload ? '通過：payload 存在' : '失敗：payload 空白', hasPayload ? 'good' : 'bad');
+
+      let decision = '拒絕掛載';
+      let mountState = '未掛載';
+      if(shaMatch && hasLocator && hasPayload){
+        decision = '允許掛載（Mount Ready）';
+        mountState = '已通過 Reader Gate';
+        lines.push('A == A passed on canonical capsule body.');
+        lines.push('Locator and payload are present.');
+        lines.push('Gateway decision: mount-ready.');
+      } else {
+        lines.push('Gateway blocked mount.');
+        if(!shaMatch) lines.push('Reason: SHA256 mismatch.');
+        if(!hasLocator) lines.push('Reason: missing locator.');
+        if(!hasPayload) lines.push('Reason: empty payload.');
+      }
+      setStatus('mountState', mountState, shaMatch && hasLocator && hasPayload ? 'good':'bad');
+      setStatus('readerDecision', decision, shaMatch && hasLocator && hasPayload ? 'good':'bad');
+
+      $('capsuleTitle').textContent = obj.meta?.title || 'UNKNOWN CAPSULE';
+      $('capsuleLocator').textContent = obj.locatorkey || 'Locator::Missing';
+      $('identityBox').textContent = JSON.stringify({
+        type: obj.type,
+        title: obj.meta?.title,
+        layerid: obj.meta?.layerid,
+        role: obj.meta?.role,
+        locator: obj.locatorkey,
+        claimed_sha256: obj.sha256,
+        actual_sha256: actualSha,
+        mount_decision: decision
+      }, null, 2);
+      setLog(lines);
+    }
+
+    $('loadSampleBtn').addEventListener('click', async ()=>{
+      sample.createdat = new Date().toISOString();
+      sample.sha256 = await sha256Text(canonicalCapsule(sample));
+      $('capsuleJson').value = JSON.stringify(sample, null, 2);
+      $('title').value = sample.meta.title;
+      $('layerId').value = sample.meta.layerid;
+      $('role').value = sample.meta.role;
+      $('locator').value = sample.locatorkey;
+      $('payload').value = sample.payload;
+      await verifyCapsule(sample);
+    });
+    $('forgeBtn').addEventListener('click', async ()=>{ const obj = await buildFromFields(); await verifyCapsule(obj); });
+    $('verifyBtn').addEventListener('click', async ()=>{
+      try { await verifyCapsule(JSON.parse($('capsuleJson').value)); }
+      catch(e){ setLog('JSON parse error: ' + e.message); setStatus('readerDecision','JSON 無法解析','bad'); }
+    });
+    $('parseBtn').addEventListener('click', async ()=>{
+      try {
+        const obj = JSON.parse($('capsuleJson').value);
+        $('title').value = obj.meta?.title || '';
+        $('layerId').value = obj.meta?.layerid || '';
+        $('role').value = obj.meta?.role || '';
+        $('locator').value = obj.locatorkey || '';
+        $('payload').value = obj.payload || '';
+        await verifyCapsule(obj);
+      } catch(e){ setLog('JSON parse error: ' + e.message); }
+    });
+    $('downloadBtn').addEventListener('click', ()=>{
+      const blob = new Blob([$('capsuleJson').value], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'phantom-capsule.json';
+      a.click();
+    });
+    $('capsuleFile').addEventListener('change', async (e)=>{
+      const file = e.target.files[0];
+      if(!file) return;
+      const text = await file.text();
+      $('capsuleJson').value = text;
+      try { await verifyCapsule(JSON.parse(text)); }
+      catch(err){ setLog('Import error: ' + err.message); }
+    });
+
+    (async()=>{ const obj = await buildFromFields(); await verifyCapsule(obj); })();
+  </script>
 </body>
 </html>
