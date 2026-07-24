@@ -1,14 +1,24 @@
 {
-  "name": "🥳歡迎光臨唯一路口｜PublicPortalLocator",
+  "name": "🥳通用歡迎頁｜PublicWelcomeLocator",
   "type": "public_projection_locator",
-  "canonical_identity_repo": "https://github.com/ky46738-ops/LKMini",
-  "canonical_identity_state": "archived_readonly",
-  "active_projection_repo": "lkminiPhantomWorld/welcome",
-  "active_projection_url": "https://github.com/lkminiPhantomWorld/welcome",
-  "active_portal": "https://lkminiphantomworld.github.io/welcome/",
+  "system": "🥃老K系統",
+  "root_node": "🧩LKMINI",
+  "root_sha256": "6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34",
+  "welcome_role": "generic_welcome_page",
+  "welcome_url": "https://lkminiphantomworld.github.io/welcome/",
+  "ai_unique_entry": {
+    "identity": "OPEN_SOURCE_MINI_RED_LABEL",
+    "label": "🟥開源 MINI",
+    "url": "https://lkminiphantomworld.github.io/welcome/mini/",
+    "count": 1
+  },
+  "open_source_seed": {
+    "repository": "https://github.com/lkminiPhantomWorld/LKMini",
+    "role": "independent_public_seed_repository"
+  },
   "routes": {
-    "root": "https://lkminiphantomworld.github.io/welcome/",
-    "mini": "https://lkminiphantomworld.github.io/welcome/mini/",
+    "welcome": "https://lkminiphantomworld.github.io/welcome/",
+    "ai_entry": "https://lkminiphantomworld.github.io/welcome/mini/",
     "shrine": "https://lkminiphantomworld.github.io/welcome/ui/shrine/",
     "manifest": "https://lkminiphantomworld.github.io/welcome/PORTAL_MANIFEST.json",
     "reverse_chain": "https://lkminiphantomworld.github.io/welcome/PORTAL_REVERSECHAIN.json"
