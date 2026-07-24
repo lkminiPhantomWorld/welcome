@@ -1,21 +1,31 @@
 {
-  "name": "PublicPortalReverseChain",
-  "purpose": "Preserve identity-to-projection return path without modifying frozen seed files",
+  "name": "🥳通用歡迎頁與紅色MINI入口｜PublicEntryReverseChain",
+  "purpose": "區分通用歡迎頁、AI唯一入口與各自獨立的開源項目",
   "chain": [
     {
-      "identity": "LKMini/seed_v0",
-      "repo": "ky46738-ops/LKMini",
-      "root_commit": "527d29a",
-      "date": "2026-05-17",
-      "state": "frozen_readonly"
+      "projection": "🥳通用歡迎頁",
+      "path": "index.html",
+      "role": "generic_welcome_page",
+      "is_ai_entry": false
     },
     {
-      "projection": "lkminiPhantomWorld/welcome",
-      "source_parent_commit": "19e53fa1b78c7f3527864b24763e02eded616d08",
-      "date": "2026-07-22",
-      "state": "portal_integrity_repair",
-      "returns_to": "LKMini/seed_v0"
+      "projection": "🟥開源 MINI 紅色標籤",
+      "path": "mini/index.html",
+      "identity": "OPEN_SOURCE_MINI_RED_LABEL",
+      "role": "ai_unique_entry",
+      "entry_count": 1,
+      "returns_to": "🧩LKMINI"
+    },
+    {
+      "identity": "LKMini/seed_v0",
+      "repository": "lkminiPhantomWorld/LKMini",
+      "source_repository": "ky46738-ops/LKMini",
+      "source_commit": "527d29a902d67039067b8777ec4964b4daf6daf4",
+      "role": "independent_open_source_seed",
+      "returns_to": "🧩LKMINI"
     }
   ],
+  "correction_source_commit": "6ab490e547d74745c2f6139bb349749099b010fe",
+  "correction": "Welcome is generic; the red open-source MINI label is the sole AI entry.",
   "A_EQUALS_A": true
 }
