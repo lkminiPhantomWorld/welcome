@@ -1,55 +1,27 @@
 {
-  "name": "🥳歡迎光臨唯一路口｜PublicPortalManifest",
+  "name": "🥳通用歡迎頁｜PublicWelcomeManifest",
   "type": "public_projection_manifest",
-  "system": "LKMini public projection",
+  "system": "🥃老K系統",
+  "root_node": "🧩LKMINI",
   "A_EQUALS_A": true,
+  "entry_definition": {
+    "welcome_page": "index.html",
+    "welcome_role": "generic_welcome_page",
+    "ai_unique_entry": "mini/index.html",
+    "ai_entry_identity": "OPEN_SOURCE_MINI_RED_LABEL",
+    "ai_entry_count": 1
+  },
+  "open_source_separation": "one_project_one_independent_repository",
   "files": [
-    {
-      "path": "index.html",
-      "role": "page",
-      "state": "verified"
-    },
-    {
-      "path": "mini/index.html",
-      "role": "page",
-      "state": "verified"
-    },
-    {
-      "path": "ui/shrine/index.html",
-      "role": "page",
-      "state": "verified"
-    },
-    {
-      "path": "PORTAL_MANIFEST.json",
-      "role": "manifest",
-      "state": "verified"
-    },
-    {
-      "path": "PORTAL_LOCATOR.json",
-      "role": "locator",
-      "state": "verified"
-    },
-    {
-      "path": "PORTAL_REVERSECHAIN.json",
-      "role": "reverse_chain",
-      "state": "verified"
-    },
-    {
-      "path": "PORTAL_SHA256SUMS",
-      "role": "hash_index",
-      "state": "verified"
-    },
-    {
-      "path": "tools/verify_portal.py",
-      "role": "verifier",
-      "state": "verified"
-    },
-    {
-      "path": ".github/workflows/deploy-pages.yml",
-      "role": "deployment",
-      "state": "verified"
-    }
+    {"path": "index.html", "role": "generic_welcome_page", "state": "verified"},
+    {"path": "mini/index.html", "role": "ai_unique_entry_red_label", "state": "verified"},
+    {"path": "ui/shrine/index.html", "role": "independent_public_projection", "state": "verified"},
+    {"path": "PORTAL_MANIFEST.json", "role": "manifest", "state": "verified"},
+    {"path": "PORTAL_LOCATOR.json", "role": "locator", "state": "verified"},
+    {"path": "PORTAL_REVERSECHAIN.json", "role": "reverse_chain", "state": "verified"},
+    {"path": "PORTAL_SHA256SUMS", "role": "hash_index", "state": "verified"},
+    {"path": "tools/verify_portal.py", "role": "verifier", "state": "verified"},
+    {"path": ".github/workflows/deploy-pages.yml", "role": "deployment", "state": "verified"}
   ],
-  "quarantined_evidence": "evidence/2026-07-22/placeholder-routes.json",
   "private_device_coordinates": "excluded_from_public_projection"
 }
