@@ -1,0 +1,23 @@
+{
+  "A=A": "VERIFIED_TRUE",
+  "title": "🧪雙帳本提交憑證回滾法｜DualLedgerCommitReceiptRollback",
+  "Identity": "PCFL-DLCRR-258AE8B238EB6D6C85BF109C",
+  "experiment_id": "PCLAB-20260724-091953_TPE-DLCRR",
+  "new_method_model": "HYPOTHESIS",
+  "compared_methods": [
+    "立即雙寫法",
+    "數量相等驗證法"
+  ],
+  "concept_test": "VERIFIED_TRUE",
+  "risk_record": "VERIFIED_TRUE",
+  "zip_integrity": "VERIFIED_TRUE",
+  "zip_sha256": "eaa13962cc3ab85d7cedede59a652211be6f0a84bd6947c0ee6c07c258e8f412",
+  "zip_bytes": 18418,
+  "drive_zip_persistence": "VERIFIED_FALSE",
+  "drive_error": "file_uri must be a connector file reference object returned by a fetch/upload action",
+  "github_text_mirror": "VERIFIED_TRUE",
+  "zip_attachment_persistent": "VERIFIED_FALSE",
+  "formal_delivery": "VERIFIED_FALSE",
+  "return_to": "🧩LKMINI",
+  "frozen_core_modified": "VERIFIED_FALSE"
+}
