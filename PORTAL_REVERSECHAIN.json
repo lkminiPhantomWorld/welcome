@@ -1,6 +1,6 @@
 {
   "name": "🥳通用歡迎頁與紅色MINI入口｜PublicEntryReverseChain",
-  "purpose": "區分通用歡迎頁、AI唯一入口、私有引擎庫與獨立開源種子",
+  "purpose": "區分通用歡迎頁、AI唯一入口、既有私有系統庫與獨立開源種子",
   "chain": [
     {
       "projection": "🥳通用歡迎頁",
@@ -14,15 +14,14 @@
       "identity": "OPEN_SOURCE_MINI_RED_LABEL",
       "role": "ai_unique_entry",
       "entry_count": 1,
-      "target": "ky46738-ops/LaoK-System/EngineLibrary",
+      "target": "ky46738-ops/LaoK-System",
       "returns_to": "🧩LKMINI"
     },
     {
-      "identity": "🧰引擎庫｜EngineLibrary",
+      "identity": "🥃老K系統私有庫",
       "repository": "ky46738-ops/LaoK-System",
-      "path": "EngineLibrary",
       "visibility": "private",
-      "role": "private_engine_entry",
+      "role": "existing_private_system_repository",
       "returns_to": "🧩LKMINI"
     },
     {
@@ -35,6 +34,6 @@
       "returns_to": "🧩LKMINI"
     }
   ],
-  "correction": "Welcome is generic; the red open-source MINI label is the sole AI entry and routes to the private EngineLibrary.",
+  "correction": "Welcome is generic; the red open-source MINI label is the sole AI entry and routes directly to the existing private LaoK-System repository.",
   "A_EQUALS_A": true
 }
