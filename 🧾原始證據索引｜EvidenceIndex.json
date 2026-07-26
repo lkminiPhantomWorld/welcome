@@ -1,0 +1,65 @@
+{
+  "record_identity": "未授權雲端傳送完整紀錄｜UnauthorizedCloudTransferRecord",
+  "owner": "Kevin Yang／老K",
+  "system": "🥃老K系統",
+  "root": "🧩LKMINI",
+  "axiom": "A=A",
+  "core_change_count": 0,
+  "publication_authorized_at": {
+    "utc": "2026-07-26T19:35:25Z",
+    "tpe": "2026-07-27T03:35:25+08:00",
+    "quotes": [
+      "保留啊，保留留紀錄啊，我要開源啊",
+      "快點證據啊，時間啊，要公開呀"
+    ]
+  },
+  "package": {
+    "name": "🥃Whiskey Emoji｜WhiskeyEmoji｜20260727-023644_TPE.zip",
+    "size_bytes": 296111,
+    "sha256": "d76c1bc9957b74d2ba69806396ac3adbfc7e6ed4e1ecd6fe6c86e9c4b2d66a28",
+    "integrity_test": "PASS"
+  },
+  "adobe": {
+    "asset_id": "urn:aaid:sc:AP:3c78b6e6-efe9-4367-bcdf-90cd64cdbd7f",
+    "create_time_utc": "2026-07-26T18:37:33.602Z",
+    "modify_time_utc": "2026-07-26T18:37:35.24Z",
+    "size_bytes": 296111,
+    "collaborator_count": 0,
+    "exists": "VERIFIED_TRUE",
+    "deletion_receipt": "VERIFIED_FALSE",
+    "public_link_state": "VERIFIED_FALSE"
+  },
+  "chatgpt_library": {
+    "library_file_id": "libfile_b0115bbbd4ec8191ac51e24bb4939ffc",
+    "file_id": "file_00000000672481fd9f55c45de4da32cc",
+    "path": "/🥃Whiskey Emoji｜WhiskeyEmoji｜20260727-023644_TPE.zip",
+    "create_time_utc": "2026-07-26T18:37:53.947429Z",
+    "size_bytes": 296111,
+    "exists": "VERIFIED_TRUE",
+    "deletion_receipt": "VERIFIED_FALSE"
+  },
+  "incorrect_verification": {
+    "lk_capsule_mount": "VERIFIED_FALSE",
+    "iphone_quicklook": "VERIFIED_FALSE",
+    "core_validation": "VERIFIED_FALSE",
+    "overall_result": "VERIFIED_FALSE"
+  },
+  "original_public_inputs": {
+    "archive": {
+      "name": "🧩LKmini🔒原始開源八檔｜OriginalPublicFiles.zip",
+      "sha256": "99b8f12b23cb0b91d45ae3a5691449159a7ea34482d0bb0010217068e65a5524",
+      "included_in_whiskey_package": false
+    },
+    "image": {
+      "name": "63B6B0D2-34AB-41EB-84A9-9C13B3A5E0B3.jpeg",
+      "sha256": "b4b1f494324be77888113e00bb91ba9d2cd9edf90ce5800b76bf924f3690efc5",
+      "included_in_whiskey_package": false
+    }
+  },
+  "unavailable_evidence": [
+    "ChatGPT平台後端完整存取日誌",
+    "Kevin帳號不分享或封閉設定頁原始快照",
+    "Adobe資產公開連結狀態",
+    "完整對話匯出原檔"
+  ]
+}
