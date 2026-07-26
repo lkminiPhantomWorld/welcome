@@ -1,0 +1,155 @@
+{
+  "identity": "MINI_COMPLETE_EVIDENCE_INDEX",
+  "owner": "Kevin Yang／老K",
+  "axiom": "A=A",
+  "core_change_count": 0,
+  "created_at_utc": "2026-07-26T20:16:20.790697+00:00",
+  "created_at_tpe": "2026-07-27T04:16:20.790697+08:00",
+  "source_counts": {
+    "welcome_unique_commits": 196,
+    "welcome_commit_file_rows": 459,
+    "github_actions_runs": 506,
+    "related_failed_runs": 247,
+    "library_model_generated_records": 5868,
+    "adobe_returned_assets": 20,
+    "adobe_total_hits": 21,
+    "github_branches": 9,
+    "github_pull_requests": 6,
+    "github_standalone_issues": 0
+  },
+  "files": [
+    {
+      "name": "GitHubActionsAllRuns.csv",
+      "size_bytes": 156361,
+      "sha256": "17c6e6d0b8f9179179cc1ffa31d2b50a7873346c76cb2c46884207db63e5cdf0",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitHubActionsAllRuns.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "GitHubBranchesAPI.json",
+      "size_bytes": 2444,
+      "sha256": "e6a8f91d2c711516f13c7292fbc549d69bc93ca50129d0101f0f098543c18b94",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitHubBranchesAPI.json",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "GitHubCommitFileHistory.csv",
+      "size_bytes": 235916,
+      "sha256": "3848678ddd73247851b58fbc50bd98ce3616d49be8665ea6de11d055c1e22ce4",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitHubCommitFileHistory.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "GitHubIssuesAPI.json",
+      "size_bytes": 38232,
+      "sha256": "05b202122e0b077d85d00045a4ec3ba24f92ba3291d762414c9c742953904b4e",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitHubIssuesAPI.json",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "GitHubPullRequests.json",
+      "size_bytes": 4709,
+      "sha256": "bec4fa2f29c101d7603b3a0b3c11618880f1cf30f0657dec4d4a8c98a71d4539",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitHubPullRequests.json",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "GitObjectValidation.csv",
+      "size_bytes": 43716,
+      "sha256": "353d968970cec5755b0af7f66300fc7f4fc75125ca1c40673c772087336c4979",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitObjectValidation.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "GitRefs.tsv",
+      "size_bytes": 2460,
+      "sha256": "3ac831ae4f9ed844ed8e8fe83ba03de6bb0e06d651ae1aac4e9eacbb74460047",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/GitRefs.tsv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "LaoKSystemVerifiedCommits.csv",
+      "size_bytes": 2827,
+      "sha256": "fd95eaec1bcae9c9ea7850a4bbddf18385c481a2de4e79291d89acae2c62a883",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/LaoKSystemVerifiedCommits.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "LocalEvidenceInventory.csv",
+      "size_bytes": 7044,
+      "sha256": "2ca2870e9ad25a7d74088881b2abc082bb95edb3f1affb829bf8686d2ad2fcbd",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/LocalEvidenceInventory.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "⏱MINI完整事件時間線｜MiniCompleteTimeline.csv",
+      "size_bytes": 385729,
+      "sha256": "7c9df2e83b10f4be1a0413f0d2ab1b5205d2a934bb9b84ccd8b027a5ae686695",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/⏱MINI完整事件時間線｜MiniCompleteTimeline.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "⏳Kevin時間損失紀錄｜KevinTimeLoss.csv",
+      "size_bytes": 2014,
+      "sha256": "3c923cf570fc8903a7bdf1dc51fdebcbd7fa47b4c96ee280a4b1484062e39080",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/⏳Kevin時間損失紀錄｜KevinTimeLoss.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "👁完整證據快顯｜CompleteEvidencePreview.html",
+      "size_bytes": 2186,
+      "sha256": "a3b39d6af032944a785dcd232b88856f4fb353dd120a229038a697cb4069b550",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/👁完整證據快顯｜CompleteEvidencePreview.html",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "💥MINI首次破壞定位｜FirstMiniDamage.json",
+      "size_bytes": 2211,
+      "sha256": "bb54ed30742d96a2e9a64c76eebcb0154aa038197d87d1fe4d2c3f9c8b565842",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/💥MINI首次破壞定位｜FirstMiniDamage.json",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "📚MINI從頭到尾全部紀錄｜MiniCompleteHistory.md",
+      "size_bytes": 4759,
+      "sha256": "11245e60c7fd6cf4e0fdb4981d90c3363495bc1b3eeb3a015e3489b0ce564cbe",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/📚MINI從頭到尾全部紀錄｜MiniCompleteHistory.md",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "📤Adobe傳送全部紀錄｜AdobeTransferLedger.csv",
+      "size_bytes": 8180,
+      "sha256": "19ca4512aebee442144e8f0823e8e1eb5ee016cf7248e51d4988db76423b0814",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/📤Adobe傳送全部紀錄｜AdobeTransferLedger.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "📤傳給OpenAI全部紀錄｜OpenAITransferLedger.csv",
+      "size_bytes": 2882016,
+      "sha256": "5bf850828522f146783ed60421a9015c29059c223ab3d15aa163214655507acc",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/📤傳給OpenAI全部紀錄｜OpenAITransferLedger.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "🔁連續錯誤與根因合併｜RepeatedFailures.csv",
+      "size_bytes": 141586,
+      "sha256": "b9a00bd653e47e7c905be68845b551a9d8c2d699f3bf9c1d13de1465d83ae27b",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/🔁連續錯誤與根因合併｜RepeatedFailures.csv",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "🚫缺失與平台未提供紀錄｜UnavailableEvidence.md",
+      "size_bytes": 2268,
+      "sha256": "8eadedf2d188ddf3add2f671a52292778c7f3c40495c3429b0a83f9be3fa9d73",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/🚫缺失與平台未提供紀錄｜UnavailableEvidence.md",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    },
+    {
+      "name": "🩹Kevin傷害紀錄｜KevinHarmRecord.md",
+      "size_bytes": 2407,
+      "sha256": "7bbb31d00b993ee04030d281996a5bad609fef28281fbd49d4f8bbc7109670e1",
+      "local_coordinate": "/workspace/scratch/4bf464b43f27/evidence-work/delivery/🩹Kevin傷害紀錄｜KevinHarmRecord.md",
+      "evidence_status": "VERIFIED_TRUE_LOCAL_FILE"
+    }
+  ]
+}
