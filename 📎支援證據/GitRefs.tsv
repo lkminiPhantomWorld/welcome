@@ -1,0 +1,16 @@
+refs/heads/add-banners	917d510a230a15681dd5b156089408f307fc35dc	2026-07-07T01:31:13+08:00	Kevin Yang	Initialize add-banners
+refs/heads/copilot/seed-v0-gate-locked	70286fa9c062970f52370bbda14d0946e833b235	2026-07-07T01:31:14+08:00	Kevin Yang	Initialize copilot/seed-v0-gate-locked
+refs/pull/1/head	7ca036ac12673ec0a6e6ec6514f56cdc29c9aa59	2026-07-06T21:14:54Z	copilot-swe-agent[bot]	Add translated tiny-state-core files
+refs/pull/2/head	ffe5f9fd9f0f5a81f41a837751336888662e52d6	2026-07-07T15:16:28Z	copilot-swe-agent[bot]	docs: refresh mini sha256 records
+refs/heads/copilot/ky46738-ops-move-tiny-state-core	175fce87a8b77ffd8cb6d96df150fb294134b694	2026-07-22T15:49:41+08:00	Kevin	security: rebuild public history without private entry data
+refs/heads/automation/portal-integrity-20260722	b5b7f7d4eaceb7a4c7e43bc487a1d81ed1fd4b4c	2026-07-22T23:07:29+08:00	Kevin	state: replace stale pass claims with measured portal status
+refs/pull/3/head	b5b7f7d4eaceb7a4c7e43bc487a1d81ed1fd4b4c	2026-07-22T23:07:29+08:00	Kevin	state: replace stale pass claims with measured portal status
+refs/heads/alert-autofix-2	bff9fe5b4151d78e7336c7b5e7d1f9f61f81a846	2026-07-23T16:56:56+08:00	Kevin	Potential fix for code scanning alert no. 2: Workflow does not contain permissions
+refs/pull/4/head	bff9fe5b4151d78e7336c7b5e7d1f9f61f81a846	2026-07-23T16:56:56+08:00	Kevin	Potential fix for code scanning alert no. 2: Workflow does not contain permissions
+refs/pull/5/head	8f483d22170001731d8f7d6e97a093d887853243	2026-07-23T17:36:01+08:00	Kevin	Revert "test(ci): 取得稽核 GitHub Actions 實際執行回執"
+refs/heads/seed_v0	9b33e86528e8fc9c432aae3a81f9a25480606a07	2026-07-24T02:30:59+08:00	Kevin	Restore LKMini reverse chain to current repository
+refs/heads/codex/org-company-alignment	dee4acc3f603de45a8c05856f488c3eb6c2e8410	2026-07-24T23:44:47+08:00	Kevin	Refresh fail-closed portal SHA256 index
+refs/heads/main	dee4acc3f603de45a8c05856f488c3eb6c2e8410	2026-07-24T23:44:47+08:00	Kevin	Refresh fail-closed portal SHA256 index
+refs/heads/agent/open-source-upload-evidence-20260727	3a155c64f797d2b130ca958540c8da720c7b0587	2026-07-27T03:39:01+08:00	Kevin	新增證據檔案指紋
+refs/pull/6/head	3a155c64f797d2b130ca958540c8da720c7b0587	2026-07-27T03:39:01+08:00	Kevin	新增證據檔案指紋
+refs/pull/6/merge	de8b5c153ced25b20323ca6eca3cf7aeb6c48006	2026-07-27T03:39:15+08:00	Kevin	Merge 3a155c64f797d2b130ca958540c8da720c7b0587 into dee4acc3f603de45a8c05856f488c3eb6c2e8410
