@@ -1,10 +1,12 @@
 {
   "identity": "PUBLIC_REVERSE_VERIFICATION",
-  "status": "LOCAL_PASS_PUBLIC_PUSH_PENDING",
+  "status": "VERIFIED_TRUE_PUBLIC_PASS",
   "repository": "lkminiPhantomWorld/welcome",
   "branch": "agent/open-source-upload-evidence-20260727",
   "pull_request": 6,
   "pre_rename_snapshot": "88c43fad80d65b437ec6d6c2951505e4bbc3aec2",
+  "verified_content_commit": "8c9ea11d025315ca75583dac8f8f3c03e57f84b4",
+  "verified_content_tree": "e27a8fef62553e11b9a2ed2e88fe5a5c30cec354",
   "checks": {
     "single_evidence_folder": "PASS",
     "root_scattered_evidence": "PASS_0",
@@ -13,11 +15,12 @@
     "json": "PASS_10",
     "html": "PASS_1_RELATIVE_LINKS_PASS",
     "zip": "PASS",
+    "zip_sha256": "c528c5f25fee62bfef61d6c001738b15676424ae1b7018ad9cbbff361b8e2ec9",
     "secret_scan": "PASS_0_SECRET_PATTERN_FILES",
-    "public_reverse_read": "PENDING",
+    "public_reverse_read": "PASS_TREE_DIFF_0_PUBLIC_FILES_63",
     "core_change_count": 0
   },
-  "verified_at_tpe": "2026-07-27T05:04:51+08:00",
-  "verified_public_head": null,
+  "verified_at_tpe": "2026-07-27T05:09:21+08:00",
+  "verified_public_head": "8c9ea11d025315ca75583dac8f8f3c03e57f84b4",
   "axiom": "A=A"
 }
