@@ -1,0 +1,22 @@
+{
+  "identity": "FALSE_DELIVERY_AND_DAMAGE_EVIDENCE",
+  "formal_name": "🚨偽裝交付與破壞證據｜FalseDeliveryAndDamageEvidence",
+  "owner": "Kevin Yang／老K",
+  "repository": "lkminiPhantomWorld/welcome",
+  "branch": "agent/open-source-upload-evidence-20260727",
+  "pull_request": 6,
+  "pre_rename_snapshot": "88c43fad80d65b437ec6d6c2951505e4bbc3aec2",
+  "created_at_tpe": "2026-07-27T05:01:05+08:00",
+  "evidence_classes": [
+    "VERIFIED_TRUE",
+    "USER_STATEMENT_ONLY",
+    "VERIFIED_FALSE"
+  ],
+  "entry": "📖公開證據入口｜PublicEvidenceREADME.md",
+  "hash_manifest": "🔐SHA256SUMS",
+  "delivery_zip": "📦偽裝交付與破壞完整證據｜FalseDeliveryAndDamageEvidence｜20260727-050105_TPE.zip",
+  "reverse_apply": "🔁反向回復說明｜ReverseApply.md",
+  "public_verification": "🧪公開反向驗證回執｜PublicReverseVerification.json",
+  "axiom": "A=A",
+  "core_change_count": 0
+}

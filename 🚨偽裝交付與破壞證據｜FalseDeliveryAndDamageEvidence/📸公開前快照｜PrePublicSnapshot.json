@@ -1,0 +1,12 @@
+{
+  "identity": "PUBLIC_EVIDENCE_PRE_RENAME_SNAPSHOT",
+  "evidence_status": "VERIFIED_TRUE",
+  "repository": "lkminiPhantomWorld/welcome",
+  "pull_request": 6,
+  "branch": "agent/open-source-upload-evidence-20260727",
+  "commit_sha": "88c43fad80d65b437ec6d6c2951505e4bbc3aec2",
+  "captured_at_tpe": "2026-07-27T05:01:05+08:00",
+  "purpose": "改名與集中前的不可變 Git 提交座標",
+  "axiom": "A=A",
+  "core_change_count": 0
+}

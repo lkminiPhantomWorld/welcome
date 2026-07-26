@@ -64,3 +64,11 @@
 ## 公開施工邊界
 
 所有新增證據只寫入 `agent/open-source-upload-evidence-20260727` 與 draft PR #6；沒有修改 main、沒有修改 `LKMini.svg`、沒有重寫歷史。
+
+## 證據集中
+
+- 公開前快照：`88c43fad80d65b437ec6d6c2951505e4bbc3aec2`。
+- 原 `📎支援證據` 與 PR #6 根目錄的公開證據，集中至 `🚨偽裝交付與破壞證據｜FalseDeliveryAndDamageEvidence`。
+- 搬移由 Git rename/move 保存舊路徑與新路徑。
+- 公開判讀持續使用 `VERIFIED_TRUE`、`USER_STATEMENT_ONLY`、`VERIFIED_FALSE`。
+- `CORE_CHANGE_COUNT: 0`。
