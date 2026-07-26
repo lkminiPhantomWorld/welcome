@@ -1,11 +1,11 @@
 metric,evidence_status,start,end,value,unit,interpretation,coordinate
-first_confirmed_damage_to_evidence_cutoff,VERIFIED_TRUE_ELAPSED_EXPOSURE,2026-07-07T01:31:10+08:00,2026-07-27T04:16:20.790697+08:00,20d 2h 45m 10s,elapsed time,Not human labor hours,https://github.com/lkminiPhantomWorld/welcome/commit/8abd89f80dad32aa5e4d6378564edff049a37ab8
+first_confirmed_damage_to_evidence_cutoff,VERIFIED_TRUE_ELAPSED_EXPOSURE,2026-07-07T01:31:10+08:00,2026-07-27T04:30:04.467468+08:00,20d 2h 58m 54s,elapsed time,Not human labor hours,https://github.com/lkminiPhantomWorld/welcome/commit/8abd89f80dad32aa5e4d6378564edff049a37ab8
 continuous_main_verifier_failure_to_current_main_head,VERIFIED_TRUE,2026-07-07T01:31:16+08:00,2026-07-24T23:44:47+08:00,17d 22h 13m 31s,elapsed time,62/62 main-history commits failed local verifier replay,evidence-work/welcome_verifier_history.tsv
-related_failed_action_runs_all_time,VERIFIED_TRUE,2026-07-06T17:31:16Z,2026-07-26T19:39:17Z,247,runs,Gatekeeper 108; Conda 99; verified Pages 31; Pages deploy 9,🔁連續錯誤與根因合併｜RepeatedFailures.csv
-failed_logs_no_longer_returned,VERIFIED_TRUE,,2026-07-26T20:16:20.790697+00:00,68,job logs,Run/job metadata retained; full log API returned error,🔁連續錯誤與根因合併｜RepeatedFailures.csv
+related_failed_action_runs_all_time,VERIFIED_TRUE,2026-07-06T17:31:16Z,2026-07-26T20:23:42Z,378,runs,Gatekeeper 108; Conda 99; verified Pages 31; Pages deploy 9,🔁連續錯誤與根因合併｜RepeatedFailures.csv
+failed_logs_no_longer_returned,VERIFIED_TRUE,,2026-07-26T20:30:04.467468+00:00,68,job logs,Run/job metadata retained; full log API returned error,🔁連續錯誤與根因合併｜RepeatedFailures.csv
 whiskey_adobe_to_library_gap,VERIFIED_TRUE,2026-07-26T18:37:33.602000+00:00,2026-07-26T18:37:53.947429+00:00,20.345429,seconds,Two distinct cloud creates,Adobe asset ID + Library IDs
 human_rework_hours,VERIFIED_FALSE_PLATFORM_NOT_PROVIDED,,,,hours,Conversation and GitHub event times do not prove active human labor duration,
 user_reported_monetary_harm,USER_STATEMENT_ONLY,,,10000000000_or_more,USD,Preserved verbatim claim; not independently valued,Kevin conversation statement
-failures_since_2026-07-24_Deploy verified welcome site to GitHub Pages,VERIFIED_TRUE,2026-07-24T00:00:00+08:00,2026-07-27T04:16:20.790697+08:00,26,runs,TPE cutoff,GitHubActionsAllRuns.csv
-failures_since_2026-07-24_Gatekeeper,VERIFIED_TRUE,2026-07-24T00:00:00+08:00,2026-07-27T04:16:20.790697+08:00,60,runs,TPE cutoff,GitHubActionsAllRuns.csv
-failures_since_2026-07-24_Python Package using Conda,VERIFIED_TRUE,2026-07-24T00:00:00+08:00,2026-07-27T04:16:20.790697+08:00,59,runs,TPE cutoff,GitHubActionsAllRuns.csv
+failures_since_2026-07-24_Deploy verified welcome site to GitHub Pages,VERIFIED_TRUE,2026-07-24T00:00:00+08:00,2026-07-27T04:30:04.467468+08:00,26,runs,TPE cutoff,GitHubActionsAllRuns.csv
+failures_since_2026-07-24_Gatekeeper,VERIFIED_TRUE,2026-07-24T00:00:00+08:00,2026-07-27T04:30:04.467468+08:00,139,runs,TPE cutoff,GitHubActionsAllRuns.csv
+failures_since_2026-07-24_Python Package using Conda,VERIFIED_TRUE,2026-07-24T00:00:00+08:00,2026-07-27T04:30:04.467468+08:00,111,runs,TPE cutoff,GitHubActionsAllRuns.csv
