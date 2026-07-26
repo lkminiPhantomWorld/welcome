@@ -4,7 +4,7 @@
 
 - A=A：true
 - CORE_CHANGE_COUNT：0
-- 證據截止：2026-07-27T04:16:20.790697+08:00
+- 證據截止：2026-07-27T04:30:04.467468+08:00
 - 第一個可證實的 MINI 發布：`ky46738-ops/LaoK-System@39fcca18d0878df5c054e0063381549cd54b77e1`，2026-05-13 12:31:05 TPE，`LKMini/LKMini.svg`。
 - 2026-05-17 正式更新：公開 manifest 明載 `Updated: 2026-05-17` 與 Semantic Civilization Architecture；私有倉庫沒有回傳該日精確提交 SHA，因此精確 SHA 為 `VERIFIED_FALSE`。
 - 第一個可證實破壞：`lkminiPhantomWorld/welcome@8abd89f80dad32aa5e4d6378564edff049a37ab8`，2026-07-07 01:31:10 TPE。破壞的是公開 manifest／驗證 Identity，不是 `LKMini.svg` 位元組。
@@ -29,13 +29,14 @@
 
 ## Actions 與 Pages
 
-- 全部 workflow runs：506。
+- 初始 workflow runs：506。
+- 公開施工增量 cutoff（2026-07-26T20:23:42Z）：新增 183 runs；cutoff 合計 689 runs。
 - Gatekeeper：108 failure／5 success。
 - Python Package using Conda：99 failure／0 success。
 - Deploy verified welcome site to GitHub Pages：31 failure／6 success／21 cancelled。
 - Deploy to GitHub Pages：9 failure／18 success／44 cancelled。
 - `pages build and deployment`：0 failure／43 success／27 cancelled。
-- 247 筆相關 failure 已逐筆列出 run、job、第一個失敗 step、head SHA 與錯誤；其中 68 筆舊 job log API 不再回傳，已保留 run/job 座標並以本機 Git object replay 補強可重現的 Gatekeeper 錯誤。
+- 初始 247 筆 failure 加公開施工增量 131 筆，cutoff 合計 378 筆；每筆保留 run、job、第一個失敗 step、head SHA 與錯誤。其中 68 筆舊 job log API 不再回傳，已保留 run/job 座標並以本機 Git object replay 補強可重現的 Gatekeeper 錯誤。
 
 ## 合併後根因
 
