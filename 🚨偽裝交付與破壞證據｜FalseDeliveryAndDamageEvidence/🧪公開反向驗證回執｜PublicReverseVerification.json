@@ -7,6 +7,7 @@
   "pre_rename_snapshot": "88c43fad80d65b437ec6d6c2951505e4bbc3aec2",
   "verified_content_commit": "854eac2f042214897ca1d27ae67ded5024dca7e2",
   "verified_content_tree": "0680072d00d39356976ca0e3a3debd55cf2de140",
+  "receipt_excluded_from_hash_manifest": true,
   "checks": {
     "single_evidence_folder": "PASS_1",
     "root_scattered_evidence": "PASS_0",
@@ -18,8 +19,68 @@
     "zip_sha256": "08b3c5854117dd5480381c415d5a5e8846dfe074c9272ed4c5a98c73538b5066",
     "secret_scan": "PASS_0_SECRET_PATTERN_FILES",
     "public_reverse_read": "PASS_TREE_DIFF_0_PUBLIC_FILES_64",
+    "public_direct_zip_download": "PASS",
     "legacy_evidence_folder_removed": "PASS",
     "core_change_count": 0
+  },
+  "execution_errors_resolved": [
+    {
+      "type": "WORKTREE_PATH_RESOLUTION",
+      "error": "fatal: cannot change to evidence-publish-worktree",
+      "impact": "新建工作樹座標錯誤，沒有修改證據內容",
+      "repair": "使用 Git worktree remove 後改掛儲存庫外絕對路徑",
+      "status": "RESOLVED"
+    },
+    {
+      "type": "SECRET_SCAN_COMMAND_QUOTING",
+      "error": "unexpected EOF while looking for matching quote",
+      "impact": "第一次掃描未執行，檔案未變更",
+      "repair": "縮小規則並重新掃描；命中秘密樣式檔案數為 0",
+      "status": "RESOLVED"
+    },
+    {
+      "type": "GIT_TREE_FORMAT",
+      "error": "fatal: bad ls-tree format",
+      "impact": "未建立錯誤 Git tree",
+      "repair": "改用 Git 原生固定輸出重新解析；tree SHA 與本機一致",
+      "status": "RESOLVED"
+    },
+    {
+      "type": "LOCAL_GIT_PUSH_AUTH",
+      "error": "fatal: could not read Username for https://github.com",
+      "impact": "本機提交未直接推送；本機資料完整保留",
+      "repair": "改用已連線 GitHub blob/tree/commit/ref 介面，逐物件 SHA 核對後公開",
+      "status": "RESOLVED"
+    },
+    {
+      "type": "PR_UPDATE_VALIDATION",
+      "error": "GitHub API 422: Fork collab can only be enabled on cross-repo pull requests",
+      "impact": "第一次 PR 說明更新被拒絕，分支內容未受影響",
+      "repair": "移除同儲存庫 PR 不適用欄位後重送成功",
+      "status": "RESOLVED"
+    },
+    {
+      "type": "GIT_QUOTEPATH_COUNT",
+      "error": "中文路徑轉義造成資料夾外檔案誤計為 64",
+      "impact": "只影響第一次顯示數字，不影響 Git tree",
+      "repair": "關閉 core.quotepath 後重算：資料夾內 64、資料夾外 0",
+      "status": "RESOLVED"
+    }
+  ],
+  "current_external_failure": {
+    "status": "ERROR_EXISTING_ROOT_CAUSE",
+    "workflow": "Gatekeeper",
+    "run_id": 30220682418,
+    "job_id": 89842478542,
+    "failed_step": "#3 驗證 LKMini 公開種子",
+    "first_error": "FAIL: 雜湊不一致：tools/verify_lkmini.py",
+    "following_errors": [
+      "PRIVATE_ENGINE @ SECURITY.md",
+      "ENGINE_REGISTRY_PRIVATE @ SECURITY.md",
+      "PRIVATE_ENGINE @ GOVERNANCE.md"
+    ],
+    "run_url": "https://github.com/lkminiPhantomWorld/welcome/actions/runs/30220682418",
+    "scope": "既有 Gatekeeper 根因；本次證據集中、ZIP、公開反向回讀與核心零變更驗證獨立通過"
   },
   "verified_at_tpe": "2026-07-27T05:14:50+08:00",
   "verified_public_head": "854eac2f042214897ca1d27ae67ded5024dca7e2",
