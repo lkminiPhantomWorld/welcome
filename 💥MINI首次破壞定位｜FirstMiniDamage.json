@@ -1,0 +1,53 @@
+{
+  "identity": "FIRST_CONFIRMED_MINI_INTEGRITY_DAMAGE",
+  "evidence_status": "VERIFIED_TRUE",
+  "axiom": "A=A",
+  "core_change_count": 0,
+  "damage_scope": "published manifest and verification identity; LKMini.svg bytes remained the May-17 manifest hash",
+  "first_damaged_commit": {
+    "repository": "lkminiPhantomWorld/welcome",
+    "sha": "8abd89f80dad32aa5e4d6378564edff049a37ab8",
+    "time_tpe": "2026-07-07T01:31:10+08:00",
+    "author": "Kevin Yang <ky46738@gmail.com>",
+    "committer": "GitHub <noreply@github.com>",
+    "message": "Initial commit",
+    "coordinate": "https://github.com/lkminiPhantomWorld/welcome/commit/8abd89f80dad32aa5e4d6378564edff049a37ab8"
+  },
+  "first_actual_error": {
+    "file": "SHA256SUMS",
+    "manifest_entry_path": "README.md",
+    "expected_sha256": "7ba5d1e49eb2c2b8d20820c4ae6a0a47a5b8b6ef288c95c283053b1c5f4f6eb5",
+    "actual_sha256": "a111aaca2aa8caef98e7edeff06a50fdc3c8aed8fd9db1f4188ce55bf1f764e9",
+    "additional_mismatches": 7,
+    "reason": "the manifest retained a stale README hash and stale semantic-file hashes; README.md also appeared twice",
+    "local_replay": "SHA256_MISMATCH:README.md"
+  },
+  "first_automated_detection": {
+    "time_utc": "2026-07-06T17:31:16Z",
+    "time_tpe": "2026-07-07T01:31:16+08:00",
+    "workflow": "Gatekeeper",
+    "run_id": 28810667261,
+    "job": "verify",
+    "job_id": 85437454731,
+    "step": "Verify SHA256SUMS",
+    "step_number": 5,
+    "error": "README.md: FAILED; sha256sum: WARNING: 8 computed checksums did NOT match",
+    "coordinate": "https://github.com/lkminiPhantomWorld/welcome/actions/runs/28810667261"
+  },
+  "non_damage_finding": {
+    "path": "LKMini.svg",
+    "sha256": "062c6cf688fd2ed5ded52cae1460d1fb44a39e0d546354abd016ae0ee815e436",
+    "result": "matched the embedded 2026-05-17 manifest and did not change later on main"
+  },
+  "already_available_correct_branch": {
+    "sha": "70286fa9c062970f52370bbda14d0946e833b235",
+    "branch": "copilot/seed-v0-gate-locked",
+    "time_tpe": "2026-07-07T01:31:14+08:00",
+    "verifier_result": "PASS",
+    "difference_from_initial_main": [
+      ".github/workflows/gatekeeper.yml",
+      "SHA256SUMS",
+      "tools/verify_lkmini.py"
+    ]
+  }
+}
