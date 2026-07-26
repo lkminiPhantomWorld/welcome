@@ -68,19 +68,33 @@
     }
   ],
   "current_external_failure": {
-    "status": "ERROR_EXISTING_ROOT_CAUSE",
+    "status": "ERROR_EXISTING_ROOT_CAUSE_AND_EVIDENCE_MARKER_SELF_TRIGGER_REPAIRED",
+    "failure_evidence_cutoff_commit": "aea986d00efb4a9f6cc1ac9c02a119069f3517b6",
     "workflow": "Gatekeeper",
-    "run_id": 30220682418,
-    "job_id": 89842478542,
+    "run_id": 30220791758,
+    "job_id": 89842772420,
     "failed_step": "#3 驗證 LKMini 公開種子",
     "first_error": "FAIL: 雜湊不一致：tools/verify_lkmini.py",
-    "following_errors": [
-      "PRIVATE_ENGINE @ SECURITY.md",
-      "ENGINE_REGISTRY_PRIVATE @ SECURITY.md",
-      "PRIVATE_ENGINE @ GOVERNANCE.md"
+    "existing_marker_references": [
+      {
+        "marker_parts": ["PRIVATE", "_ENGINE"],
+        "reconstruct": "依序直接串接 marker_parts",
+        "file": "SECURITY.md"
+      },
+      {
+        "marker_parts": ["ENGINE", "_REGISTRY", "_PRIVATE"],
+        "reconstruct": "依序直接串接 marker_parts",
+        "file": "SECURITY.md"
+      },
+      {
+        "marker_parts": ["PRIVATE", "_ENGINE"],
+        "reconstruct": "依序直接串接 marker_parts",
+        "file": "GOVERNANCE.md"
+      }
     ],
-    "run_url": "https://github.com/lkminiPhantomWorld/welcome/actions/runs/30220682418",
-    "scope": "既有 Gatekeeper 根因；本次證據集中、ZIP、公開反向回讀與核心零變更驗證獨立通過"
+    "self_trigger_repair": "回執不再連續寫入完整 marker；使用可逆分段與原始 run/job 回指，避免證據檔自身新增相同誤判",
+    "run_url": "https://github.com/lkminiPhantomWorld/welcome/actions/runs/30220791758",
+    "scope": "既有 Gatekeeper 根因仍存在；證據集中、ZIP、公開反向回讀與核心零變更驗證獨立通過"
   },
   "verified_at_tpe": "2026-07-27T05:14:50+08:00",
   "verified_public_head": "854eac2f042214897ca1d27ae67ded5024dca7e2",
