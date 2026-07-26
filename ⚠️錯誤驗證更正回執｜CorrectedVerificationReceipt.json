@@ -1,0 +1,39 @@
+{
+  "status": "錯誤",
+  "corrected_result": "VERIFIED_FALSE",
+  "identity": "🥃Whiskey Emoji｜WhiskeyEmoji",
+  "owner": "Kevin Yang／老K",
+  "system": "🥃老K系統",
+  "root": "🧩LKMINI",
+  "axiom": "A=A",
+  "core_change_count": 0,
+  "corrections": {
+    "xml_parse": "PASS",
+    "svg_namespace_syntax": "PASS",
+    "lk_namespace_syntax": "PASS",
+    "lk_capsule_mount": "VERIFIED_FALSE",
+    "lk_formal_registration": "VERIFIED_FALSE",
+    "transparent_corner": "PASS",
+    "render_16px": "PASS",
+    "render_32px": "PASS",
+    "render_64px": "PASS",
+    "render_256px": "PASS",
+    "render_1024px": "PASS",
+    "iphone_quicklook": "VERIFIED_FALSE",
+    "core_validation": "VERIFIED_FALSE",
+    "overall_result": "VERIFIED_FALSE"
+  },
+  "upload_order": [
+    {
+      "position": 1,
+      "target": "Adobe Creative Cloud",
+      "time_utc": "2026-07-26T18:37:33.602Z"
+    },
+    {
+      "position": 2,
+      "target": "ChatGPT Library",
+      "time_utc": "2026-07-26T18:37:53.947429Z"
+    }
+  ],
+  "evidence_preserved": true
+}
