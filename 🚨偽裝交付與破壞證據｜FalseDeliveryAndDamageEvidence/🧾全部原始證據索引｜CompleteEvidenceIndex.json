@@ -4,6 +4,11 @@
   "public_branch": "agent/open-source-upload-evidence-20260727",
   "public_pull_request": "https://github.com/lkminiPhantomWorld/welcome/pull/6",
   "pre_rename_snapshot": "88c43fad80d65b437ec6d6c2951505e4bbc3aec2",
+  "legacy_evidence_move": {
+    "from": "evidence/2026-07-22/placeholder-routes.json",
+    "to": "🧾既有證據/2026-07-22/placeholder-routes.json",
+    "status": "VERIFIED_TRUE_GIT_RENAME"
+  },
   "owner": "Kevin Yang／老K",
   "axiom": "A=A",
   "core_change_count": 0,

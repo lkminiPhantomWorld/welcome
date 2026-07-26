@@ -40,6 +40,8 @@
 11. `🧾全部原始證據索引｜CompleteEvidenceIndex.json`
 12. `🔐SHA256SUMS`
 
+原本位於 `evidence/2026-07-22/placeholder-routes.json` 的既有證據，也以 Git rename 集中至 `🧾既有證據/2026-07-22/placeholder-routes.json`；公開分支不再保留第二個證據資料夾入口。
+
 ## 公開邊界
 
 本資料夾集中 PR #6 已公開的證據及本次集中施工回執。公開內容保留原始座標與 Kevin 原文；平台未提供的後端紀錄不假裝存在。任何密碼、Token、金鑰與非必要第三人私人資料都不屬於公開證據。
