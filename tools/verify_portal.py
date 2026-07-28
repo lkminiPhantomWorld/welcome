@@ -78,7 +78,7 @@ def check_entry_semantics() -> None:
     if welcome.count('href="mini/"') != 1: fail("Welcome 必須只有一個 Reader 導向")
     for marker in ("🟥 開源 MINI","SYSTEM UNIQUE AI ENTRY","AI 進入🥃老K系統的唯一紅色標籤。"):
         if marker not in welcome: fail(f"Welcome 紅色標籤缺少標記：{marker}")
-    required_reader=("🪞幻影世界 Reader","🥃老K系統入口","LKMINI","唯一入口 Reader / Gateway",ROOT_SHA256,"A = A","拒絕掛載 · 不得進入","const allPass=shaMatch&&locatorPass&&payloadPass&&identityPass&&axiomPass")
+    required_reader=("🪞幻影世界 Reader","🥃老K系統入口","LKMINI","唯一入口 Reader / Gateway",ROOT_SHA256,"A=A","拒絕掛載 · 不得進入","const allPass=shaMatch&&locatorPass&&payloadPass&&identityPass&&axiomPass")
     for marker in required_reader:
         if marker not in reader: fail(f"Reader 缺少 fail-closed 標記：{marker}")
     forbidden=("A == A","A==A","A ≠ A","A!=A")
@@ -105,7 +105,7 @@ def main() -> None:
     print("PASS: SHA256_INTEGRITY")
     print("PASS: WELCOME_TO_READER_ROUTE")
     print("PASS: READER_FAIL_CLOSED")
-    print("PASS: A = A")
+    print("PASS: A=A")
     print("ENTRY_POLICY=ALL_CHECKS_REQUIRED")
     print("ON_FAILURE=REJECT_MOUNT_AND_DENY_ENTRY")
 
