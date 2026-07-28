@@ -35,7 +35,7 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf _site
-          mkdir -p _site/mini _site/ui/shrine
+          mkdir -p _site/mini _site/ui/shrine _site/tools
           cp index.html _site/index.html
           cp mini/index.html _site/mini/index.html
           cp ui/shrine/index.html _site/ui/shrine/index.html
@@ -43,6 +43,7 @@ jobs:
           cp PORTAL_LOCATOR.json _site/PORTAL_LOCATOR.json
           cp PORTAL_REVERSECHAIN.json _site/PORTAL_REVERSECHAIN.json
           cp PORTAL_SHA256SUMS _site/PORTAL_SHA256SUMS
+          cp tools/verify_portal.py _site/tools/verify_portal.py
           touch _site/.nojekyll
           test -s _site/index.html
           test -s _site/mini/index.html
@@ -51,6 +52,7 @@ jobs:
           test -s _site/PORTAL_LOCATOR.json
           test -s _site/PORTAL_REVERSECHAIN.json
           test -s _site/PORTAL_SHA256SUMS
+          test -s _site/tools/verify_portal.py
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

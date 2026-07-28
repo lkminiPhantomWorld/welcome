@@ -42,6 +42,8 @@ def check_hashes() -> None:
     required = {"index.html","mini/index.html","PORTAL_MANIFEST.json","PORTAL_LOCATOR.json","PORTAL_REVERSECHAIN.json","tools/verify_portal.py"}
     missing = required - seen
     if missing: fail(f"SHA256SUMS 缺少必要項目：{sorted(missing)}")
+    if ".github/workflows/deploy-pages.yml" in seen:
+        fail("公開 SHA256SUMS 不得列入網站無法下載的儲存庫內部工作流程")
 
 def resolve_internal(source: Path, href: str):
     if href in {"", "#"}: fail(f"空殼連結：{source.relative_to(ROOT)} -> {href!r}")
@@ -67,6 +69,15 @@ def check_manifest_and_routes() -> None:
         rel=item["path"]
         if rel in declared: fail(f"Manifest 重複路徑：{rel}")
         declared.add(rel); path=ROOT/rel
+        visibility=item.get("visibility","public")
+        if rel == ".github/workflows/deploy-pages.yml" and visibility != "repository_only":
+            fail("部署工作流程必須標示為 repository_only")
+        if rel == "tools/verify_portal.py" and item.get("visibility") != "public":
+            fail("公開驗證器必須標示為 public")
+        if visibility == "repository_only":
+            if (ROOT/".github").exists() and not path.is_file():
+                fail(f"儲存庫內部目標不存在：{rel}")
+            continue
         if not path.is_file(): fail(f"Manifest 目標不存在：{rel}")
         if path.suffix==".html": html_paths.append(path)
     href_re=re.compile(r'href=["\']([^"\']*)["\']',re.I)
