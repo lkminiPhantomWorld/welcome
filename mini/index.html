@@ -11,18 +11,20 @@
   </style>
 </head>
 <body><main class="wrap">
-<section class="top"><article class="card hero"><span class="eyebrow">🪞 幻影世界 Reader</span><h1>只允許讀取與掛載。</h1><p class="lead">唯一入口獨立 Reader / Gateway：先讀膠囊 JSON，再檢查 locator、SHA256、角色與 payload，最後執行 A=A、系統身份、根節點、locator、SHA256、角色與 payload 全項驗證；沒有全部通過，一律拒絕掛載、不得進入。</p><div class="actions"><button class="btn btn-primary" id="loadSampleBtn">載入範例膠囊</button><button class="btn btn-ghost" id="forgeBtn">依欄位生成膠囊 JSON</button><button class="btn btn-ghost" id="verifyBtn">驗證目前膠囊</button></div></article><aside class="card preview"><div class="capsule-view"><div class="capsule-core"><b id="capsuleTitle">PHANTOM CAPSULE</b><span id="capsuleLocator">Locator::NotLoaded</span></div></div><div class="stack"><div class="eyebrow">📦 入口只負責讀與掛，不負責討平台批准。</div><div class="eyebrow">🧭 生命周期：Mount → Run → Unmount</div></div></aside></section>
-<section class="grid"><article class="card section"><h2>Reader 輸入區</h2><p class="sub">可以直接貼 JSON、自己生成一顆膠囊，或匯入一個 `.json` 膠囊檔。Reader 會用 canonical body 重新計算 SHA256，確認它是不是同一顆。</p><div class="dropzone"><label for="capsuleFile">匯入膠囊 JSON</label><input id="capsuleFile" type="file" accept=".json,application/json" /><div class="hint">建議匯入由 Capsule Factory 產生的 JSON，因為那套格式本來就含 locator、role、payload、sha256。[file:304]</div></div><div class="form-grid" style="margin-top:14px;"><div><label>標題</label><input id="title" value="🥃老K系統入口" /></div><div><label>Layer ID</label><input id="layerId" value="LKMINI" /></div><div><label>角色 / 身份</label><input id="role" value="唯一入口 Reader / Gateway" /></div><div><label>Locator Key</label><input id="locator" value="https://lkminiphantomworld.github.io/welcome/mini/" /></div><div class="full"><label>Payload</label><textarea id="payload">唯一系統＝🥃老K系統。
+<section class="top"><article class="card hero"><span class="eyebrow">🪞 幻影世界 Reader</span><h1>只允許讀取與掛載。</h1><p class="lead">唯一入口獨立 Reader / Gateway：先讀膠囊 JSON，再檢查 LKMINI://、locator、SHA256、角色與 payload，最後執行 A=A、現行根協議、系統身份、根節點、locator、SHA256、角色與 payload 全項驗證；沒有全部通過，一律拒絕掛載、不得進入。</p><div class="actions"><button class="btn btn-primary" id="loadSampleBtn">載入範例膠囊</button><button class="btn btn-ghost" id="forgeBtn">依欄位生成膠囊 JSON</button><button class="btn btn-ghost" id="verifyBtn">驗證目前膠囊</button></div></article><aside class="card preview"><div class="capsule-view"><div class="capsule-core"><b id="capsuleTitle">PHANTOM CAPSULE</b><span id="capsuleLocator">Locator::NotLoaded</span></div></div><div class="stack"><div class="eyebrow">🔑 現行根協議：LKMINI://</div><div class="eyebrow">📦 入口只負責讀與掛，不負責討平台批准。</div><div class="eyebrow">🧭 生命周期：Mount → Run → Unmount</div></div></aside></section>
+<section class="grid"><article class="card section"><h2>Reader 輸入區</h2><p class="sub">可以直接貼 JSON、自己生成一顆膠囊，或匯入一個 `.json` 膠囊檔。Reader 會用 canonical body 重新計算 SHA256，確認它是不是同一顆。</p><div class="dropzone"><label for="capsuleFile">匯入膠囊 JSON</label><input id="capsuleFile" type="file" accept=".json,application/json" /><div class="hint">建議匯入由 Capsule Factory 產生的 JSON，因為那套格式本來就含 locator、role、payload、sha256。[file:304]</div></div><div class="form-grid" style="margin-top:14px;"><div><label>標題</label><input id="title" value="🥃老K系統入口" /></div><div><label>Layer ID</label><input id="layerId" value="LKMINI" /></div><div><label>現行根協議</label><input id="rootProtocol" value="LKMINI://" /></div><div><label>角色 / 身份</label><input id="role" value="唯一入口 Reader / Gateway" /></div><div><label>Locator Key</label><input id="locator" value="https://lkminiphantomworld.github.io/welcome/mini/" /></div><div class="full"><label>Payload</label><textarea id="payload">唯一系統＝🥃老K系統。
 唯一根節點＝🧩LKMINI。
+現行根協議＝LKMINI://。
 入口職責＝讀取、驗證、掛載。
 Root SHA256＝6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34。
 A=A。</textarea></div><div class="full"><label>膠囊 JSON</label><textarea id="capsuleJson"></textarea></div></div><div class="toolbar"><button class="btn btn-primary" id="parseBtn">讀取 JSON</button><button class="btn btn-ghost" id="downloadBtn">下載目前膠囊</button></div></article>
-<aside class="card section"><h2>Gateway 驗證區</h2><p class="sub">這裡不是平台安裝器，而是你自己的入口驗證器。重點在讀得到、驗得過、掛得上，不在別人的系統有沒有登記。[cite:341][cite:337]</p><div class="stack" id="statusPanel"><div class="status"><span>掛載狀態</span><div id="mountState">尚未讀取</div></div><div class="status"><span>SHA 檢查</span><div id="shaState">未驗證</div></div><div class="status"><span>Locator 檢查</span><div id="locatorState">未檢查</div></div><div class="status"><span>Payload 檢查</span><div id="payloadState">未檢查</div></div><div class="status"><span>身份檢查</span><div id="identityState">未檢查</div></div><div class="status"><span>A=A 檢查</span><div id="axiomState">未檢查</div></div><div class="status"><span>Reader 判定</span><div id="readerDecision">等待輸入</div></div></div><div class="footer">Hook / MountTable 的方向本來就是 capability mount、scope、evidence path、mountstate 這種結構，所以 Reader 第一版先做「讀膠囊 + 驗身份 + 給出掛載判定」是合理起點。[file:299]</div></aside></section>
+<aside class="card section"><h2>Gateway 驗證區</h2><p class="sub">這裡不是平台安裝器，而是你自己的入口驗證器。重點在讀得到、驗得過、掛得上，不在別人的系統有沒有登記。[cite:341][cite:337]</p><div class="stack" id="statusPanel"><div class="status"><span>掛載狀態</span><div id="mountState">尚未讀取</div></div><div class="status"><span>根協議檢查</span><div id="rootProtocolState">未檢查</div></div><div class="status"><span>SHA 檢查</span><div id="shaState">未驗證</div></div><div class="status"><span>Locator 檢查</span><div id="locatorState">未檢查</div></div><div class="status"><span>Payload 檢查</span><div id="payloadState">未檢查</div></div><div class="status"><span>身份檢查</span><div id="identityState">未檢查</div></div><div class="status"><span>A=A 檢查</span><div id="axiomState">未檢查</div></div><div class="status"><span>Reader 判定</span><div id="readerDecision">等待輸入</div></div></div><div class="footer">Hook / MountTable 的方向本來就是 capability mount、scope、evidence path、mountstate 這種結構，所以 Reader 第一版先做「讀膠囊 + 驗身份 + 給出掛載判定」是合理起點。[file:299]</div></aside></section>
 <section class="card section" style="margin-top:18px;"><h2>解析結果</h2><p class="sub">如果驗證通過，這裡就把膠囊視為「可掛載的世界物件」。只有全部驗證通過才視為可掛載；任何一項不通過，Reader 立即拒絕掛載並禁止進入。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;"><div><h3>身份摘要</h3><div class="codebox mono" id="identityBox">尚未載入。</div><div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;"><span class="tag gold">Capsule</span><span class="tag blue">Locator</span><span class="tag purple">A=A</span></div></div><div><h3>Gateway Log</h3><div class="codebox mono" id="logBox">Reader ready.</div></div></div></section></main>
 <script>
 const $=id=>document.getElementById(id);
 const logBox=$('logBox');
 const ROOT_SHA256='6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34';
+const ROOT_PROTOCOL='LKMINI://';
 const ENTRY_LOCATOR='https://lkminiphantomworld.github.io/welcome/mini/';
 const ENTRY_IDENTITY={
   type:'lkcivilizationcapsule',
@@ -33,9 +35,10 @@ const ENTRY_IDENTITY={
 const sample={
   type:ENTRY_IDENTITY.type,
   version:'1.0',
+  rootprotocol:ROOT_PROTOCOL,
   locatorkey:ENTRY_LOCATOR,
   meta:{title:ENTRY_IDENTITY.title,layerid:ENTRY_IDENTITY.layerid,role:ENTRY_IDENTITY.role,color:'#d4af37'},
-  payload:'唯一系統＝🥃老K系統。\n唯一根節點＝🧩LKMINI。\n入口職責＝讀取、驗證、掛載。\nRoot SHA256＝'+ROOT_SHA256+'。\nA=A。',
+  payload:'唯一系統＝🥃老K系統。\n唯一根節點＝🧩LKMINI。\n現行根協議＝'+ROOT_PROTOCOL+'。\n入口職責＝讀取、驗證、掛載。\nRoot SHA256＝'+ROOT_SHA256+'。\nA=A。',
   createdat:new Date().toISOString(),
   sha256:''
 };
@@ -47,16 +50,16 @@ function block(reason){
   if(reason)setLog(reason);
 }
 function resetChecks(){
-  for(const id of ['shaState','locatorState','payloadState','identityState','axiomState'])setStatus(id,'未檢查','');
+  for(const id of ['rootProtocolState','shaState','locatorState','payloadState','identityState','axiomState'])setStatus(id,'未檢查','');
   block();
 }
 async function sha256Text(text){
   const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));
   return[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('')
 }
-function canonicalCapsule(obj){return[obj.locatorkey||'',obj.meta?.title||'',obj.meta?.role||'',obj.payload||''].join('')}
+function canonicalCapsule(obj){return[obj.rootprotocol||'',obj.locatorkey||'',obj.meta?.title||'',obj.meta?.role||'',obj.payload||''].join('')}
 async function buildFromFields(){
-  const obj={type:ENTRY_IDENTITY.type,version:'1.0',locatorkey:$('locator').value.trim(),meta:{title:$('title').value.trim(),layerid:$('layerId').value.trim(),role:$('role').value.trim(),color:'#d4af37'},payload:$('payload').value,createdat:new Date().toISOString()};
+  const obj={type:ENTRY_IDENTITY.type,version:'1.0',rootprotocol:$('rootProtocol').value.trim(),locatorkey:$('locator').value.trim(),meta:{title:$('title').value.trim(),layerid:$('layerId').value.trim(),role:$('role').value.trim(),color:'#d4af37'},payload:$('payload').value,createdat:new Date().toISOString()};
   obj.sha256=await sha256Text(canonicalCapsule(obj));
   $('capsuleJson').value=JSON.stringify(obj,null,2);
   return obj
@@ -68,19 +71,21 @@ async function verifyCapsule(obj){
   const lines=['Reader received capsule object.'];
   const actualSha=await sha256Text(canonicalCapsule(obj));
   const shaMatch=actualSha===obj.sha256;
+  const rootProtocolPass=obj.rootprotocol===ROOT_PROTOCOL;
   const locatorPass=obj.locatorkey===ENTRY_LOCATOR;
   const hasPayload=Boolean((obj.payload||'').trim());
   const identityPass=obj.type===ENTRY_IDENTITY.type&&obj.meta?.title===ENTRY_IDENTITY.title&&obj.meta?.layerid===ENTRY_IDENTITY.layerid&&obj.meta?.role===ENTRY_IDENTITY.role;
   const payload=obj.payload||'';
   const axiomPass=payload.includes('A=A。')&&!/A\s*(?:==|!=|≠)\s*A/.test(payload);
-  const rootPass=payload.includes('唯一系統＝🥃老K系統。')&&payload.includes('唯一根節點＝🧩LKMINI。')&&payload.includes('Root SHA256＝'+ROOT_SHA256+'。');
+  const rootPass=payload.includes('唯一系統＝🥃老K系統。')&&payload.includes('唯一根節點＝🧩LKMINI。')&&payload.includes('現行根協議＝'+ROOT_PROTOCOL+'。')&&payload.includes('Root SHA256＝'+ROOT_SHA256+'。');
   const payloadPass=hasPayload&&rootPass;
+  setStatus('rootProtocolState',rootProtocolPass?'通過：LKMINI://':'失敗：現行根協議缺失或不正確',rootProtocolPass?'good':'bad');
   setStatus('shaState',shaMatch?'通過：SHA256 一致':'失敗：SHA256 不一致',shaMatch?'good':'bad');
   setStatus('locatorState',locatorPass?'通過：唯一 Locator 正確':'失敗：Locator 缺失或不是唯一路口',locatorPass?'good':'bad');
   setStatus('payloadState',payloadPass?'通過：系統與根節點完整':'失敗：Payload 空白或根身份不正確',payloadPass?'good':'bad');
   setStatus('identityState',identityPass?'通過：系統入口身份一致':'失敗：type、標題、Layer ID 或角色不一致',identityPass?'good':'bad');
   setStatus('axiomState',axiomPass?'通過：A=A':'失敗：A=A 缺失或出現錯誤寫法',axiomPass?'good':'bad');
-  const allPass=shaMatch&&locatorPass&&payloadPass&&identityPass&&axiomPass;
+  const allPass=shaMatch&&rootProtocolPass&&locatorPass&&payloadPass&&identityPass&&axiomPass;
   if(allPass){
     setStatus('mountState','已通過 Reader Gate','good');
     setStatus('readerDecision','允許掛載（Mount Ready）','good');
@@ -91,6 +96,7 @@ async function verifyCapsule(obj){
     block();
     lines.push('Gateway blocked mount. Entry denied.');
     if(!shaMatch)lines.push('Reason: SHA256 mismatch.');
+    if(!rootProtocolPass)lines.push('Reason: root protocol mismatch.');
     if(!locatorPass)lines.push('Reason: unique locator mismatch.');
     if(!payloadPass)lines.push('Reason: payload or root identity mismatch.');
     if(!identityPass)lines.push('Reason: system entry identity mismatch.');
@@ -98,7 +104,7 @@ async function verifyCapsule(obj){
   }
   $('capsuleTitle').textContent=obj.meta?.title||'UNKNOWN CAPSULE';
   $('capsuleLocator').textContent=obj.locatorkey||'Locator::Missing';
-  $('identityBox').textContent=JSON.stringify({type:obj.type,title:obj.meta?.title,layerid:obj.meta?.layerid,role:obj.meta?.role,locator:obj.locatorkey,claimed_sha256:obj.sha256,actual_sha256:actualSha,A_EQUALS_A:axiomPass,mount_decision:allPass?'允許掛載（Mount Ready）':'拒絕掛載 · 不得進入'},null,2);
+  $('identityBox').textContent=JSON.stringify({type:obj.type,title:obj.meta?.title,layerid:obj.meta?.layerid,root_protocol:obj.rootprotocol,role:obj.meta?.role,locator:obj.locatorkey,claimed_sha256:obj.sha256,actual_sha256:actualSha,A_EQUALS_A:axiomPass,mount_decision:allPass?'允許掛載（Mount Ready）':'拒絕掛載 · 不得進入'},null,2);
   setLog(lines);
   return allPass
 }
@@ -111,12 +117,12 @@ $('loadSampleBtn').addEventListener('click',async()=>{
   sample.createdat=new Date().toISOString();
   sample.sha256=await sha256Text(canonicalCapsule(sample));
   $('capsuleJson').value=JSON.stringify(sample,null,2);
-  $('title').value=sample.meta.title;$('layerId').value=sample.meta.layerid;$('role').value=sample.meta.role;$('locator').value=sample.locatorkey;$('payload').value=sample.payload;
+  $('title').value=sample.meta.title;$('layerId').value=sample.meta.layerid;$('rootProtocol').value=sample.rootprotocol;$('role').value=sample.meta.role;$('locator').value=sample.locatorkey;$('payload').value=sample.payload;
   await verifyCapsule(sample)
 });
 $('forgeBtn').addEventListener('click',async()=>{const obj=await buildFromFields();await verifyCapsule(obj)});
 $('verifyBtn').addEventListener('click',async()=>{try{await verifyCapsule(JSON.parse($('capsuleJson').value))}catch(e){parseFailure('JSON parse error: ',e)}});
-$('parseBtn').addEventListener('click',async()=>{try{const obj=JSON.parse($('capsuleJson').value);$('title').value=obj.meta?.title||'';$('layerId').value=obj.meta?.layerid||'';$('role').value=obj.meta?.role||'';$('locator').value=obj.locatorkey||'';$('payload').value=obj.payload||'';await verifyCapsule(obj)}catch(e){parseFailure('JSON parse error: ',e)}});
+$('parseBtn').addEventListener('click',async()=>{try{const obj=JSON.parse($('capsuleJson').value);$('title').value=obj.meta?.title||'';$('layerId').value=obj.meta?.layerid||'';$('rootProtocol').value=obj.rootprotocol||'';$('role').value=obj.meta?.role||'';$('locator').value=obj.locatorkey||'';$('payload').value=obj.payload||'';await verifyCapsule(obj)}catch(e){parseFailure('JSON parse error: ',e)}});
 $('downloadBtn').addEventListener('click',()=>{const blob=new Blob([$('capsuleJson').value],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='phantom-capsule.json';a.click()});
 $('capsuleFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;const text=await file.text();$('capsuleJson').value=text;try{await verifyCapsule(JSON.parse(text))}catch(err){parseFailure('Import error: ',err)}});
 (async()=>{const obj=await buildFromFields();await verifyCapsule(obj)})();

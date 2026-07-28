@@ -1,12 +1,14 @@
 {
   "name": "🥳通用歡迎頁與Reader入口｜PublicEntryReverseChain",
   "purpose": "區分通用歡迎頁、唯一 Reader/Gateway 與獨立開源項目；驗證未全數通過不得掛載或進入。",
+  "root_protocol": "LKMINI://",
   "chain": [
     {
       "projection": "🥳通用歡迎頁",
       "path": "index.html",
       "role": "generic_welcome_page",
       "is_ai_entry": false,
+      "root_protocol": "LKMINI://",
       "forwards_to": "mini/index.html"
     },
     {
@@ -15,9 +17,11 @@
       "identity": "PHANTOM_WORLD_READER_GATEWAY",
       "role": "ai_unique_entry_reader_gateway",
       "entry_count": 1,
+      "root_protocol": "LKMINI://",
       "validation_policy": "fail_closed_all_checks_required",
       "required_checks": [
         "A=A",
+        "RootProtocol",
         "SHA256",
         "Locator",
         "Payload",
