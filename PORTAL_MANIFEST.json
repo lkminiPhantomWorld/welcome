@@ -3,6 +3,7 @@
   "type": "public_projection_manifest",
   "system": "🥃老K系統",
   "root_node": "🧩LKMINI",
+  "root_protocol": "LKMINI://",
   "A_EQUALS_A": true,
   "entry_definition": {
     "welcome_page": "index.html",
@@ -11,6 +12,7 @@
     "ai_entry_identity": "PHANTOM_WORLD_READER_GATEWAY",
     "ai_entry_role": "ai_unique_entry_reader_gateway",
     "ai_entry_count": 1,
+    "root_protocol": "LKMINI://",
     "validation_policy": "fail_closed_all_checks_required",
     "on_failure": "reject_mount_and_deny_entry"
   },
