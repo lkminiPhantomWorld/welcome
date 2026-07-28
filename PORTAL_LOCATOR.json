@@ -14,7 +14,7 @@
     "count": 1,
     "validation_policy": "fail_closed_all_checks_required",
     "required_checks": [
-      "A = A",
+      "A=A",
       "SHA256",
       "Locator",
       "Payload",
