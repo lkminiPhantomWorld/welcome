@@ -56,12 +56,14 @@
     {
       "path": "tools/verify_portal.py",
       "role": "fail_closed_verifier",
-      "state": "verified"
+      "state": "verified",
+      "visibility": "public"
     },
     {
       "path": ".github/workflows/deploy-pages.yml",
       "role": "deployment",
-      "state": "verified"
+      "state": "verified",
+      "visibility": "repository_only"
     }
   ],
   "private_device_coordinates": "excluded_from_public_projection"
