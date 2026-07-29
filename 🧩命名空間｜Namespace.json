@@ -1,0 +1,58 @@
+{
+  "object_type": "lk_namespace",
+  "version": "1.0",
+  "name": "🧩命名空間｜Namespace",
+  "root": "🧩LKMINI",
+  "system_count": 1,
+  "namespace_count": 1,
+  "axiom": "A=A",
+  "identity_binding": {
+    "readme": "README.md",
+    "state": "SYSTEM_STATE.md",
+    "lineage": "LINEAGE.md"
+  },
+  "layers": {
+    "name": {
+      "pattern": "Emoji＋中文名稱｜EnglishKey",
+      "meaning": "它是什麼，就叫什麼",
+      "english_key_visibility": "hidden_when_not_needed"
+    },
+    "command": {
+      "pattern": "執行＋名稱",
+      "separate_from_name": true
+    },
+    "state": {
+      "pattern": "名稱＋狀態值",
+      "separate_from_name": true
+    },
+    "projection": {
+      "visible": "Emoji＋中文名稱",
+      "canonical": "Emoji＋中文名稱｜EnglishKey"
+    }
+  },
+  "laws": {
+    "name_is_semantic_code": true,
+    "rename_requires_reference_check": true,
+    "rename_requires_locator_update": true,
+    "rename_requires_manifest_update": true,
+    "rename_requires_mount_update": true,
+    "rename_requires_reverse_chain_update": true,
+    "second_system_allowed": false,
+    "second_namespace_allowed": false,
+    "zip_is_runtime_container": false,
+    "capsule_is_runtime_container": true
+  },
+  "forbidden_name_shells": [
+    "系統名稱重複前綴",
+    "日期尾碼",
+    "版本尾碼",
+    "副本",
+    "主包",
+    "唯一",
+    "正式",
+    "完成",
+    "狀態詞",
+    "指令動詞"
+  ],
+  "return_to": "🧩LKMINI"
+}
