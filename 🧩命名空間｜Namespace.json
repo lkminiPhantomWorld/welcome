@@ -1,16 +1,56 @@
 {
   "object_type": "lk_global_namespace",
-  "version": "2.0",
   "name": "🧩命名空間｜Namespace",
   "root": "🧩LKMINI",
   "system_count": 1,
   "namespace_role": "GLOBAL_ROOT",
   "axiom": "A=A",
-  "purpose": "為多人、多角色、多應用、多膠囊與多投影提供同一套可解析、可追溯、可擴充的命名根。",
+  "purpose": "供全世界任何人、團隊、組織、語言、裝置、應用與膠囊共同使用的公共命名根。",
   "identity_binding": {
-    "readme": "README.md",
-    "state": "SYSTEM_STATE.md",
-    "lineage": "LINEAGE.md"
+    "origin": "LINEAGE.md",
+    "runtime_truth": "SYSTEM_STATE.md",
+    "meaning": "PHILOSOPHY.md",
+    "context": "CONTEXT_GUARDIAN.md",
+    "interpretation": "INTERPRETATION_BOUNDARY.md",
+    "integrity": "SEMANTIC_INTEGRITY.md"
+  },
+  "existing_system_mounts": {
+    "global_identity": {
+      "lineage": "LINEAGE.md",
+      "reverse_chain": "ReverseChain.json",
+      "identity_rule": "identity_id 不可因名稱、語言、格式或持有人顯影改變"
+    },
+    "international_projection": {
+      "meaning_preservation": "MEANING_PRESERVATION.md",
+      "context_guardian": "CONTEXT_GUARDIAN.md",
+      "interpretation_boundary": "INTERPRETATION_BOUNDARY.md",
+      "rule": "語言是 Projection，不是新 Identity"
+    },
+    "public_private_access": {
+      "boundary": "PUBLIC_PRIVATE_BOUNDARY.md",
+      "threat_model": "THREAT_MODEL.md",
+      "visibility": ["public", "shared", "private", "hidden"]
+    },
+    "governance": {
+      "governance": "GOVERNANCE.md",
+      "garbage_governance": "GARBAGE_GOVERNANCE.md",
+      "semantic_integrity": "SEMANTIC_INTEGRITY.md"
+    },
+    "manifest_and_locator": {
+      "manifest": "MANIFEST.json",
+      "reverse_chain": "ReverseChain.json",
+      "index_integrity": "SHA256SUMS"
+    },
+    "verification": {
+      "validator": "tools/verify_lkmini.py",
+      "gatekeeper": ".github/workflows/gatekeeper.yml",
+      "hashes": "SHA256SUMS"
+    },
+    "public_license": {
+      "license": "LICENSE",
+      "notice": "NOTICE.md",
+      "citation": "CITATION.cff"
+    }
   },
   "address_model": {
     "canonical_path": "namespace://<realm>/<owner>/<domain>/<identity>/<projection>",
@@ -26,7 +66,7 @@
     "owner": "人、團隊、組織或公共持有人",
     "domain": "能力、資料、角色、工具、膠囊、投影、任務或其他領域",
     "identity": "唯一且不可因顯示名稱改變的正式身分",
-    "projection": "不同格式、裝置、語言與應用的顯影"
+    "projection": "不同語言、格式、裝置與應用的顯影"
   },
   "subnamespaces": [
     {
@@ -35,14 +75,18 @@
       "role": "CAPSULE_DOMAIN"
     }
   ],
-  "multi_user_rules": {
+  "global_use_rules": {
+    "any_person_may_use": true,
+    "any_organization_may_use": true,
+    "any_language_may_project": true,
+    "any_device_may_project": true,
     "multiple_people_allowed": true,
     "same_display_name_allowed": true,
     "same_identity_id_allowed": false,
     "owner_scope_required": true,
     "cross_owner_collision_resolution": "owner_scope + identity_id",
-    "language_projection_allowed": true,
-    "display_name_change_preserves_identity": true
+    "display_name_change_preserves_identity": true,
+    "language_change_preserves_identity": true
   },
   "semantic_rules": {
     "name_is_semantic_code": true,
@@ -55,13 +99,14 @@
     "rename_requires_mount_update": true,
     "rename_requires_reverse_chain_update": true
   },
-  "governance": {
+  "governance_rules": {
     "second_system_allowed": false,
     "parallel_root_allowed": false,
     "subnamespace_allowed": true,
     "subnamespace_must_return_to_root": true,
     "global_collision_log_required": true,
-    "lineage_required": true
+    "lineage_required": true,
+    "existing_systems_are_mounted_not_duplicated": true
   },
   "return_to": "🧩LKMINI"
 }
