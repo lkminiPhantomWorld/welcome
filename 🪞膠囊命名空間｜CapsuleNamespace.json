@@ -1,0 +1,50 @@
+{
+  "object_type": "lk_capsule_namespace",
+  "version": "1.0",
+  "name": "🪞膠囊命名空間｜CapsuleNamespace",
+  "parent_namespace": "🧩命名空間｜Namespace",
+  "root": "🧩LKMINI",
+  "domain": "capsule",
+  "purpose": "定義膠囊、能力、資源與其投影的命名、定位、掛載與回指規則。",
+  "name_model": {
+    "canonical": "Emoji＋中文名稱｜EnglishKey",
+    "visible": "Emoji＋中文名稱",
+    "english_key_visibility": "hidden_when_not_needed",
+    "meaning": "它是什麼，就叫什麼"
+  },
+  "separation": {
+    "name": "物件是什麼",
+    "command": "執行＋名稱",
+    "state": "名稱＋狀態值",
+    "projection": "名稱的顯影形式"
+  },
+  "capsule_identity": {
+    "identity_id": "immutable",
+    "display_name": "mutable_with_reference_migration",
+    "owner_scope_required": true,
+    "return_to_required": true,
+    "manifest_required": true,
+    "locator_required": true,
+    "mount_binding_required": true,
+    "reverse_chain_required": true
+  },
+  "container_rules": {
+    "capsule_is_runtime_container": true,
+    "zip_is_transport_projection": true,
+    "zip_is_runtime_container": false,
+    "one_capability_one_capsule": true,
+    "capsule_is_not_a_system": true
+  },
+  "forbidden_name_shells": [
+    "重複系統前綴",
+    "日期尾碼",
+    "版本尾碼",
+    "副本",
+    "主包",
+    "完成",
+    "狀態詞",
+    "指令動詞"
+  ],
+  "address_template": "namespace://<realm>/<owner>/capsule/<identity>/<projection>",
+  "return_to": "🧩LKMINI"
+}
