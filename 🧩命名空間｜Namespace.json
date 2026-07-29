@@ -15,7 +15,7 @@
       "逆向鏈"
     ],
     "預設顯示": "Emoji＋中文名稱｜EnglishKey",
-    "何時可以關閉": "只有你親口確認系統已經修好之後",
+    "何時可以關閉": "由你親自關閉",
     "關閉前不可以做的事": [
       "自行改回工程命名",
       "把中文或英文其中一個從預設名稱拿掉",
@@ -59,11 +59,11 @@
     "英文名稱": "平常可見",
     "原則": "它是什麼，就叫什麼"
   },
-  "🚪 入口與應用顯影": {
+  "🚪 膠囊入口": {
     "名稱": "🚪膠囊入口｜CapsuleGateway",
-    "現有位置": "mini/",
-    "入口頁面": "mini/index.html",
-    "它是什麼": "唯一入口 Reader／Gateway 的網頁顯影",
+    "膠囊本體": "capsules/🚪膠囊入口｜CapsuleGateway.json",
+    "網頁顯影": "mini/index.html",
+    "它是什麼": "負責讀取、驗證與掛載膠囊的入口能力",
     "它負責什麼": [
       "讀取膠囊",
       "驗證膠囊",
@@ -71,15 +71,14 @@
       "掛載通過驗證的膠囊",
       "拒絕未通過驗證的膠囊"
     ],
-    "它不屬於哪裡": [
-      "不是膠囊本體",
+    "膠囊與顯影的關係": "膠囊是能力本體，mini/index.html 是它的網頁顯影",
+    "它不是": [
       "不是另一套系統",
-      "不是另一個根",
-      "不放進🪞膠囊命名空間當成膠囊"
+      "不是另一個根"
     ],
     "它掛接哪裡": "🪞膠囊命名空間｜CapsuleNamespace",
     "它回到哪裡": "🧩LKMINI",
-    "正式地址": "namespace://LKMINI/public/入口/膠囊入口/web"
+    "正式地址": "namespace://LKMINI/public/capsule/膠囊入口/web"
   },
   "🔗 我已經接上的能力": {
     "我是誰與從哪裡來": ["LINEAGE.md", "ReverseChain.json"],
@@ -88,7 +87,7 @@
     "治理與完整性": ["GOVERNANCE.md", "GARBAGE_GOVERNANCE.md", "SEMANTIC_INTEGRITY.md"],
     "清單、定位與驗證": ["MANIFEST.json", "SHA256SUMS", "tools/verify_lkmini.py", ".github/workflows/gatekeeper.yml"],
     "公開授權與署名": ["LICENSE", "NOTICE.md", "CITATION.cff"],
-    "膠囊入口": ["mini/index.html"]
+    "膠囊入口": ["capsules/🚪膠囊入口｜CapsuleGateway.json", "mini/index.html"]
   },
   "📦 底下有哪些命名空間": [
     "🪞膠囊命名空間｜CapsuleNamespace"
@@ -97,7 +96,7 @@
     "建立第二套系統",
     "建立平行根",
     "複製既有能力假裝成新的能力",
-    "把入口誤當成膠囊本體",
+    "把膠囊本體和網頁顯影當成兩個身分",
     "改名卻不更新定位、清單、掛載與逆向鏈",
     "讓子命名空間找不到回到🧩LKMINI的路"
   ],
