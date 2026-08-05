@@ -1,20 +1,38 @@
 {
   "type": "lkcivilizationcapsule",
-  "name": "🚪膠囊入口｜CapsuleGateway",
+  "name": "📚歷史膠囊入口｜HistoricalCapsuleGateway",
+  "status": "完成",
   "rootprotocol": "LKMINI://",
   "locatorkey": "https://lkminiphantomworld.github.io/welcome/mini/",
+  "active": false,
+  "authorized": false,
   "meta": {
-    "title": "🥃老K系統入口",
-    "displayname": "🚪膠囊入口｜CapsuleGateway",
+    "title": "歷史 Reader Projection",
+    "displayname": "📚歷史膠囊入口｜HistoricalCapsuleGateway",
     "layerid": "LKMINI",
-    "role": "唯一入口 Reader / Gateway",
-    "color": "#d4af37"
+    "role": "historical Reader / Gateway",
+    "color": "#6e7681"
   },
-  "payload": "唯一系統＝🥃老K系統。\n唯一根節點＝🧩LKMINI。\n現行根協議＝LKMINI://。\n入口職責＝讀取、驗證、掛載。\nRoot SHA256＝6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34。\nA=A。",
+  "payload": "唯一系統＝🥃老K系統。\n唯一根節點＝🧩LKMINI。\n現行根協議＝LKMINI://。\n歷史入口職責＝只讀、驗證、保留證據；不得掛載。\nRoot SHA256＝6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34。\nA=A。",
   "mount": {
+    "enabled": false,
     "entry": "mini/index.html",
+    "permission_or_hook": "disabled:historical_projection",
+    "fallback_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
     "namespace": "🪞膠囊命名空間｜CapsuleNamespace",
     "returnto": "🧩LKMINI"
   },
-  "sha256": "fd140a8f91a9d54d9c637959439bf2540678d6f61e90c52ccf055c92a1078b11"
+  "current_canonical": {
+    "logical_entry_gate": "🥳歡迎光臨",
+    "web_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
+    "program_coordinate": "lkminiPhantomWorld/LaoK-System@main"
+  },
+  "history": {
+    "preserved": true,
+    "previous_name": "🚪膠囊入口｜CapsuleGateway",
+    "previous_title": "🥃老K系統入口",
+    "previous_role": "唯一入口 Reader / Gateway",
+    "previous_sha256": "fd140a8f91a9d54d9c637959439bf2540678d6f61e90c52ccf055c92a1078b11",
+    "ruling": "舊入口內容保留作歷史證據，不再授權掛載。"
+  }
 }

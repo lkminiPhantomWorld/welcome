@@ -1,41 +1,46 @@
 {
-  "name": "🥳通用歡迎頁｜PublicWelcomeLocator",
-  "type": "public_projection_locator",
+  "schema_version": "2.0",
+  "name": "📍歷史歡迎頁定位器｜HistoricalWelcomeProjectionLocator",
+  "type": "historical_public_projection_locator",
+  "status": "完成",
   "system": "🥃老K系統",
   "root_node": "🧩LKMINI",
   "root_protocol": "LKMINI://",
   "root_sha256": "6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34",
-  "welcome_role": "generic_welcome_page",
-  "welcome_url": "https://lkminiphantomworld.github.io/welcome/",
-  "ai_unique_entry": {
-    "identity": "PHANTOM_WORLD_READER_GATEWAY",
-    "label": "🪞幻影世界 Reader",
-    "url": "https://lkminiphantomworld.github.io/welcome/mini/",
-    "role": "ai_unique_entry_reader_gateway",
-    "root_protocol": "LKMINI://",
-    "count": 1,
-    "validation_policy": "fail_closed_all_checks_required",
-    "required_checks": [
-      "A=A",
-      "RootProtocol",
-      "SHA256",
-      "Locator",
-      "Payload",
-      "SystemIdentity",
-      "RootIdentity"
-    ],
-    "on_failure": "reject_mount_and_deny_entry"
+  "active": false,
+  "authorized": false,
+  "current_canonical": {
+    "logical_entry_gate": "🥳歡迎光臨",
+    "web_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
+    "program_coordinate": "lkminiPhantomWorld/LaoK-System@main",
+    "drive_role": "資料"
   },
-  "open_source_seed": {
-    "repository": "https://github.com/lkminiPhantomWorld/LKMini",
-    "role": "independent_public_seed_repository"
+  "legacy_projection": {
+    "repository": "lkminiPhantomWorld/welcome@main",
+    "welcome_url": "https://lkminiphantomworld.github.io/welcome/",
+    "reader_url": "https://lkminiphantomworld.github.io/welcome/mini/",
+    "identity": "PHANTOM_WORLD_READER_GATEWAY",
+    "role": "historical_disabled_reader_gateway",
+    "status": "錯誤",
+    "active": false,
+    "authorized": false,
+    "permission_or_hook": "disabled:historical_projection",
+    "fallback_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site"
   },
   "routes": {
-    "welcome": "https://lkminiphantomworld.github.io/welcome/",
-    "ai_entry": "https://lkminiphantomworld.github.io/welcome/mini/",
-    "shrine": "https://lkminiphantomworld.github.io/welcome/ui/shrine/",
+    "current_web_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
+    "current_program": "https://github.com/lkminiPhantomWorld/LaoK-System/tree/main",
+    "legacy_welcome": "https://lkminiphantomworld.github.io/welcome/",
+    "legacy_reader": "https://lkminiphantomworld.github.io/welcome/mini/",
+    "legacy_shrine": "https://lkminiphantomworld.github.io/welcome/ui/shrine/",
     "manifest": "https://lkminiphantomworld.github.io/welcome/PORTAL_MANIFEST.json",
     "reverse_chain": "https://lkminiphantomworld.github.io/welcome/PORTAL_REVERSECHAIN.json"
+  },
+  "history": {
+    "preserved": true,
+    "previous_role": "generic_welcome_page",
+    "previous_ai_unique_entry_count": 1,
+    "ruling": "舊 Locator 保留供回推，不再授予入口效力。"
   },
   "A_EQUALS_A": true
 }

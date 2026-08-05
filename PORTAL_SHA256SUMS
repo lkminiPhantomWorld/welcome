@@ -1,12 +1,18 @@
-# PORTAL_SHA256SUMS — verified public projections
-# Corrected: 2026-07-28
+# PORTAL_SHA256SUMS — historical projection isolation closure
+# Corrected: 2026-08-05
 # A=A
-# POLICY=fail_closed_all_checks_required
+# status=完成
+# legacy.active=false
+# legacy.authorized=false
+# entryGate=🥳歡迎光臨
+# current_web_projection=https://lkmini-wiring-hub.ky46738.chatgpt.site
 
-7505017e10a157a791eefbc1636c6e05baa5d9589cb6c5a0710657a4782e0df9  index.html
-bff2caef654790b77860ffae2426c3de7e5125247b5e0ab9a1b7a52a012299f6  mini/index.html
-84bb4f5f566693ff9242d48a895260d8664e24050cc02a40155560aedccd2d15  ui/shrine/index.html
-3f50d2e70d7f758573e3f411cb053fc362577b1ecd65d214c6d2b1e69b4cb78b  PORTAL_MANIFEST.json
-eb7c1babc2d4ed6079662909e81d4d5e54ccc7798ee5ef33be477f514340781e  PORTAL_LOCATOR.json
-e9910c567b1e24f097b218445920a9cb4df7f0f4bfd73e80e63824d2c31167e2  PORTAL_REVERSECHAIN.json
-72eb376f7fb690fffa52f7cbfcb8e694638f0550fa87bdee85a47be889a87bf9  tools/verify_portal.py
+578dcc2a8c4b9fbd0e496cd8e8f96b90872ac0f6bad112b8e32bf8f9990b5765  index.html
+53a9ab91430c2ea2cbd9360f308a08e194ef85a51a801e0a87b1fbd326a8f0ce  mini/index.html
+77f60b3da3a8415e0c8645a12df4e5c58e9910dc1e1457faf8b691f2cd49d3dd  ui/shrine/index.html
+3cece8f06735d8c029592cea7551c245bb8afb324068555f8f1acf6041779bae  PORTAL_MANIFEST.json
+7a7a88ca10217eabda885a9b47b885ca5fd31bd29fc65ecc6e3f50fe49864a17  PORTAL_LOCATOR.json
+2489cda51bb850e8a215dd281968e805855083556365c3b103092b210472b959  PORTAL_REVERSECHAIN.json
+3c2042fb9d86d2200e415f658cf8a59fb5106b60203a6418af63c93e1f259ea5  tools/verify_portal.py
+e5b919108a6b489579f48ff7eae1a5e080b61405530300eb69a383161f44c7ee  capsules/🚪膠囊入口｜CapsuleGateway.json
+887eb28c63d61550ee9d1a9935c9ffa62c77be6852629810ba37c3da6c88e927  🧭命名空間入口定位登記｜NamespacePortalLocatorRegistry.md

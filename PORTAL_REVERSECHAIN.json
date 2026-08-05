@@ -1,46 +1,60 @@
 {
-  "name": "🥳通用歡迎頁與Reader入口｜PublicEntryReverseChain",
-  "purpose": "區分通用歡迎頁、唯一 Reader/Gateway 與獨立開源項目；驗證未全數通過不得掛載或進入。",
+  "schema_version": "2.0",
+  "name": "🧾歷史歡迎頁回推鏈｜HistoricalWelcomeProjectionReverseChain",
+  "status": "完成",
+  "purpose": "保留舊 GitHub Pages 證據，撤銷其現行入口效力，並回推唯一現行座標。",
   "root_protocol": "LKMINI://",
+  "active": false,
+  "authorized": false,
   "chain": [
     {
-      "projection": "🥳通用歡迎頁",
-      "path": "index.html",
-      "role": "generic_welcome_page",
-      "is_ai_entry": false,
-      "root_protocol": "LKMINI://",
-      "forwards_to": "mini/index.html"
+      "projection": "📚歷史 GitHub Pages",
+      "repository": "lkminiPhantomWorld/welcome@main",
+      "entry_surface": "https://lkminiphantomworld.github.io/welcome/",
+      "role": "historical_projection",
+      "status": "錯誤",
+      "active": false,
+      "authorized": false,
+      "forwards_to": "https://lkmini-wiring-hub.ky46738.chatgpt.site"
     },
     {
-      "projection": "🪞幻影世界 Reader",
+      "projection": "🌐現行網頁 Projection",
+      "entry_gate": "🥳歡迎光臨",
+      "url": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
+      "role": "current_web_projection",
+      "status": "完成",
+      "active": true,
+      "authorized": true,
+      "returns_to": "lkminiPhantomWorld/LaoK-System@main"
+    },
+    {
+      "coordinate": "lkminiPhantomWorld/LaoK-System@main",
+      "role": "program",
+      "returns_to": "🧩LKMINI"
+    },
+    {
+      "identity": "🧩LKMINI",
+      "root_sha256": "6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34",
+      "returns_to": "🥃老K系統"
+    },
+    {
+      "identity": "🥃老K系統",
+      "formal_container": "🪞幻影膠囊",
+      "A_EQUALS_A": true
+    }
+  ],
+  "history": {
+    "preserved": true,
+    "previous_name": "🥳通用歡迎頁與Reader入口｜PublicEntryReverseChain",
+    "previous_correction": "Welcome red label forwards to Reader/Gateway. Only all-pass validation permits mount; every failure denies entry.",
+    "previous_reader": {
       "path": "mini/index.html",
       "identity": "PHANTOM_WORLD_READER_GATEWAY",
       "role": "ai_unique_entry_reader_gateway",
       "entry_count": 1,
-      "root_protocol": "LKMINI://",
-      "validation_policy": "fail_closed_all_checks_required",
-      "required_checks": [
-        "A=A",
-        "RootProtocol",
-        "SHA256",
-        "Locator",
-        "Payload",
-        "SystemIdentity",
-        "RootIdentity"
-      ],
-      "on_failure": "reject_mount_and_deny_entry",
-      "returns_to": "🧩LKMINI"
+      "validation_policy": "fail_closed_all_checks_required"
     },
-    {
-      "identity": "LKMini/seed_v0",
-      "repository": "lkminiPhantomWorld/LKMini",
-      "source_repository": "ky46738-ops/LKMini",
-      "source_commit": "527d29a902d67039067b8777ec4964b4daf6daf4",
-      "role": "independent_open_source_seed",
-      "returns_to": "🧩LKMINI"
-    }
-  ],
-  "correction_source_commit": "d350a08fb0dd477917eaa2dd54719498f6e1b301",
-  "correction": "Welcome red label forwards to Reader/Gateway. Only all-pass validation permits mount; every failure denies entry.",
+    "ruling": "previous_reader 僅為歷史證據，現行 active=false、authorized=false。"
+  },
   "A_EQUALS_A": true
 }
