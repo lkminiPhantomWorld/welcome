@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "v3.2",
+  "name": "現行裁決｜CurrentRuling",
+  "status": "完成",
+  "owner": "Kevin Yang",
+  "data_sovereignty": "owner",
+  "repository": "lkminiPhantomWorld/welcome@main",
+  "repository_role": "historical_public_seed_and_disabled_projection",
+  "active": false,
+  "authorized": false,
+  "current_canonical": {
+    "program_coordinate": "lkminiPhantomWorld/LaoK-System@main",
+    "logical_entry_gate": "🥳歡迎光臨",
+    "web_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
+    "sites_version": 22,
+    "sites_version_id": "appgprj_6a68801042bc8191ab7eba5718be83a0~appgver_394edee3733c81919ba6224a8a39333a",
+    "sites_source_commit": "20af366cc395bdaedfe4fb317f7ef1e4b86f0064",
+    "sites_archive_sha256": "26d54d9935efa35125c162c31eaaad096d5ba5b4332249a192b08e7d050b4876",
+    "sites_deployment_id": "appgdep_6a72b697bd2c81918165354dd5220581",
+    "sites_deployment_status": "succeeded",
+    "formal_root": "🧩LKMINI",
+    "formal_container": "🪞幻影膠囊",
+    "second_formal_root_count": 0,
+    "second_formal_container_count": 0
+  },
+  "writeback_policy": {
+    "exclusive_target": "🧩LKMINI／🪞幻影膠囊",
+    "system_messages": "exclusive",
+    "receipts": "exclusive",
+    "external_notification": false
+  },
+  "app_device_control_policy": {
+    "rule": "authorized_connector_or_tool_readback_required",
+    "without_successful_readback": "錯誤",
+    "mutation_allowed": false
+  },
+  "historical_evidence_policy": {
+    "preserved": true,
+    "active": false,
+    "authorized": false,
+    "historical_error_is_current_state": false,
+    "wrapped_controls": [
+      "MANIFEST.json",
+      "LOCATOR.json",
+      "SNAPSHOT.json",
+      "ReverseChain.json",
+      "ANCHOR.md",
+      ".tags/seed_v0.md"
+    ]
+  }
+}

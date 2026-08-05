@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "v3.2",
+  "name": "welcome 完整樹稽核｜FullTreeAudit",
+  "status": "完成",
+  "audit_scope": "pre_repair_baseline",
+  "repository": "lkminiPhantomWorld/welcome",
+  "branch": "main",
+  "source_commit": "94ef427686603c3a213ab70ad80e289afd595f45",
+  "source_tree": "a8d45da8964ddf4a146f70a17e566bb68c75b0e8",
+  "tracked_file_count": 96,
+  "tracked_blob_bytes": 172960,
+  "git_archive_tar_bytes": 266240,
+  "git_archive_tar_sha256": "1c2b80248d1ff4131b28496cd1c448eb88f1dde5134b60e2ba677d7697c543fa",
+  "tags": [],
+  "visual_file_count": 17,
+  "visual_files": [
+    "LKMini.svg",
+    "assets/banner-guardian.svg",
+    "assets/banner-math-zhuyin.jpeg",
+    "assets/banner-math-zhuyin.svg",
+    "assets/banner-math.svg",
+    "assets/banner-poo-guardian.jpeg",
+    "assets/banner-poo-guardian.svg",
+    "index.html",
+    "mini/index.html",
+    "sole-truth/index.html",
+    "tools/banners-backup.html",
+    "tools/math-zhuyin-vertical.html",
+    "ui/perplexity-role-ui.html",
+    "ui/shrine/index.html",
+    "vpoop/VPoopGuardian_PublicSeed_v1.7.html",
+    "vpoop/VPoopGuardian_PublicSeed_v1.8.html",
+    "vpoop/index.html"
+  ],
+  "github_actions": {
+    "source_commit_run_count": 6,
+    "source_commit_job_count": 10,
+    "conclusion": "success",
+    "runs": [
+      {"name": "Gatekeeper", "run_id": 30970156891, "job_id": 92192522717, "conclusion": "success"},
+      {"name": "Deploy verified welcome site to GitHub Pages", "run_id": 30970156900, "job_id": 92192522940, "conclusion": "success"},
+      {"name": "Deploy static content to Pages", "run_id": 30970156960, "job_id": 92192574862, "conclusion": "success", "ruling": "duplicate_workflow_retired_by_repair"},
+      {"name": "Dynamic Rename Markdown Files by First H1", "run_id": 30970156829, "job_count": 3, "conclusion": "success"},
+      {"name": "Conda Package", "run_id": 30970156950, "job_id": 92192522810, "conclusion": "success"},
+      {"name": "CodeQL Advanced", "run_id": 30970156772, "job_count": 3, "conclusion": "success"}
+    ]
+  },
+  "repair_chain": {
+    "parent_commit": "94ef427686603c3a213ab70ad80e289afd595f45",
+    "method": "single_non_force_commit_then_remote_readback",
+    "history_deleted": false,
+    "target_ruling": "historical_projection_active_false_authorized_false",
+    "current_web_projection": "https://lkmini-wiring-hub.ky46738.chatgpt.site",
+    "current_sites_version": 22
+  }
+}

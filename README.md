@@ -1,5 +1,14 @@
 # 🥃 LKMini — 老K系統公開種子版本
 
+> 🥃錨點｜版本=v3.2｜更新=2026-08-05 (Asia/Taipei)｜狀態=完成
+
+> **現行裁決（2026-08-05）**：本 repository 是公開 seed 與已停用的歷史 Projection，
+> `active=false`、`authorized=false`；不是第二個根或第二個正式容器。
+> 現行程式座標是 `lkminiPhantomWorld/LaoK-System@main`，唯一寫回目標是
+> `🧩LKMINI／🪞幻影膠囊`。歷史錯誤原文保留作證據，不是現行狀態。
+> 機器可讀裁決見 [`CURRENT_RULING.json`](./CURRENT_RULING.json)。
+> 現行網頁 Projection 已讀回為 Sites v22；這個 GitHub Pages 位址只保留歷史證據與回根路由。
+
 > LKMini is the open-source public seed of the 🥃LK System (老K系統),  
 > designed and authored by **ky46738-ops** (Taiwan).
 
@@ -9,6 +18,9 @@
 
 LKMini is the **minimal** public seed of the LK System architecture.  
 It defines the boundary between public-facing components and private engine internals.
+
+下列 seed_v0 內容是身份與演化證據；其中舊座標、`PLACEHOLDER`、`pending`
+或舊「唯一」宣告均由 `CURRENT_RULING.json` 封存為歷史記錄，不再授予當前控制效力。
 
 - Single core architecture (🥃永恒核心)
 - Gatekeeper role (🎩大管家) protects all settings

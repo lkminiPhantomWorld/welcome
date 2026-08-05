@@ -5,6 +5,11 @@
 **Anchor Hash**: `499742a2c0bfc423bb132fc9808483e6b70d5222a051f7c0a68162b9285197de`
 **Target File**: `SHA256SUMS`
 
+> **歷史邊界**：這個 hash 已在 Git commit
+> `8abd89f80dad32aa5e4d6378564edff049a37ab8` 讀回成功，只錨定 2026-05-17 的歷史切片。
+> 它不是現行 `SHA256SUMS` 的 hash，也不得把當前不相等解讀為現行污染。
+> 現行驗證請執行 `sha256sum -c SHA256SUMS` 與 `python3 tools/verify_lkmini.py`。
+
 ---
 
 ## 1. 宣告
@@ -16,7 +21,7 @@
 
 ## 2. 驗證方法
 
-在 repo 根目錄執行：
+要驗證歷史切片，請在該 commit 的 repo 根目錄執行：
 
 ```bash
 echo "499742a2c0bfc423bb132fc9808483e6b70d5222a051f7c0a68162b9285197de  SHA256SUMS" | shasum -a 256 -c
@@ -24,6 +29,9 @@ echo "499742a2c0bfc423bb132fc9808483e6b70d5222a051f7c0a68162b9285197de  SHA256SU
 
 輸出 `SHA256SUMS: OK` = 未篹改。
 輸出 `SHA256SUMS: FAILED` = 污染。
+
+上述兩行是原始歷史判讀文字，只適用於錨定的歷史 commit。
+當前 branch 演化後的 `SHA256SUMS` 不相等，不可單憑此結果判定污染。
 
 ---
 
