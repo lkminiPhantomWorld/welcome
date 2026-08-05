@@ -1,0 +1,9 @@
+name: welcome-ci
+channels:
+  - defaults
+dependencies:
+  - python=3.10.20
+  - pip=25.2
+  - pip:
+      - flake8==7.3.0
+      - pytest==8.4.2
