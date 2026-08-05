@@ -1,55 +1,92 @@
 <!DOCTYPE html>
-<html lang="zh-TW" data-projection-status="historical" data-active="false" data-authorized="false">
+<html lang="zh-Hant" data-language="all">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://lkmini-wiring-hub.ky46738.chatgpt.site">
-<title>📚歷史 Projection｜🥳歡迎光臨</title>
+<title>🥳 歡迎光臨 | lkminiPhantomWorld</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:24px;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-main{width:min(100%,760px);margin:auto}.hero,.panel,.notice{background:#161b22;border:1px solid #30363d;border-radius:18px;padding:24px}.hero{text-align:center;margin-bottom:16px}.hero h1{margin:0;color:#f0f6fc;font-size:clamp(30px,8vw,48px)}.hero p,.notice p{margin:12px 0 0;color:#9da7b3;line-height:1.7}.notice{margin-bottom:16px;border:2px solid #f2cc60;background:#272115}.notice strong{color:#f2cc60}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{display:block;padding:22px;border-radius:16px;background:#161b22;border:1px solid #30363d;text-decoration:none;color:inherit;min-height:150px}.card:hover,.card:focus-visible{border-color:#58a6ff;transform:translateY(-2px)}.current{border:2px solid #2ea043;background:linear-gradient(145deg,#102b18,#161b22)}.history{border-style:dashed}.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#238636;color:#fff;font-size:12px;font-weight:900;letter-spacing:.05em}.badge.history{background:#6e7681}.emoji{font-size:34px}.title{margin-top:12px;color:#f0f6fc;font-size:20px;font-weight:800}.desc{margin-top:6px;color:#8b949e;line-height:1.5}.panel{margin-top:16px}.panel h2{margin:0 0 12px;color:#f0f6fc}.links{display:flex;flex-wrap:wrap;gap:8px}.links a{padding:10px 12px;border-radius:10px;background:#21262d;color:#c9d1d9;text-decoration:none;font-size:14px}.status{margin-top:14px;color:#f2cc60;font-size:14px}details{margin-top:16px;color:#8b949e}summary{cursor:pointer;color:#c9d1d9}footer{text-align:center;color:#6e7681;font-size:12px;padding:20px 0}
+html,body{margin:0}
+body{min-height:100vh;padding:24px;background:#0d1117;color:#c9d1d9;font-family:"Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+main{width:min(100%,860px);margin:auto}
+.hero,.panel,.card{background:#161b22;border:1px solid #30363d;border-radius:18px}
+.hero{padding:28px;text-align:center;margin-bottom:16px}
+.hero h1{margin:0;color:#f0f6fc;font-size:clamp(32px,8vw,54px);letter-spacing:0}
+.hero p{margin:12px auto 0;color:#aab3bf;max-width:58ch}
+.controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0 0}
+button{border:1px solid #30363d;border-radius:999px;background:#21262d;color:#f0f6fc;padding:9px 12px;min-height:40px;cursor:pointer;font-weight:800}
+button[aria-pressed="true"]{background:#f85149;border-color:#ff7b72;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{display:block;padding:22px;text-decoration:none;color:inherit;min-height:166px}
+.card:hover,.card:focus-visible{border-color:#58a6ff;transform:translateY(-2px)}
+.entry{border:2px solid #f85149;background:linear-gradient(145deg,#2b1114,#161b22)}
+.entry:hover,.entry:focus-visible{border-color:#ff7b72}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:#da3633;color:#fff;font-size:12px;font-weight:900;letter-spacing:.02em}
+.emoji{font-size:34px}.title{margin-top:12px;color:#f0f6fc;font-size:20px;font-weight:900}.desc{margin-top:6px;color:#9da7b3}
+.panel{margin-top:16px;padding:22px}.panel h2{margin:0 0 12px;color:#f0f6fc;font-size:22px}
+.links{display:flex;flex-wrap:wrap;gap:8px}.links a{padding:10px 12px;border-radius:10px;background:#21262d;color:#c9d1d9;text-decoration:none;font-size:14px}
+.status{margin-top:14px;color:#7ee787;font-size:14px}.private{color:#ffa657}
+footer{text-align:center;color:#6e7681;font-size:12px;padding:20px 0}
+html[data-language="zh"] .en,html[data-language="en"] .zh,html[data-language="compact"] .optional{display:none}
+html[data-language="compact"] .en{display:none}
+@media(max-width:640px){body{padding:14px}.hero,.panel,.card{border-radius:14px;padding:18px}}
 </style>
 </head>
 <body>
 <main>
-<section class="notice" role="status">
-  <strong>📚歷史 Projection｜Historical Projection</strong>
-  <p>本 GitHub Pages 已停用現行入口授權：<code>active=false</code>、<code>authorized=false</code>。現行邏輯入口為「🥳歡迎光臨」，現行網頁 Projection 請進入下方 Sites。</p>
-</section>
 <section class="hero">
-  <h1>🥳 歡迎光臨</h1>
-  <p>這是保留供回推的歷史頁面，不是本體，也不是現行網頁入口。</p>
+  <h1><span class="emoji">🥳</span> <span class="zh">歡迎光臨</span><span class="en">Welcome Gate</span></h1>
+  <p>
+    <span class="zh">這是公開入口投影；唯一根仍回指 🧩LKMINI。中文路徑是本地離線座標，公開頁只顯示可公開摘要。</span>
+    <span class="en">This is the public projection gate; the single root still points back to 🧩LKMINI. Chinese local paths stay offline and private.</span>
+  </p>
+  <div class="controls" aria-label="顯示模式 Display mode">
+    <button type="button" data-mode="all" aria-pressed="true">🌐 全部 All</button>
+    <button type="button" data-mode="zh" aria-pressed="false">中文</button>
+    <button type="button" data-mode="en" aria-pressed="false">English</button>
+    <button type="button" data-mode="compact" aria-pressed="false">👁️ 精簡隱藏</button>
+  </div>
 </section>
-<section class="grid" aria-label="投影入口">
-  <a class="card current" href="https://lkmini-wiring-hub.ky46738.chatgpt.site" aria-label="前往現行網頁 Projection">
-    <span class="badge">CURRENT WEB PROJECTION</span>
-    <div class="title">🥳 歡迎光臨</div>
-    <div class="desc">現行網頁 Projection；程式回指 lkminiPhantomWorld/LaoK-System@main。</div>
+<section class="grid" aria-label="公開項目 Public entries">
+  <a class="card entry" href="mini/" aria-label="🧩 MINI 唯一入口 Unique AI entry">
+    <span class="badge">🧩 <span class="zh">唯一入口</span><span class="en">Unique Entry</span></span>
+    <div class="title">🧩 MINI</div>
+    <div class="desc">
+      <span class="zh">AI 只作功能加強；入口只負責讀取、驗證、掛載。</span>
+      <span class="en">AI is enhancement only; this gate reads, verifies, and mounts.</span>
+    </div>
   </a>
-  <a class="card history" href="mini/" aria-label="開啟停用的歷史 Reader Projection">
-    <span class="badge history">HISTORICAL · DISABLED</span>
-    <div class="title">🪞 歷史 Reader</div>
-    <div class="desc">只供證據回讀；不得掛載、不得授權、不得自稱現行唯一入口。</div>
-  </a>
-  <a class="card history" href="ui/shrine/">
-    <div class="emoji">⛩️</div><div class="title">祭祀世界</div>
-    <div class="desc">保留的公開靜態 Projection。</div>
+  <a class="card optional" href="ui/shrine/">
+    <div class="emoji">🪞</div>
+    <div class="title"><span class="zh">幻影神龕</span><span class="en">Projection Shrine</span></div>
+    <div class="desc">
+      <span class="zh">獨立公開項目的靜態投影。</span>
+      <span class="en">Static projection for public-facing project surfaces.</span>
+    </div>
   </a>
 </section>
 <section class="panel">
-  <h2>🔬 公開驗證</h2>
+  <h2>🔬 <span class="zh">公開驗證</span><span class="en">Public Verification</span></h2>
   <div class="links">
-    <a href="PORTAL_MANIFEST.json">Manifest</a>
-    <a href="PORTAL_LOCATOR.json">Locator</a>
-    <a href="PORTAL_REVERSECHAIN.json">ReverseChain</a>
-    <a href="PORTAL_SHA256SUMS">SHA256</a>
+    <a href="PORTAL_MANIFEST.json">📋 Manifest</a>
+    <a href="PORTAL_LOCATOR.json">📍 Locator</a>
+    <a href="PORTAL_REVERSECHAIN.json">🔁 ReverseChain</a>
+    <a href="PORTAL_SHA256SUMS">🔐 SHA256</a>
   </div>
-  <div class="status">完成 · historical=true · active=false · authorized=false · entryGate=🥳歡迎光臨</div>
-  <details id="historical-claims"><summary>📚歷史原文證據</summary><p>舊標記曾為「SYSTEM UNIQUE AI ENTRY」、「AI 進入🥃老K系統的唯一紅色標籤」與「AI入口數量＝1」。此段僅保留來源證據，已撤銷現行效力。</p></details>
+  <div class="status">A=A · WELCOME_PAGE · AI_ENTRY_COUNT=1 · ROOT=🧩LKMINI</div>
+  <div class="status private">🔒 <span class="zh">本地中文路徑、登入權限、內部回執不在公開頁顯示。</span><span class="en">Local Chinese paths, sign-in permissions, and internal receipts are hidden from public pages.</span></div>
 </section>
-<footer>lkminiPhantomWorld · Kevin Yang · Historical Projection · 2026</footer>
+<footer>lkminiPhantomWorld · Kevin Yang · 2026</footer>
 </main>
+<script>
+const root=document.documentElement;
+const buttons=[...document.querySelectorAll("[data-mode]")];
+buttons.forEach(button=>button.addEventListener("click",()=>{
+  const mode=button.dataset.mode;
+  root.dataset.language=mode;
+  buttons.forEach(item=>item.setAttribute("aria-pressed",String(item===button)));
+}));
+</script>
 </body>
 </html>
