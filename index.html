@@ -27,6 +27,7 @@ button[aria-pressed="true"]{background:#f85149;border-color:#ff7b72;color:#fff}
 .panel{margin-top:16px;padding:22px}.panel h2{margin:0 0 12px;color:#f0f6fc;font-size:22px}
 .links{display:flex;flex-wrap:wrap;gap:8px}.links a{padding:10px 12px;border-radius:10px;background:#21262d;color:#c9d1d9;text-decoration:none;font-size:14px}
 .status{margin-top:14px;color:#7ee787;font-size:14px}.private{color:#ffa657}
+.path-list{display:grid;gap:10px;margin-top:12px}.path-row{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:start;padding:12px;border:1px solid #30363d;border-radius:12px;background:#0d1117}.path-name{color:#f0f6fc;font-weight:900}.path-code{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;color:#d2a8ff;word-break:break-word}.path-note{color:#9da7b3;font-size:13px}
 footer{text-align:center;color:#6e7681;font-size:12px;padding:20px 0}
 html[data-language="zh"] .en,html[data-language="en"] .zh,html[data-language="compact"] .optional{display:none}
 html[data-language="compact"] .en{display:none}
@@ -36,21 +37,21 @@ html[data-language="compact"] .en{display:none}
 <body>
 <main>
 <section class="hero">
-  <h1><span class="emoji">🥳</span> <span class="zh">歡迎光臨</span><span class="en">Welcome Gate</span></h1>
+  <h1><span class="emoji">🥳</span> <span class="zh">歡迎光臨</span><span class="en">｜Welcome Gate</span></h1>
   <p>
     <span class="zh">這是公開入口投影；唯一根仍回指 🧩LKMINI。中文路徑是本地離線座標，公開頁只顯示可公開摘要。</span>
     <span class="en">This is the public projection gate; the single root still points back to 🧩LKMINI. Chinese local paths stay offline and private.</span>
   </p>
   <div class="controls" aria-label="顯示模式 Display mode">
-    <button type="button" data-mode="all" aria-pressed="true">🌐 全部 All</button>
-    <button type="button" data-mode="zh" aria-pressed="false">中文</button>
-    <button type="button" data-mode="en" aria-pressed="false">English</button>
+    <button type="button" data-mode="all" aria-pressed="true">🌐 全部｜中英</button>
+    <button type="button" data-mode="zh" aria-pressed="false">中文為主</button>
+    <button type="button" data-mode="en" aria-pressed="false">英文輔助 English</button>
     <button type="button" data-mode="compact" aria-pressed="false">👁️ 精簡隱藏</button>
   </div>
 </section>
 <section class="grid" aria-label="公開項目 Public entries">
   <a class="card entry" href="mini/" aria-label="🧩 MINI 唯一入口 Unique AI entry">
-    <span class="badge">🧩 <span class="zh">唯一入口</span><span class="en">Unique Entry</span></span>
+    <span class="badge">🧩 <span class="zh">唯一入口</span><span class="en">｜Unique Entry</span></span>
     <div class="title">🧩 MINI</div>
     <div class="desc">
       <span class="zh">AI 只作功能加強；入口只負責讀取、驗證、掛載。</span>
@@ -59,7 +60,7 @@ html[data-language="compact"] .en{display:none}
   </a>
   <a class="card optional" href="ui/shrine/">
     <div class="emoji">🪞</div>
-    <div class="title"><span class="zh">幻影神龕</span><span class="en">Projection Shrine</span></div>
+    <div class="title"><span class="zh">幻影神龕</span><span class="en">｜Projection Shrine</span></div>
     <div class="desc">
       <span class="zh">獨立公開項目的靜態投影。</span>
       <span class="en">Static projection for public-facing project surfaces.</span>
@@ -67,15 +68,27 @@ html[data-language="compact"] .en{display:none}
   </a>
 </section>
 <section class="panel">
-  <h2>🔬 <span class="zh">公開驗證</span><span class="en">Public Verification</span></h2>
+  <h2>🔬 <span class="zh">公開驗證</span><span class="en">｜Public Verification</span></h2>
   <div class="links">
-    <a href="PORTAL_MANIFEST.json">📋 Manifest</a>
-    <a href="PORTAL_LOCATOR.json">📍 Locator</a>
-    <a href="PORTAL_REVERSECHAIN.json">🔁 ReverseChain</a>
-    <a href="PORTAL_SHA256SUMS">🔐 SHA256</a>
+    <a href="PORTAL_MANIFEST.json">📋 公開清單｜Manifest</a>
+    <a href="PORTAL_LOCATOR.json">📍 位置表｜Locator</a>
+    <a href="PORTAL_REVERSECHAIN.json">🔁 回推鏈｜ReverseChain</a>
+    <a href="PORTAL_SHA256SUMS">🔐 指紋表｜SHA256</a>
+    <a href="%F0%9F%A7%AD%E8%B7%AF%E5%BE%91%E5%B0%8D%E7%85%A7%E8%A1%A8%EF%BD%9CPathMap.html">🧭 路徑對照表｜PathMap</a>
   </div>
   <div class="status">A=A · WELCOME_PAGE · AI_ENTRY_COUNT=1 · ROOT=🧩LKMINI</div>
   <div class="status private">🔒 <span class="zh">本地中文路徑、登入權限、內部回執不在公開頁顯示。</span><span class="en">Local Chinese paths, sign-in permissions, and internal receipts are hidden from public pages.</span></div>
+</section>
+<section class="panel">
+  <h2>🧭 <span class="zh">路徑對照</span><span class="en">｜Path Map</span></h2>
+  <div class="path-list">
+    <div class="path-row"><div class="path-name">🧩 唯一根</div><div><div class="path-code">🧩LKMINI</div><div class="path-note">所有投影都回到這裡。</div></div></div>
+    <div class="path-row"><div class="path-name">🥳 歡迎入口</div><div><div class="path-code">/welcome/</div><div class="path-note">公開首頁，只放可公開摘要。</div></div></div>
+    <div class="path-row"><div class="path-name">🪞 膠囊入口</div><div><div class="path-code">/welcome/mini/</div><div class="path-note">Reader / Gateway：讀取、驗證、掛載。</div></div></div>
+    <div class="path-row optional"><div class="path-name">📋 公開清單</div><div><div class="path-code">/welcome/PORTAL_MANIFEST.json</div><div class="path-note">公開檔案關係。</div></div></div>
+    <div class="path-row optional"><div class="path-name">📍 位置表</div><div><div class="path-code">/welcome/PORTAL_LOCATOR.json</div><div class="path-note">公開 locator 摘要，不公開本地完整路徑。</div></div></div>
+    <div class="path-row optional"><div class="path-name">🔒 本地中文路徑</div><div><div class="path-code">只留在離線系統</div><div class="path-note">登入權限、內部回執、完整磁碟路徑不放公開頁。</div></div></div>
+  </div>
 </section>
 <footer>lkminiPhantomWorld · Kevin Yang · 2026</footer>
 </main>

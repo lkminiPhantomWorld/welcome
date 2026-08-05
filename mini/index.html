@@ -13,70 +13,70 @@
 <body><main class="wrap">
 <section class="top">
   <article class="card hero">
-    <span class="eyebrow">🪞 <span class="zh">幻影膠囊 Reader</span><span class="en">Phantom Capsule Reader</span></span>
-    <h1><span class="zh">只讀、驗證、掛載。</span><span class="en">Read, Verify, Mount.</span></h1>
+    <span class="eyebrow">🪞 <span class="zh">幻影膠囊讀取器</span><span class="en">｜Phantom Capsule Reader</span></span>
+    <h1><span class="zh">只讀、驗證、掛載。</span><span class="en">｜Read, Verify, Mount.</span></h1>
     <p class="lead"><span class="zh">唯一入口 Reader / Gateway：先讀膠囊 JSON，再檢查 Locator、SHA256、角色、Payload 與 A=A。全部通過才允許掛載；AI 只作功能加強，中文本地路徑不公開。</span><span class="en">The single Reader / Gateway reads a capsule JSON, then checks Locator, SHA256, role, Payload, and A=A. Mounting is allowed only after all checks pass; AI is enhancement only, and local Chinese paths stay private.</span></p>
     <div class="controls" aria-label="顯示模式 Display mode">
-      <button type="button" class="btn btn-ghost" data-mode="all" aria-pressed="true">🌐 全部 All</button>
-      <button type="button" class="btn btn-ghost" data-mode="zh" aria-pressed="false">中文</button>
-      <button type="button" class="btn btn-ghost" data-mode="en" aria-pressed="false">English</button>
+      <button type="button" class="btn btn-ghost" data-mode="all" aria-pressed="true">🌐 全部｜中英</button>
+      <button type="button" class="btn btn-ghost" data-mode="zh" aria-pressed="false">中文為主</button>
+      <button type="button" class="btn btn-ghost" data-mode="en" aria-pressed="false">英文輔助 English</button>
       <button type="button" class="btn btn-ghost" data-mode="compact" aria-pressed="false">👁️ 精簡隱藏</button>
     </div>
     <div class="actions">
-      <button class="btn btn-primary" id="loadSampleBtn">📥 載入範例 Sample</button>
-      <button class="btn btn-ghost" id="forgeBtn">🧬 生成膠囊 Generate</button>
-      <button class="btn btn-ghost" id="verifyBtn">🔬 驗證 Verify</button>
+      <button class="btn btn-primary" id="loadSampleBtn">📥 載入範例｜Sample</button>
+      <button class="btn btn-ghost" id="forgeBtn">🧬 生成膠囊｜Generate</button>
+      <button class="btn btn-ghost" id="verifyBtn">🔬 驗證｜Verify</button>
     </div>
   </article>
   <aside class="card preview">
-    <div class="capsule-view"><div class="capsule-core"><b id="capsuleTitle">PHANTOM CAPSULE</b><span id="capsuleLocator">Locator::NotLoaded</span></div></div>
+    <div class="capsule-view"><div class="capsule-core"><b id="capsuleTitle">🪞幻影膠囊</b><span id="capsuleLocator">📍位置：尚未載入</span></div></div>
     <div class="stack">
       <div class="eyebrow">📦 <span class="zh">入口只負責讀與掛，不替平台登入授權。</span><span class="en">This gate reads and mounts; it does not perform platform sign-in.</span></div>
-      <div class="eyebrow">🧭 Mount → Run → Unmount</div>
+      <div class="eyebrow">🧭 掛載 → 執行 → 卸載 <span class="en">｜Mount → Run → Unmount</span></div>
     </div>
   </aside>
 </section>
 <section class="grid">
   <article class="card section">
-    <h2>📥 <span class="zh">Reader 輸入區</span><span class="en">Reader Input</span></h2>
+    <h2>📥 <span class="zh">讀取器輸入區</span><span class="en">｜Reader Input</span></h2>
     <p class="sub"><span class="zh">可以貼 JSON、生成膠囊，或匯入 `.json` 檔。Reader 會用 canonical body 重算 SHA256，確認是不是同一顆膠囊。</span><span class="en">Paste JSON, generate a capsule, or import a `.json` file. The Reader recomputes SHA256 from the canonical body.</span></p>
-    <div class="dropzone"><label for="capsuleFile">📎 匯入膠囊 JSON | Import Capsule JSON</label><input id="capsuleFile" type="file" accept=".json,application/json" /><div class="hint optional">🔒 本地中文路徑與內部回執只留在離線座標，不寫入公開頁。</div></div>
+    <div class="dropzone"><label for="capsuleFile">📎 匯入膠囊 JSON｜Import Capsule JSON</label><input id="capsuleFile" type="file" accept=".json,application/json" /><div class="hint optional">🔒 本地中文路徑與內部回執只留在離線座標，不寫入公開頁。</div></div>
     <div class="form-grid" style="margin-top:14px;">
-      <div><label>🏷️ 標題 | Title</label><input id="title" value="🥃老K系統入口" /></div>
+      <div><label>🏷️ 標題｜Title</label><input id="title" value="🥃老K系統入口" /></div>
       <div><label>🧩 Layer ID</label><input id="layerId" value="LKMINI" /></div>
-      <div><label>🎩 角色 / Role</label><input id="role" value="唯一入口 Reader / Gateway" /></div>
-      <div><label>📍 Locator Key</label><input id="locator" value="https://lkminiphantomworld.github.io/welcome/mini/" /></div>
+      <div><label>🎩 角色｜Role</label><input id="role" value="唯一入口 Reader / Gateway" /></div>
+      <div><label>📍 位置鑰匙｜Locator Key</label><input id="locator" value="https://lkminiphantomworld.github.io/welcome/mini/" /></div>
       <div class="full"><label>📦 Payload</label><textarea id="payload">唯一系統＝🥃老K系統。
 唯一根節點＝🧩LKMINI。
 入口職責＝讀取、驗證、掛載。
 AI 角色＝功能加強，不是系統本體。
 Root SHA256＝6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34。
 A=A。</textarea></div>
-      <div class="full"><label>🧬 膠囊 JSON | Capsule JSON</label><textarea id="capsuleJson"></textarea></div>
+      <div class="full"><label>🧬 膠囊 JSON｜Capsule JSON</label><textarea id="capsuleJson"></textarea></div>
     </div>
     <div class="toolbar"><button class="btn btn-primary" id="parseBtn">📖 讀取 JSON</button><button class="btn btn-ghost" id="downloadBtn">⬇️ 下載膠囊</button></div>
   </article>
   <aside class="card section">
-    <h2>🔬 <span class="zh">Gateway 驗證區</span><span class="en">Gateway Checks</span></h2>
+    <h2>🔬 <span class="zh">入口驗證區</span><span class="en">｜Gateway Checks</span></h2>
     <p class="sub"><span class="zh">重點在讀得到、驗得過、掛得上；公開面不顯示登入權限、內部回執或本地完整路徑。</span><span class="en">The goal is readable, verifiable, mountable. Public pages hide sign-in permissions, internal receipts, and full local paths.</span></p>
     <div class="stack" id="statusPanel">
       <div class="status"><span>🧭 掛載狀態</span><div id="mountState">尚未讀取</div></div>
       <div class="status"><span>🔐 SHA</span><div id="shaState">未驗證</div></div>
-      <div class="status"><span>📍 Locator</span><div id="locatorState">未檢查</div></div>
+      <div class="status"><span>📍 位置</span><div id="locatorState">未檢查</div></div>
       <div class="status"><span>📦 Payload</span><div id="payloadState">未檢查</div></div>
       <div class="status"><span>🎩 身份</span><div id="identityState">未檢查</div></div>
       <div class="status"><span>⚖️ A=A</span><div id="axiomState">未檢查</div></div>
       <div class="status"><span>✅ Reader 判定</span><div id="readerDecision">等待輸入</div></div>
     </div>
-    <div class="footer optional">🧩 Root=LKMINI · 🪞 Container=Phantom Capsule · 🔒 Public=summary only</div>
+    <div class="footer optional">🧩 根＝LKMINI · 🪞 容器＝幻影膠囊 · 🔒 公開＝只顯示摘要</div>
   </aside>
 </section>
 <section class="card section" style="margin-top:18px;">
-  <h2>📋 <span class="zh">解析結果</span><span class="en">Parse Result</span></h2>
+  <h2>📋 <span class="zh">解析結果</span><span class="en">｜Parse Result</span></h2>
   <p class="sub"><span class="zh">全部驗證通過才視為可掛載；任一項不通過就拒絕掛載。</span><span class="en">A capsule is mountable only when every check passes.</span></p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-    <div><h3>🎩 身份摘要 | Identity</h3><div class="codebox mono" id="identityBox">尚未載入。</div><div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;"><span class="tag gold">🧬 Capsule</span><span class="tag blue">📍 Locator</span><span class="tag purple">⚖️ A=A</span></div></div>
-    <div><h3>🧾 Gateway Log</h3><div class="codebox mono" id="logBox">Reader ready.</div></div>
+    <div><h3>🎩 身份摘要｜Identity</h3><div class="codebox mono" id="identityBox">尚未載入。</div><div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;"><span class="tag gold">🧬 膠囊</span><span class="tag blue">📍 位置</span><span class="tag purple">⚖️ A=A</span></div></div>
+    <div><h3>🧾 入口紀錄｜Gateway Log</h3><div class="codebox mono" id="logBox">讀取器已準備。</div></div>
   </div>
 </section>
 </main>
@@ -97,7 +97,7 @@ async function buildFromFields(){const obj={type:ENTRY_IDENTITY.type,version:"1.
 async function verifyCapsule(obj){
   resetChecks();setStatus("mountState","驗證中","blue");
   if(!obj||typeof obj!=="object"){block("拒絕掛載：不是 JSON 物件。");return false}
-  const lines=["Reader received capsule object."];
+  const lines=["讀取器收到膠囊物件。"];
   const actualSha=await sha256Text(canonicalCapsule(obj));
   const shaMatch=actualSha===obj.sha256;
   const locatorPass=obj.locatorkey===ENTRY_LOCATOR;
@@ -112,19 +112,19 @@ async function verifyCapsule(obj){
   setStatus("identityState",identityPass?"通過：系統入口身份一致":"失敗：type、標題、Layer ID 或角色不一致",identityPass?"good":"bad");
   setStatus("axiomState",axiomPass?"通過：A=A":"失敗：A=A 缺失或寫法錯誤",axiomPass?"good":"bad");
   const allPass=shaMatch&&locatorPass&&payloadPass&&identityPass&&axiomPass;
-  if(allPass){setStatus("mountState","已通過 Reader Gate","good");setStatus("readerDecision","允許掛載（Mount Ready）","good");lines.push("A=A passed.");lines.push("System identity, root SHA256, locator, role and payload passed.");lines.push("Gateway decision: mount-ready.")}
-  else{block();lines.push("Gateway blocked mount. Entry denied.");if(!shaMatch)lines.push("Reason: SHA256 mismatch.");if(!locatorPass)lines.push("Reason: unique locator mismatch.");if(!payloadPass)lines.push("Reason: payload or root identity mismatch.");if(!identityPass)lines.push("Reason: system entry identity mismatch.");if(!axiomPass)lines.push("Reason: A=A validation failed.")}
-  $("capsuleTitle").textContent=obj.meta?.title||"UNKNOWN CAPSULE";$("capsuleLocator").textContent=obj.locatorkey||"Locator::Missing";
+  if(allPass){setStatus("mountState","已通過讀取器入口","good");setStatus("readerDecision","允許掛載（Mount Ready）","good");lines.push("A=A 通過。");lines.push("系統身份、根 SHA256、位置、角色、Payload 全部通過。");lines.push("入口判定：可以掛載。")}
+  else{block();lines.push("入口已拒絕掛載。");if(!shaMatch)lines.push("原因：SHA256 不一致。");if(!locatorPass)lines.push("原因：唯一位置不一致。");if(!payloadPass)lines.push("原因：Payload 或根身份不正確。");if(!identityPass)lines.push("原因：系統入口身份不一致。");if(!axiomPass)lines.push("原因：A=A 驗證失敗。")}
+  $("capsuleTitle").textContent=obj.meta?.title||"未知膠囊";$("capsuleLocator").textContent=obj.locatorkey||"📍位置：缺失";
   $("identityBox").textContent=JSON.stringify({type:obj.type,title:obj.meta?.title,layerid:obj.meta?.layerid,role:obj.meta?.role,locator:obj.locatorkey,claimed_sha256:obj.sha256,actual_sha256:actualSha,A_EQUALS_A:axiomPass,mount_decision:allPass?"允許掛載":"拒絕掛載"},null,2);
   setLog(lines);return allPass
 }
 function parseFailure(prefix,e){resetChecks();setStatus("readerDecision","拒絕掛載 · JSON 解析失敗","bad");setLog(prefix+e.message)}
 $("loadSampleBtn").addEventListener("click",async()=>{sample.createdat=new Date().toISOString();sample.sha256=await sha256Text(canonicalCapsule(sample));$("capsuleJson").value=JSON.stringify(sample,null,2);$("title").value=sample.meta.title;$("layerId").value=sample.meta.layerid;$("role").value=sample.meta.role;$("locator").value=sample.locatorkey;$("payload").value=sample.payload;await verifyCapsule(sample)});
 $("forgeBtn").addEventListener("click",async()=>{const obj=await buildFromFields();await verifyCapsule(obj)});
-$("verifyBtn").addEventListener("click",async()=>{try{await verifyCapsule(JSON.parse($("capsuleJson").value))}catch(e){parseFailure("JSON parse error: ",e)}});
-$("parseBtn").addEventListener("click",async()=>{try{const obj=JSON.parse($("capsuleJson").value);$("title").value=obj.meta?.title||"";$("layerId").value=obj.meta?.layerid||"";$("role").value=obj.meta?.role||"";$("locator").value=obj.locatorkey||"";$("payload").value=obj.payload||"";await verifyCapsule(obj)}catch(e){parseFailure("JSON parse error: ",e)}});
+$("verifyBtn").addEventListener("click",async()=>{try{await verifyCapsule(JSON.parse($("capsuleJson").value))}catch(e){parseFailure("JSON 解析失敗：",e)}});
+$("parseBtn").addEventListener("click",async()=>{try{const obj=JSON.parse($("capsuleJson").value);$("title").value=obj.meta?.title||"";$("layerId").value=obj.meta?.layerid||"";$("role").value=obj.meta?.role||"";$("locator").value=obj.locatorkey||"";$("payload").value=obj.payload||"";await verifyCapsule(obj)}catch(e){parseFailure("JSON 解析失敗：",e)}});
 $("downloadBtn").addEventListener("click",()=>{const blob=new Blob([$("capsuleJson").value],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="phantom-capsule.json";a.click()});
-$("capsuleFile").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;const text=await file.text();$("capsuleJson").value=text;try{await verifyCapsule(JSON.parse(text))}catch(err){parseFailure("Import error: ",err)}});
+$("capsuleFile").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;const text=await file.text();$("capsuleJson").value=text;try{await verifyCapsule(JSON.parse(text))}catch(err){parseFailure("匯入失敗：",err)}});
 document.querySelectorAll("[data-mode]").forEach(button=>button.addEventListener("click",()=>{document.documentElement.dataset.language=button.dataset.mode;document.querySelectorAll("[data-mode]").forEach(item=>item.setAttribute("aria-pressed",String(item===button)))}));
 (async()=>{const obj=await buildFromFields();await verifyCapsule(obj)})();
 </script></body></html>
