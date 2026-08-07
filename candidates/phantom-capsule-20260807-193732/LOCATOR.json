@@ -1,0 +1,17 @@
+{
+  "locator_type": "phantom_capsule_candidate_locator",
+  "target_identity": "🧩LKMINI",
+  "coordinate_type": "repository_projection_candidate_branch",
+  "repository_projection": "章魚貓｜程式座標（GitHub）",
+  "repository": "lkminiPhantomWorld/welcome",
+  "branch": "agent/phantom-capsule-candidate-20260807-193732",
+  "base_branch": "main",
+  "candidate_path": "candidates/phantom-capsule-20260807-193732/",
+  "protocol": "LKMINI://",
+  "formal_container": "🪞幻影膠囊",
+  "axiom": "A=A",
+  "visibility": "public_candidate_summary_only",
+  "private_content_published": false,
+  "main_branch_mutation": false,
+  "resolution": "Projection -> Locator -> Manifest -> Snapshot -> ReverseChain -> 🧩LKMINI -> A=A"
+}
