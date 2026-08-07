@@ -1,10 +1,18 @@
 {
   "name": "LKMini",
-  "type": "public_seed_locator",
-  "canonical_url": "https://github.com/ky46738-ops/LKMini",
-  "pages_url": "https://ky46738-ops.github.io/LKMini",
+  "type": "public_mirror_seed_locator",
+  "projection_role": "open_source_public_mirror",
+  "identity_root": "🧩LKMINI",
+  "formal_container": "🪞幻影膠囊",
+  "coordinate_label": "章魚貓｜程式座標（GitHub）",
+  "canonical_url": "https://github.com/lkminiPhantomWorld/welcome",
+  "historical_urls": [
+    "https://github.com/ky46738-ops/LKMini",
+    "https://ky46738-ops.github.io/LKMini"
+  ],
   "author": "Kevin Yang (ky46738-ops)",
   "version": "seed_v0",
-  "A_EQUALS_A": true,
-  "note": "This is the single canonical locator for LKMini public seed."
+  "A=A": true,
+  "PRIVATE_CORE_INCLUDED": false,
+  "note": "This is the public mirror locator for LKMini seed Projection. Formal Identity remains 🧩LKMINI."
 }
