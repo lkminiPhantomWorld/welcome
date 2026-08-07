@@ -1,16 +1,21 @@
 {
   "snapshot_id": "seed_v0",
   "timestamp": "2026-05-17T10:00:00Z",
+  "updated_at": "2026-08-07T00:00:00+08:00",
   "author": "Kevin Yang (ky46738-ops)",
-  "repo": "ky46738-ops/LKMini",
+  "repo": "lkminiPhantomWorld/welcome",
+  "projection_role": "open_source_public_mirror",
+  "identity_root": "🧩LKMINI",
   "status": {
     "PUBLIC_REPO": true,
+    "PUBLIC_MIRROR": true,
     "GATEKEEPER_DEPLOYED": true,
     "PUBLIC_PRIVATE_BOUNDARY_DEFINED": true,
-    "SHA256SUMS_STATUS": "PLACEHOLDER",
+    "SHA256SUMS_STATUS": "ACTIVE",
     "SEED_TAG_CREATED": true,
-    "A_EQUALS_A": true,
+    "A=A": true,
     "CORE_DIRECTION_CORRECT": true,
+    "PRIVATE_CORE_INCLUDED": false,
     "FULL_IMMUTABLE_RUNTIME_NOT_FINISHED": true
   }
 }
