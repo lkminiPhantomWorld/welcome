@@ -1,14 +1,17 @@
 {
   "name": "ReverseChain",
-  "purpose": "Lineage and restore reference chain for LKMini public seed",
+  "purpose": "Lineage and restore reference chain for LKMini public mirror seed Projection",
   "author": "Kevin Yang (ky46738-ops)",
+  "identity_root": "🧩LKMINI",
+  "formal_container": "🪞幻影膠囊",
   "chain": [
     {
       "version": "seed_v0",
       "date": "2026-05-17",
-      "repo": "ky46738-ops/LKMini",
-      "note": "First public seed. Gatekeeper deployed. Core files committed.",
-      "A_EQUALS_A": true
+      "repo": "lkminiPhantomWorld/welcome",
+      "projection_role": "open_source_public_mirror",
+      "note": "First public mirror seed. Gatekeeper deployed. Core files committed. Formal Identity remains 🧩LKMINI.",
+      "A=A": true
     }
   ]
 }
