@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-LKMini 公開鏡像封裝腳本
+LKMini 封裝腳本
 輸出：LKMini_seed_v0.zip
 """
 
 import zipfile
 import os
+import datetime
 
 SEED_FILES = [
     "README.md",
@@ -34,7 +35,7 @@ SEED_FILES = [
 OUTPUT = "LKMini_seed_v0.zip"
 
 if __name__ == "__main__":
-    print(f"封裝 LKMini public mirror seed_v0 -> {OUTPUT}")
+    print(f"封裝 LKMini seed_v0 -> {OUTPUT}")
     with zipfile.ZipFile(OUTPUT, "w", zipfile.ZIP_DEFLATED) as zf:
         for f in SEED_FILES:
             if os.path.exists(f):
@@ -43,4 +44,4 @@ if __name__ == "__main__":
             else:
                 print(f"  跳過（不存在）: {f}")
     print(f"\n✅ 完成: {OUTPUT}")
-    print("A=A=true")
+    print("A_EQUALS_A=true")
