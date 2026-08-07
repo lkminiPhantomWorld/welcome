@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""LKMini seed_v0 integrity verifier. A_EQUALS_A=true."""
+"""LKMini public mirror seed integrity verifier. A=A=true."""
 from pathlib import Path
 import hashlib
 
@@ -41,7 +41,7 @@ def check_required_files() -> bool:
 
 def check_a_equals_a() -> bool:
     text = (ROOT / "README.md").read_text(encoding="utf-8")
-    ok = "A_EQUALS_A=true" in text
+    ok = "A=A=true" in text
     print("PASS: A=A 標記存在" if ok else "FAIL: README 缺少 A=A 標記")
     return ok
 
@@ -106,7 +106,7 @@ if __name__ == "__main__":
         check_no_private_leak(),
     ]
     if all(checks):
-        print("PASS: LKMini seed gate verified")
+        print("PASS: LKMini public mirror seed gate verified")
         raise SystemExit(0)
-    print("FAIL: LKMini seed gate verification failed")
+    print("FAIL: LKMini public mirror seed gate verification failed")
     raise SystemExit(1)
