@@ -1,0 +1,20 @@
+{
+  "manifest_type": "phantom_capsule_candidate_manifest",
+  "status": "candidate_branch_only",
+  "root_identity": "🧩LKMINI",
+  "metadata_sha256": "6c0f6f487d8af27de4a8cee9f3fc853f0fbcf417cbd21acb56ac65c55adfcf34",
+  "axiom": "A=A",
+  "formal_container": "🪞幻影膠囊",
+  "repository_projection": "章魚貓｜程式座標（GitHub）",
+  "base_branch": "main",
+  "main_branch_mutation": false,
+  "open_source_mini_stage": "final_stage_candidate",
+  "public_original_words_preserved": true,
+  "private_content_published": false,
+  "files": [
+    "candidates/phantom-capsule-20260807-193732/README.md",
+    "candidates/phantom-capsule-20260807-193732/MANIFEST.json",
+    "candidates/phantom-capsule-20260807-193732/LOCATOR.json",
+    "candidates/phantom-capsule-20260807-193732/REVERSECHAIN.md"
+  ]
+}
